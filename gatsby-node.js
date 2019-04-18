@@ -17,3 +17,31 @@ module.exports.onCreateNode = ({ node, actions }) => {
     })
   }
 }
+
+module.exports.createPages = async ({ graphql, actions }) => {
+  const { createPage } = actions
+  const blogTemplate = path.resolve("./src/templates/blogTemplate.js")
+  const res = await graphql(`
+    query {
+      allMarkdownRemark {
+        edges {
+          node {
+            fields {
+              slug
+            }
+          }
+        }
+      }
+    }
+  `)
+
+  res.data.allMarkdownRemark.edges.forEach(edge => {
+    createPage({
+      component: blogTemplate, // 연결할 템플릿
+      path: `/blog/${edge.node.fields.slug}`, // 생성할 페이지 경로
+      context: {
+        slug: edge.node.fields.slug, // 템플릿에 전달할 것들?
+      },
+    })
+  })
+}

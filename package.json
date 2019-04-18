@@ -6,7 +6,7 @@
   "license": "MIT",
   "scripts": {
     "build": "gatsby build",
-    "develop": "env-cmd .env.development gatsby develop",
+    "develop": "env-cmd .env gatsby develop",
     "format": "prettier --write src/**/*.{js,jsx}",
     "start": "npm run develop",
     "serve": "gatsby serve",
@@ -15,6 +15,7 @@
   "dependencies": {
     "babel-plugin-styled-components": "^1.10.0",
     "gatsby": "^2.3.16",
+    "gatsby-plugin-react-helmet": "^3.0.12",
     "gatsby-plugin-sharp": "^2.0.35",
     "gatsby-plugin-styled-components": "^3.0.7",
     "gatsby-remark-images": "^3.0.10",
@@ -23,6 +24,7 @@
     "gatsby-transformer-remark": "^2.3.8",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
+    "react-helmet": "^5.2.0",
     "styled-components": "^4.2.0"
   },
   "devDependencies": {

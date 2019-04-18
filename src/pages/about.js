@@ -1,10 +1,12 @@
 import React from "react"
 import { Link } from "gatsby"
 import Layout from "../components/layout"
+import HelmetComponent from "../components/helmetComponent"
 
 const AboutPage = () => {
   return (
     <Layout>
+      <HelmetComponent title="어바웃" />
       <h1>MANDARIN은?</h1>
       <Link to="/contact">컨택트</Link>
       <p>만다린은 남성이다.</p>

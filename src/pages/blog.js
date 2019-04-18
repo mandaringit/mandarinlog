@@ -2,6 +2,7 @@ import React from "react"
 import Layout from "../components/layout"
 import { useStaticQuery, graphql, Link } from "gatsby"
 import styled from "styled-components"
+import HelmetComponent from "../components/helmetComponent"
 
 const Posts = styled.ol`
   list-style-type: none;
@@ -52,6 +53,7 @@ const BlogPage = () => {
   `)
   return (
     <Layout>
+      <HelmetComponent title="블로그" />
       <h1>블로그</h1>
       <Posts>
         {data.allMarkdownRemark.edges.map(edge => (

@@ -1,5 +1,5 @@
 import React from "react"
-import { Link } from "gatsby"
+import { Link, graphql, useStaticQuery } from "gatsby"
 import styled from "styled-components"
 
 // active 시, 색상변경
@@ -35,10 +35,19 @@ const NavList = styled.ul`
 `
 
 const Header = () => {
+  const data = useStaticQuery(graphql`
+    query {
+      site {
+        siteMetadata {
+          title
+        }
+      }
+    }
+  `)
   return (
     <ExtendedHeader>
       <h1>
-        <TitleLink to="/">mandarindigo</TitleLink>
+        <TitleLink to="/">{data.site.siteMetadata.title}</TitleLink>
       </h1>
       <nav>
         <NavList>

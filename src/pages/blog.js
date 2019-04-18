@@ -35,13 +35,16 @@ const Content = styled.p`
 const BlogPage = () => {
   const data = useStaticQuery(graphql`
     query {
-      allContentfulBlogPost(sort: { fields: publishedDate, order: DESC }) {
+      allMarkdownRemark {
         edges {
           node {
-            # contentful의 모델에 따라 다르다.
-            title
-            slug
-            publishedDate(formatString: "MM월 DD일, YYYY")
+            frontmatter {
+              title
+              date
+            }
+            fields {
+              slug
+            }
           }
         }
       }
@@ -51,11 +54,11 @@ const BlogPage = () => {
     <Layout>
       <h1>블로그</h1>
       <Posts>
-        {data.allContentfulBlogPost.edges.map(edge => (
+        {data.allMarkdownRemark.edges.map(edge => (
           <Post>
-            <BlogLink to={`/blog/${edge.node.slug}`}>
-              <Title>{edge.node.title}</Title>
-              <Content>{edge.node.publishedDate}</Content>
+            <BlogLink to={`/blog/${edge.node.fields.slug}`}>
+              <Title>{edge.node.frontmatter.title}</Title>
+              <Content>{edge.node.frontmatter.date}</Content>
             </BlogLink>
           </Post>
         ))}

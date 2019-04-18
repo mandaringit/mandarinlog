@@ -31,8 +31,9 @@ export const query = graphql`
     }
   }
 `
-
 const Blog = props => {
+  //  다 좋은데, 글을 작성해도 이미지의 정보를 못 읽어오는 경우가 많음
+  // 오류인지 뭔지 잘 모르겠음.
   const options = {
     renderNode: {
       "embedded-asset-block": node => {

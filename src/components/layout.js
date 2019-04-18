@@ -5,10 +5,6 @@ import styled, { ThemeProvider } from "styled-components"
 import GlobalStyles from "../styles/GlobalStyles"
 import { Theme } from "../styles/Theme"
 
-const Test = styled.div`
-  color: ${props => props.theme.basicColor};
-`
-
 const Layout = props => {
   return (
     <ThemeProvider theme={Theme}>
@@ -16,7 +12,6 @@ const Layout = props => {
         <GlobalStyles />
         <>
           <div>
-            <Test>lala</Test>
             <Header />
             {props.children}
             <Footer />

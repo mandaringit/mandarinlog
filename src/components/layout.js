@@ -5,17 +5,33 @@ import styled, { ThemeProvider } from "styled-components"
 import GlobalStyles from "../styles/GlobalStyles"
 import { Theme } from "../styles/Theme"
 
+const Container = styled.div`
+  margin: 0 auto;
+  max-width: 750px;
+  padding: 1rem;
+
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+`
+
+const Content = styled.div`
+  flex-grow: 1;
+`
+
 const Layout = props => {
   return (
     <ThemeProvider theme={Theme}>
       <>
         <GlobalStyles />
         <>
-          <div>
-            <Header />
-            {props.children}
+          <Container>
+            <Content>
+              <Header />
+              {props.children}
+            </Content>
             <Footer />
-          </div>
+          </Container>
         </>
       </>
     </ThemeProvider>

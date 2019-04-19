@@ -25,3 +25,36 @@ featuredImage: "경로"
 translation: Boolean => true 또는 false
 ---
 ```
+
+### GAME
+
+```text
+---
+title: "제목"
+date : "2019-01-01"
+category: "GAME"
+featuredImage: "경로"
+---
+```
+
+### MOVIE
+
+```text
+---
+title: "제목"
+date : "2019-01-01"
+category: "MOVIE"
+featuredImage: "경로"
+---
+```
+
+### CODE
+
+```text
+---
+title: "제목"
+date : "2019-01-01"
+category: "CODE"
+featuredImage: "경로"
+---
+```

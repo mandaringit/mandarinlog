@@ -70,6 +70,9 @@ const Header = () => {
             <NavLink to="/game">GAME</NavLink>
           </li>
           <li>
+            <NavLink to="/movie">MOVIE</NavLink>
+          </li>
+          <li>
             <NavLink to="/code">CODE</NavLink>
           </li>
           <li>

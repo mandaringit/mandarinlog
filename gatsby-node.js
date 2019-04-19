@@ -22,7 +22,7 @@ module.exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions
   const opinionTemplate = path.resolve("./src/templates/opinionTemplate.js")
   const musicTemplate = path.resolve("./src/templates/musicTemplate.js")
-  const moiveTemplate = path.resolve("./src/templates/moiveTemplate.js")
+  const movieTemplate = path.resolve("./src/templates/movieTemplate.js")
   const gameTemplate = path.resolve("./src/templates/gameTemplate.js")
   const codeTemplate = path.resolve("./src/templates/codeTemplate.js")
   const etcTemplate = path.resolve("./src/templates/etcTemplate.js")
@@ -63,7 +63,7 @@ module.exports.createPages = async ({ graphql, actions }) => {
       })
     } else if (edge.node.frontmatter.category === "MOVIE") {
       createPage({
-        component: moiveTemplate,
+        component: movieTemplate,
         path: `/movie/${edge.node.fields.slug}`,
         context: {
           slug: edge.node.fields.slug,

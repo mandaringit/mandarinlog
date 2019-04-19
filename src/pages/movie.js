@@ -15,7 +15,7 @@ const Post = styled.li`
 const FeaturedImage = styled.img`
   margin: 0;
 `
-const GameLink = styled(Link)`
+const MovieLink = styled(Link)`
   background-color: white;
   color: #000000;
   display: block;
@@ -53,13 +53,13 @@ const Bar = styled.div`
   border-bottom: 1px solid ${props => props.theme.barColor};
 `
 
-const MusicPage = () => {
+const MoviePage = () => {
   const data = useStaticQuery(QUERY)
   const { edges } = data.allMarkdownRemark
   return (
     <Layout>
-      <HelmetComponent title="GAME" />
-      <h1>GAME ({edges.length})</h1>
+      <HelmetComponent title="MOVIE" />
+      <h1>MOVIE ({edges.length})</h1>
       <Posts>
         {edges.map(edge => {
           const { slug } = edge.node.fields
@@ -70,15 +70,13 @@ const MusicPage = () => {
           const { excerpt } = edge.node
           return (
             <Post key={slug}>
-              <GameLink to={`/game/${slug}`}>
+              <MovieLink to={`/movie/${slug}`}>
                 <FeaturedImage src={src} />
                 <Title>{title}</Title>
-                {/* <Singer>🎤 {singer}</Singer> */}
                 <DateContainer>🗒 {date}</DateContainer>
-                {/* {translation ? <p>"번역 완료"</p> : <p>"미번역"</p>} */}
                 <Bar />
                 <Content>{excerpt}</Content>
-              </GameLink>
+              </MovieLink>
             </Post>
           )
         })}
@@ -87,11 +85,11 @@ const MusicPage = () => {
   )
 }
 
-export default MusicPage
+export default MoviePage
 
 const QUERY = graphql`
   query {
-    allMarkdownRemark(filter: { frontmatter: { category: { eq: "GAME" } } }) {
+    allMarkdownRemark(filter: { frontmatter: { category: { eq: "MOVIE" } } }) {
       edges {
         node {
           frontmatter {

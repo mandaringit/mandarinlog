@@ -1,6 +1,6 @@
 import React from "react"
 import Layout from "../components/layout"
-import { useStaticQuery, graphql, Link } from "gatsby"
+import { useStaticQuery, graphql } from "gatsby"
 import styled from "styled-components"
 import HelmetComponent from "../components/helmetComponent"
 import {
@@ -10,6 +10,7 @@ import {
   Excerpt,
   Bar,
   PostLinkBox,
+  InfoBox,
 } from "../styles/pageStyles"
 
 const Posts = styled.ol`
@@ -39,10 +40,12 @@ const MoviePage = () => {
             <Post key={slug}>
               <PostLinkBox to={`/movie/${slug}`}>
                 <FeaturedImage src={src} />
-                <Title>{title}</Title>
-                <DateContainer>🗒 {date}</DateContainer>
-                <Bar />
-                <Excerpt>{excerpt}</Excerpt>
+                <InfoBox>
+                  <Title>{title}</Title>
+                  <DateContainer>🗒 {date}</DateContainer>
+                  <Bar />
+                  <Excerpt>{excerpt}</Excerpt>
+                </InfoBox>
               </PostLinkBox>
             </Post>
           )

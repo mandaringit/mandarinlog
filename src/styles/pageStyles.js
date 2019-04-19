@@ -40,10 +40,15 @@ export const PostLinkBox = styled(Link)`
   background-color: white;
   color: #000000;
   display: block;
-  padding: 1rem;
+  /* padding: 1rem; */
   text-decoration: none;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
   :hover {
     background: ${props => props.theme.hoverColor};
+    transition-duration: 1s;
   }
+`
+
+export const InfoBox = styled.div`
+  padding: 1rem;
 `

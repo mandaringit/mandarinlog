@@ -10,6 +10,7 @@ import {
   Excerpt,
   Bar,
   PostLinkBox,
+  InfoBox,
 } from "../styles/pageStyles"
 
 const Posts = styled.ol`
@@ -20,7 +21,7 @@ const Post = styled.li`
   margin: 1rem 0;
 `
 
-const MusicPage = () => {
+const GamePage = () => {
   const data = useStaticQuery(QUERY)
   const { edges, totalCount } = data.allMarkdownRemark
   return (
@@ -39,10 +40,12 @@ const MusicPage = () => {
             <Post key={slug}>
               <PostLinkBox to={`/game/${slug}`}>
                 <FeaturedImage src={src} />
-                <Title>{title}</Title>
-                <DateContainer>🗒 {date}</DateContainer>
-                <Bar />
-                <Excerpt>{excerpt}</Excerpt>
+                <InfoBox>
+                  <Title>{title}</Title>
+                  <DateContainer>🗒 {date}</DateContainer>
+                  <Bar />
+                  <Excerpt>{excerpt}</Excerpt>
+                </InfoBox>
               </PostLinkBox>
             </Post>
           )
@@ -52,7 +55,7 @@ const MusicPage = () => {
   )
 }
 
-export default MusicPage
+export default GamePage
 
 const QUERY = graphql`
   query {

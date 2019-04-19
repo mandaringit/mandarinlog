@@ -1,6 +1,6 @@
 import React from "react"
 import Layout from "../components/layout"
-import { useStaticQuery, graphql, Link } from "gatsby"
+import { useStaticQuery, graphql } from "gatsby"
 import styled from "styled-components"
 import HelmetComponent from "../components/helmetComponent"
 import {
@@ -10,6 +10,7 @@ import {
   Excerpt,
   Bar,
   PostLinkBox,
+  InfoBox,
 } from "../styles/pageStyles"
 
 const Posts = styled.ol`
@@ -44,12 +45,14 @@ const MusicPage = () => {
             <Post key={slug}>
               <PostLinkBox to={`/music/${slug}`}>
                 <FeaturedImage src={src} />
-                <Title>{title}</Title>
-                <Singer>🎤 {singer}</Singer>
-                <DateContainer>🗒 {date}</DateContainer>
-                {translation ? <p>"번역 완료"</p> : <p>"미번역"</p>}
-                <Bar />
-                <Excerpt>{excerpt}</Excerpt>
+                <InfoBox>
+                  <Title>{title}</Title>
+                  <Singer>🎤 {singer}</Singer>
+                  <DateContainer>🗒 {date}</DateContainer>
+                  {translation ? <p>"번역 완료"</p> : <p>"미번역"</p>}
+                  <Bar />
+                  <Excerpt>{excerpt}</Excerpt>
+                </InfoBox>
               </PostLinkBox>
             </Post>
           )

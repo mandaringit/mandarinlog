@@ -63,6 +63,7 @@ const QUERY = graphql`
   query {
     allMarkdownRemark(
       filter: { frontmatter: { category: { eq: "OPINION" } } }
+      sort: { order: DESC, fields: [frontmatter___date] }
     ) {
       totalCount
       edges {

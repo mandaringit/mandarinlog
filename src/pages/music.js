@@ -66,7 +66,10 @@ export default MusicPage
 
 const QUERY = graphql`
   query {
-    allMarkdownRemark(filter: { frontmatter: { category: { eq: "MUSIC" } } }) {
+    allMarkdownRemark(
+      filter: { frontmatter: { category: { eq: "MUSIC" } } }
+      sort: { order: DESC, fields: [frontmatter___date] }
+    ) {
       totalCount
       edges {
         node {

@@ -59,7 +59,10 @@ export default MoviePage
 
 const QUERY = graphql`
   query {
-    allMarkdownRemark(filter: { frontmatter: { category: { eq: "CODE" } } }) {
+    allMarkdownRemark(
+      filter: { frontmatter: { category: { eq: "CODE" } } }
+      sort: { order: DESC, fields: [frontmatter___date] }
+    ) {
       totalCount
       edges {
         node {

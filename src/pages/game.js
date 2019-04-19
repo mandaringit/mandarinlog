@@ -59,7 +59,10 @@ export default GamePage
 
 const QUERY = graphql`
   query {
-    allMarkdownRemark(filter: { frontmatter: { category: { eq: "GAME" } } }) {
+    allMarkdownRemark(
+      filter: { frontmatter: { category: { eq: "GAME" } } }
+      sort: { order: DESC, fields: [frontmatter___date] }
+    ) {
       totalCount
       edges {
         node {

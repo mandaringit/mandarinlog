@@ -4,6 +4,7 @@ import { useStaticQuery, graphql } from "gatsby"
 import styled from "styled-components"
 import HelmetComponent from "../components/helmetComponent"
 import {
+  CategoryTitle,
   Title,
   FeaturedImage,
   DateContainer,
@@ -27,7 +28,7 @@ const OpinionPage = () => {
   return (
     <Layout>
       <HelmetComponent title="OPINION" />
-      <h1>OPINION ({totalCount})</h1>
+      <CategoryTitle>OPINION ({totalCount})</CategoryTitle>
       <Posts>
         {edges.map(edge => {
           const { slug } = edge.node.fields

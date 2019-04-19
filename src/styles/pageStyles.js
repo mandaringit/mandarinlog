@@ -3,9 +3,14 @@ import { Link } from "gatsby"
 // 이하 전부 포스트 안의 내용이 아닌
 // 페이지에 나타나는 포스트의 스타일이다.
 
+// 카테고리 타이틀
+export const CategoryTitle = styled.h1`
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+`
+
 // 각 포스트 타이틀
 export const Title = styled.h3`
-  margin-top: 0.5rem;
   margin-bottom: 0.5rem;
 `
 
@@ -19,7 +24,7 @@ export const FeaturedImage = styled.img`
 
 // 각 포스트의 날짜
 export const DateContainer = styled.div`
-  color: ${props => props.theme.thinMainColor};
+  color: ${props => props.theme.barColor};
   font-size: 0.7rem;
   margin-bottom: 0.5rem;
 `

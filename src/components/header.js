@@ -18,11 +18,20 @@ const NavLink = styled(Link).attrs({ activeClassName })`
   }
   &.${activeClassName} {
     color: #333333;
+    border-bottom: 1px solid black;
   }
 `
 
 const ExtendedHeader = styled.header`
   padding: 1rem 0 3rem;
+`
+
+const NavList = styled.ul`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  list-style-type: none;
+  margin: 0;
 `
 
 const TitleLink = styled(Link)`
@@ -31,13 +40,7 @@ const TitleLink = styled(Link)`
   color: ${props => props.theme.mainColor};
   font-size: 3rem;
   text-decoration: none;
-`
-
-const NavList = styled.ul`
-  display: flex;
-  justify-content: space-between;
-  list-style-type: none;
-  margin: 0;
+  margin-left: 1rem;
 `
 
 const Header = () => {

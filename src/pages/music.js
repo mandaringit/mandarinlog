@@ -12,63 +12,107 @@ const Post = styled.li`
   margin: 1rem 0;
 `
 
-const BlogLink = styled(Link)`
-  background-color: #f4f4f4;
+const FeaturedImage = styled.img`
+  margin: 0;
+`
+const MusicLink = styled(Link)`
+  background-color: white;
   color: #000000;
   display: block;
   padding: 1rem;
   text-decoration: none;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
   :hover {
-    background: #e4e4e4;
+    background: ${props => props.theme.hoverColor};
   }
 `
 
-const Title = styled.h2`
-  margin-bottom: 0;
+const Title = styled.h3`
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+`
+
+const DateContainer = styled.div`
+  color: ${props => props.theme.thinMainColor};
+  font-size: 0.7rem;
+  margin-bottom: 0.5rem;
+`
+
+const Singer = styled.div`
+  font-weight: bold;
+  font-size: 0.7rem;
 `
 
 const Content = styled.p`
-  color: #777777;
+  color: black;
   font-size: 0.8rem;
-  font-style: italic;
+  margin-top: 0.5rem;
+`
+
+const Bar = styled.div`
+  border-bottom: 1px solid ${props => props.theme.barColor};
 `
 
 const MusicPage = () => {
-  const data = useStaticQuery(graphql`
-    query {
-      allMarkdownRemark(
-        filter: { frontmatter: { category: { eq: "MUSIC" } } }
-      ) {
-        edges {
-          node {
-            frontmatter {
-              title
-              date(formatString: "MM월 DD일, YYYY")
-            }
-            fields {
-              slug
-            }
-          }
-        }
-      }
-    }
-  `)
+  const data = useStaticQuery(QUERY)
+  const { edges } = data.allMarkdownRemark
   return (
     <Layout>
-      <HelmetComponent title="뮤직" />
-      <h1>뮤직</h1>
+      <HelmetComponent title="POP" />
+      <h1>POP ({edges.length})</h1>
       <Posts>
-        {data.allMarkdownRemark.edges.map(edge => (
-          <Post>
-            <BlogLink to={`/music/${edge.node.fields.slug}`}>
-              <Title>{edge.node.frontmatter.title}</Title>
-              <Content>{edge.node.frontmatter.date}</Content>
-            </BlogLink>
-          </Post>
-        ))}
+        {edges.map(edge => {
+          const { slug } = edge.node.fields
+          const {
+            src,
+          } = edge.node.frontmatter.featuredImage.childImageSharp.fixed
+          const { title, singer, date, translation } = edge.node.frontmatter
+          const { excerpt } = edge.node
+          return (
+            <Post key={slug}>
+              <MusicLink to={`/music/${slug}`}>
+                <FeaturedImage src={src} />
+                <Title>{title}</Title>
+                <Singer>🎤 {singer}</Singer>
+                <DateContainer>🗒 {date}</DateContainer>
+                {translation ? <p>"번역 완료"</p> : <p>"미번역"</p>}
+                <Bar />
+                <Content>{excerpt}</Content>
+              </MusicLink>
+            </Post>
+          )
+        })}
       </Posts>
     </Layout>
   )
 }
 
 export default MusicPage
+
+const QUERY = graphql`
+  query {
+    allMarkdownRemark(filter: { frontmatter: { category: { eq: "MUSIC" } } }) {
+      edges {
+        node {
+          frontmatter {
+            title
+            date(formatString: "YYYY년 MM월 DD일")
+            singer
+            translation
+            featuredImage {
+              childImageSharp {
+                fixed(width: 1000) {
+                  src
+                }
+              }
+            }
+          }
+          fields {
+            slug
+          }
+          excerpt(pruneLength: 200)
+        }
+      }
+    }
+  }
+`

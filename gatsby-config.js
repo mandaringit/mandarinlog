@@ -19,9 +19,11 @@ module.exports = {
       },
     },
     `gatsby-plugin-sharp`, // transformer-reamark 이전에 와야한다.
+    `gatsby-transformer-sharp`,
     {
       resolve: `gatsby-transformer-remark`,
       options: {
+        excerpt_separator: `<!-- end -->`, // 발췌 분리자. 여기까지 발췌한다.
         plugins: [
           `gatsby-remark-relative-images`,
           {

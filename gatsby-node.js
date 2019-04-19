@@ -25,7 +25,6 @@ module.exports.createPages = async ({ graphql, actions }) => {
   const movieTemplate = path.resolve("./src/templates/movieTemplate.js")
   const gameTemplate = path.resolve("./src/templates/gameTemplate.js")
   const codeTemplate = path.resolve("./src/templates/codeTemplate.js")
-  const etcTemplate = path.resolve("./src/templates/etcTemplate.js")
 
   const res = await graphql(`
     query {
@@ -81,14 +80,6 @@ module.exports.createPages = async ({ graphql, actions }) => {
       createPage({
         component: codeTemplate,
         path: `/code/${edge.node.fields.slug}`,
-        context: {
-          slug: edge.node.fields.slug,
-        },
-      })
-    } else {
-      createPage({
-        component: etcTemplate,
-        path: `/etc/${edge.node.fields.slug}`,
         context: {
           slug: edge.node.fields.slug,
         },

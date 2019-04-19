@@ -75,9 +75,6 @@ const Header = () => {
           <li>
             <NavLink to="/code">CODE</NavLink>
           </li>
-          <li>
-            <NavLink to="/etc">ETC</NavLink>
-          </li>
         </NavList>
       </nav>
     </ExtendedHeader>

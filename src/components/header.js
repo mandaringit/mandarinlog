@@ -6,8 +6,11 @@ import styled from "styled-components"
 const activeClassName = "active"
 
 const NavLink = styled(Link).attrs({ activeClassName })`
+  @import url("https://fonts.googleapis.com/css?family=Merriweather");
+  font-family: "Merriweather", serif;
   color: #999999;
   font-size: 0.9rem;
+  font-weight: bold;
   margin-right: 1.3rem;
   text-decoration: none;
   :hover {
@@ -23,6 +26,8 @@ const ExtendedHeader = styled.header`
 `
 
 const TitleLink = styled(Link)`
+  @import url("https://fonts.googleapis.com/css?family=Merriweather");
+  font-family: "Merriweather", serif;
   color: ${props => props.theme.mainColor};
   font-size: 3rem;
   text-decoration: none;
@@ -30,6 +35,7 @@ const TitleLink = styled(Link)`
 
 const NavList = styled.ul`
   display: flex;
+  justify-content: space-between;
   list-style-type: none;
   margin: 0;
 `
@@ -52,19 +58,19 @@ const Header = () => {
       <nav>
         <NavList>
           <li>
-            <NavLink to="/">홈</NavLink>
+            <NavLink to="/">HOME</NavLink>
           </li>
           <li>
-            <NavLink to="/opinion">오피니언</NavLink>
+            <NavLink to="/opinion">OPINION</NavLink>
           </li>
           <li>
-            <NavLink to="/music">뮤직</NavLink>
+            <NavLink to="/music">POP</NavLink>
           </li>
           <li>
-            <NavLink to="/game">게임</NavLink>
+            <NavLink to="/game">GAME</NavLink>
           </li>
           <li>
-            <NavLink to="/code">코드</NavLink>
+            <NavLink to="/code">CODE</NavLink>
           </li>
           <li>
             <NavLink to="/etc">ETC</NavLink>

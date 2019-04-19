@@ -12,25 +12,36 @@ const Post = styled.li`
   margin: 1rem 0;
 `
 
-const BlogLink = styled(Link)`
-  background-color: #f4f4f4;
+const OpinionLink = styled(Link)`
+  background-color: white;
   color: #000000;
   display: block;
   padding: 1rem;
   text-decoration: none;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
   :hover {
-    background: #e4e4e4;
+    background: ${props => props.theme.hoverColor};
   }
 `
 
-const Title = styled.h2`
-  margin-bottom: 0;
+const Title = styled.h3`
+  margin-bottom: 0.5rem;
+`
+
+const DateContainer = styled.div`
+  color: ${props => props.theme.thinMainColor};
+  font-size: 0.7rem;
+  margin-bottom: 0.5rem;
 `
 
 const Content = styled.p`
-  color: #777777;
+  color: black;
   font-size: 0.8rem;
-  font-style: italic;
+  margin-top: 0.5rem;
+`
+
+const Bar = styled.div`
+  border-bottom: 1px solid ${props => props.theme.barColor};
 `
 
 const OpinionPage = () => {
@@ -43,11 +54,12 @@ const OpinionPage = () => {
           node {
             frontmatter {
               title
-              date(formatString: "MM월 DD일, YYYY")
+              date(formatString: "YYYY년 MM월 DD일")
             }
             fields {
               slug
             }
+            excerpt(pruneLength: 200)
           }
         }
       }
@@ -56,14 +68,16 @@ const OpinionPage = () => {
   return (
     <Layout>
       <HelmetComponent title="오피니언" />
-      <h1>오피니언</h1>
+      <h1>오피니언 ({data.allMarkdownRemark.edges.length})</h1>
       <Posts>
         {data.allMarkdownRemark.edges.map(edge => (
-          <Post>
-            <BlogLink to={`/opinion/${edge.node.fields.slug}`}>
+          <Post key={edge.node.fields.slug}>
+            <OpinionLink to={`/opinion/${edge.node.fields.slug}`}>
               <Title>{edge.node.frontmatter.title}</Title>
-              <Content>{edge.node.frontmatter.date}</Content>
-            </BlogLink>
+              <DateContainer>🗒 {edge.node.frontmatter.date}</DateContainer>
+              <Bar />
+              <Content>{edge.node.excerpt}</Content>
+            </OpinionLink>
           </Post>
         ))}
       </Posts>

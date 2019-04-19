@@ -1,14 +1,12 @@
-import {
-  createGlobalStyle
-} from "styled-components"
+import { createGlobalStyle } from "styled-components"
 
-export default createGlobalStyle `
+export default createGlobalStyle`
   /* Reset provided by https://github.com/gatsbyjs/gatsby-starter-blog via MIT license */
-
 html {
   font-family: sans-serif;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
+  background-color:#F0F0F0;
 }
 body {
   margin: 0;

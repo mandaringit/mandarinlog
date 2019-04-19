@@ -3,6 +3,14 @@ import Layout from "../components/layout"
 import { useStaticQuery, graphql, Link } from "gatsby"
 import styled from "styled-components"
 import HelmetComponent from "../components/helmetComponent"
+import {
+  Title,
+  FeaturedImage,
+  DateContainer,
+  Excerpt,
+  Bar,
+  PostLinkBox,
+} from "../styles/pageStyles"
 
 const Posts = styled.ol`
   list-style-type: none;
@@ -12,54 +20,13 @@ const Post = styled.li`
   margin: 1rem 0;
 `
 
-const FeaturedImage = styled.img`
-  margin: 0;
-`
-const MovieLink = styled(Link)`
-  background-color: white;
-  color: #000000;
-  display: block;
-  padding: 1rem;
-  text-decoration: none;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
-  :hover {
-    background: ${props => props.theme.hoverColor};
-  }
-`
-
-const Title = styled.h3`
-  margin-top: 0.5rem;
-  margin-bottom: 0.5rem;
-`
-
-const DateContainer = styled.div`
-  color: ${props => props.theme.thinMainColor};
-  font-size: 0.7rem;
-  margin-bottom: 0.5rem;
-`
-
-const Singer = styled.div`
-  font-weight: bold;
-  font-size: 0.7rem;
-`
-
-const Content = styled.p`
-  color: black;
-  font-size: 0.8rem;
-  margin-top: 0.5rem;
-`
-
-const Bar = styled.div`
-  border-bottom: 1px solid ${props => props.theme.barColor};
-`
-
 const MoviePage = () => {
   const data = useStaticQuery(QUERY)
-  const { edges } = data.allMarkdownRemark
+  const { edges, totalCount } = data.allMarkdownRemark
   return (
     <Layout>
       <HelmetComponent title="CODE" />
-      <h1>CODE ({edges.length})</h1>
+      <h1>CODE ({totalCount})</h1>
       <Posts>
         {edges.map(edge => {
           const { slug } = edge.node.fields
@@ -70,13 +37,13 @@ const MoviePage = () => {
           const { excerpt } = edge.node
           return (
             <Post key={slug}>
-              <MovieLink to={`/code/${slug}`}>
+              <PostLinkBox to={`/code/${slug}`}>
                 <FeaturedImage src={src} />
                 <Title>{title}</Title>
                 <DateContainer>🗒 {date}</DateContainer>
                 <Bar />
-                <Content>{excerpt}</Content>
-              </MovieLink>
+                <Excerpt>{excerpt}</Excerpt>
+              </PostLinkBox>
             </Post>
           )
         })}
@@ -90,6 +57,7 @@ export default MoviePage
 const QUERY = graphql`
   query {
     allMarkdownRemark(filter: { frontmatter: { category: { eq: "CODE" } } }) {
+      totalCount
       edges {
         node {
           frontmatter {
@@ -97,7 +65,7 @@ const QUERY = graphql`
             date(formatString: "YYYY년 MM월 DD일")
             featuredImage {
               childImageSharp {
-                fixed(width: 1000) {
+                fixed(width: 900) {
                   src
                 }
               }

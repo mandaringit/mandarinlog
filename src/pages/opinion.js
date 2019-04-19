@@ -3,6 +3,14 @@ import Layout from "../components/layout"
 import { useStaticQuery, graphql, Link } from "gatsby"
 import styled from "styled-components"
 import HelmetComponent from "../components/helmetComponent"
+import {
+  Title,
+  FeaturedImage,
+  DateContainer,
+  Excerpt,
+  Bar,
+  PostLinkBox,
+} from "../styles/pageStyles"
 
 const Posts = styled.ol`
   list-style-type: none;
@@ -12,77 +20,67 @@ const Post = styled.li`
   margin: 1rem 0;
 `
 
-const OpinionLink = styled(Link)`
-  background-color: white;
-  color: #000000;
-  display: block;
-  padding: 1rem;
-  text-decoration: none;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
-  :hover {
-    background: ${props => props.theme.hoverColor};
-  }
-`
-
-const Title = styled.h3`
-  margin-bottom: 0.5rem;
-`
-
-const DateContainer = styled.div`
-  color: ${props => props.theme.thinMainColor};
-  font-size: 0.7rem;
-  margin-bottom: 0.5rem;
-`
-
-const Content = styled.p`
-  color: black;
-  font-size: 0.8rem;
-  margin-top: 0.5rem;
-`
-
-const Bar = styled.div`
-  border-bottom: 1px solid ${props => props.theme.barColor};
-`
-
 const OpinionPage = () => {
-  const data = useStaticQuery(graphql`
-    query {
-      allMarkdownRemark(
-        filter: { frontmatter: { category: { eq: "OPINION" } } }
-      ) {
-        edges {
-          node {
-            frontmatter {
-              title
-              date(formatString: "YYYY년 MM월 DD일")
-            }
-            fields {
-              slug
-            }
-            excerpt(pruneLength: 200)
-          }
-        }
-      }
-    }
-  `)
+  const data = useStaticQuery(QUERY)
+  const { edges, totalCount } = data.allMarkdownRemark
   return (
     <Layout>
-      <HelmetComponent title="오피니언" />
-      <h1>오피니언 ({data.allMarkdownRemark.edges.length})</h1>
+      <HelmetComponent title="OPINION" />
+      <h1>OPINION ({totalCount})</h1>
       <Posts>
-        {data.allMarkdownRemark.edges.map(edge => (
-          <Post key={edge.node.fields.slug}>
-            <OpinionLink to={`/opinion/${edge.node.fields.slug}`}>
-              <Title>{edge.node.frontmatter.title}</Title>
-              <DateContainer>🗒 {edge.node.frontmatter.date}</DateContainer>
-              <Bar />
-              <Content>{edge.node.excerpt}</Content>
-            </OpinionLink>
-          </Post>
-        ))}
+        {edges.map(edge => {
+          const { slug } = edge.node.fields
+          {
+            /* const {
+            src,
+          } = edge.node.frontmatter.featuredImage.childImageSharp.fixed */
+          }
+          const { title, date } = edge.node.frontmatter
+          const { excerpt } = edge.node
+          return (
+            <Post key={slug}>
+              <PostLinkBox to={`/opinion/${slug}`}>
+                {/* <FeaturedImage src={src} /> */}
+                <Title>{title}</Title>
+                <DateContainer>🗒 {date}</DateContainer>
+                <Bar />
+                <Excerpt>{excerpt}</Excerpt>
+              </PostLinkBox>
+            </Post>
+          )
+        })}
       </Posts>
     </Layout>
   )
 }
 
 export default OpinionPage
+
+const QUERY = graphql`
+  query {
+    allMarkdownRemark(
+      filter: { frontmatter: { category: { eq: "OPINION" } } }
+    ) {
+      totalCount
+      edges {
+        node {
+          frontmatter {
+            title
+            date(formatString: "YYYY년 MM월 DD일")
+            # featuredImage {
+            #   childImageSharp {
+            #     fixed(width: 900) {
+            #       src
+            #     }
+            #   }
+            # }
+          }
+          fields {
+            slug
+          }
+          excerpt(pruneLength: 200)
+        }
+      }
+    }
+  }
+`

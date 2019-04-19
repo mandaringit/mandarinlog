@@ -33,15 +33,15 @@ const Content = styled.p`
   font-style: italic;
 `
 
-const BlogPage = () => {
+const CodePage = () => {
   const data = useStaticQuery(graphql`
     query {
-      allMarkdownRemark {
+      allMarkdownRemark(filter: { frontmatter: { category: { eq: "CODE" } } }) {
         edges {
           node {
             frontmatter {
               title
-              date
+              date(formatString: "MM월 DD일, YYYY")
             }
             fields {
               slug
@@ -53,12 +53,12 @@ const BlogPage = () => {
   `)
   return (
     <Layout>
-      <HelmetComponent title="블로그" />
-      <h1>블로그</h1>
+      <HelmetComponent title="코드" />
+      <h1>코드</h1>
       <Posts>
         {data.allMarkdownRemark.edges.map(edge => (
           <Post>
-            <BlogLink to={`/blog/${edge.node.fields.slug}`}>
+            <BlogLink to={`/code/${edge.node.fields.slug}`}>
               <Title>{edge.node.frontmatter.title}</Title>
               <Content>{edge.node.frontmatter.date}</Content>
             </BlogLink>
@@ -69,4 +69,4 @@ const BlogPage = () => {
   )
 }
 
-export default BlogPage
+export default CodePage

@@ -12,14 +12,14 @@ export const query = graphql`
     markdownRemark(fields: { slug: { eq: $slug } }) {
       frontmatter {
         title
-        date
+        date(formatString: "MM월 DD일, YYYY")
       }
       html
     }
   }
 `
 
-const Blog = props => {
+const MovieTemplate = props => {
   return (
     <Layout>
       <HelmetComponent title={props.data.markdownRemark.frontmatter.title} />
@@ -32,4 +32,4 @@ const Blog = props => {
   )
 }
 
-export default Blog
+export default MovieTemplate

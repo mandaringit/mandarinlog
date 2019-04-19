@@ -1,3 +1,3 @@
 export const Theme = {
-  basicColor: "blue",
+  mainColor: "#5c6bc0",
 }

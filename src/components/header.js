@@ -23,7 +23,7 @@ const ExtendedHeader = styled.header`
 `
 
 const TitleLink = styled(Link)`
-  color: #000000;
+  color: ${props => props.theme.mainColor};
   font-size: 3rem;
   text-decoration: none;
 `
@@ -55,13 +55,19 @@ const Header = () => {
             <NavLink to="/">홈</NavLink>
           </li>
           <li>
-            <NavLink to="/blog">블로그</NavLink>
+            <NavLink to="/opinion">오피니언</NavLink>
           </li>
           <li>
-            <NavLink to="/contact">컨택트</NavLink>
+            <NavLink to="/music">뮤직</NavLink>
           </li>
           <li>
-            <NavLink to="/about">어바웃</NavLink>
+            <NavLink to="/game">게임</NavLink>
+          </li>
+          <li>
+            <NavLink to="/code">코드</NavLink>
+          </li>
+          <li>
+            <NavLink to="/etc">ETC</NavLink>
           </li>
         </NavList>
       </nav>

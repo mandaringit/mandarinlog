@@ -20,12 +20,21 @@ module.exports.onCreateNode = ({ node, actions }) => {
 
 module.exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions
-  const blogTemplate = path.resolve("./src/templates/blogTemplate.js")
+  const opinionTemplate = path.resolve("./src/templates/opinionTemplate.js")
+  const musicTemplate = path.resolve("./src/templates/musicTemplate.js")
+  const moiveTemplate = path.resolve("./src/templates/moiveTemplate.js")
+  const gameTemplate = path.resolve("./src/templates/gameTemplate.js")
+  const codeTemplate = path.resolve("./src/templates/codeTemplate.js")
+  const etcTemplate = path.resolve("./src/templates/etcTemplate.js")
+
   const res = await graphql(`
     query {
       allMarkdownRemark {
         edges {
           node {
+            frontmatter {
+              category
+            }
             fields {
               slug
             }
@@ -36,12 +45,54 @@ module.exports.createPages = async ({ graphql, actions }) => {
   `)
 
   res.data.allMarkdownRemark.edges.forEach(edge => {
-    createPage({
-      component: blogTemplate, // 연결할 템플릿
-      path: `/blog/${edge.node.fields.slug}`, // 생성할 페이지 경로
-      context: {
-        slug: edge.node.fields.slug, // 템플릿에 전달할 것들?
-      },
-    })
+    if (edge.node.frontmatter.category === "OPINION") {
+      createPage({
+        component: opinionTemplate,
+        path: `/opinion/${edge.node.fields.slug}`,
+        context: {
+          slug: edge.node.fields.slug,
+        },
+      })
+    } else if (edge.node.frontmatter.category === "MUSIC") {
+      createPage({
+        component: musicTemplate,
+        path: `/music/${edge.node.fields.slug}`,
+        context: {
+          slug: edge.node.fields.slug,
+        },
+      })
+    } else if (edge.node.frontmatter.category === "MOVIE") {
+      createPage({
+        component: moiveTemplate,
+        path: `/movie/${edge.node.fields.slug}`,
+        context: {
+          slug: edge.node.fields.slug,
+        },
+      })
+    } else if (edge.node.frontmatter.category === "GAME") {
+      createPage({
+        component: gameTemplate,
+        path: `/game/${edge.node.fields.slug}`,
+        context: {
+          slug: edge.node.fields.slug,
+        },
+      })
+    } else if (edge.node.frontmatter.category === "CODE") {
+      createPage({
+        component: codeTemplate,
+        path: `/code/${edge.node.fields.slug}`,
+        context: {
+          slug: edge.node.fields.slug,
+        },
+      })
+    } else {
+      createPage({
+        component: etcTemplate,
+        path: `/etc/${edge.node.fields.slug}`,
+        context: {
+          slug: edge.node.fields.slug,
+        },
+      })
+    }
   })
 }

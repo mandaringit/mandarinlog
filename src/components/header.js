@@ -28,19 +28,28 @@ const ExtendedHeader = styled.header`
 
 const NavList = styled.ul`
   display: flex;
-  flex-wrap: wrap;
   justify-content: space-around;
   list-style-type: none;
   margin: 0;
+  @media (min-width: 300px) {
+    flex-direction: column;
+  }
+  @media (min-width: 768px) {
+    flex-direction: row;
+  }
 `
 
 const TitleLink = styled(Link)`
   @import url("https://fonts.googleapis.com/css?family=Merriweather");
   font-family: "Merriweather", serif;
   color: ${props => props.theme.mainColor};
-  font-size: 3rem;
   text-decoration: none;
-  margin-left: 1rem;
+  @media (min-width: 300px) {
+    font-size: 2rem;
+  }
+  @media (min-width: 768px) {
+    font-size: 3rem;
+  }
 `
 
 const Header = () => {

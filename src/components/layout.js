@@ -8,38 +8,24 @@ import { Theme } from "../styles/Theme"
 const Container = styled.div`
   padding: 1rem;
   margin: 0 auto;
-  max-width: 1200px;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-`
-
-const Content = styled.div`
-  flex-grow: 1;
-  @media (min-width: 576px) {
-    margin: 0 auto;
-    min-width: 500px;
+  @media (min-width: 300px) {
+    max-width: 100vw;
   }
 
   /* // 태블릿 디바이스 (가로 해상도가 768px 보다 큰 화면에 적용) */
   @media (min-width: 768px) {
-    margin: 0 auto;
-    min-width: 700px;
+    max-width: 90vw;
   }
+`
 
-  /* // 테스크탑 (가로 해상도가 992px 보다 큰 화면에 적용) */
-  @media (min-width: 992px) {
-    margin: 0 auto;
-    min-width: 900px;
-    max-width: 900px;
-  }
-
-  /* // 큰화면 데스크탑 (가로 해상도가 1200px 보다 큰 화면에 적용) */
-  @media (min-width: 1200px) {
-    margin: 0 auto;
-    min-width: 900px;
-    max-width: 900px;
-  }
+const Content = styled.div`
+  flex-grow: 1;
+  margin: 0 auto;
+  max-width: 90vw;
+  min-width: 90vw;
 `
 
 const Layout = props => {

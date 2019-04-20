@@ -7,23 +7,34 @@ import styled from "styled-components"
 
 const PostsGrid = styled.div`
   display: grid;
-  grid-template-columns: auto auto;
-  grid-template-rows: repeat(6, 10rem);
   grid-gap: 1rem;
   margin: 0;
+
+  @media (min-width: 300px) {
+    grid-template-columns: auto;
+    grid-template-rows: repeat(7, 20rem);
+  }
+
+  /* // 태블릿 디바이스 (가로 해상도가 768px 보다 큰 화면에 적용) */
+  @media (min-width: 768px) {
+    grid-template-columns: auto auto;
+    grid-template-rows: repeat(6, 15rem);
+  }
 `
 const PostGridItem = styled.div`
   overflow: hidden;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
-  :first-child {
-    grid-row: span 2;
-    grid-column: span 2;
-  }
-  :nth-child(2) {
-    grid-row: span 2;
-  }
-  :nth-child(6) {
-    grid-row: span 2;
+  @media (min-width: 768px) {
+    :first-child {
+      grid-row: span 2;
+      grid-column: span 2;
+    }
+    :nth-child(2) {
+      grid-row: span 2;
+    }
+    :nth-child(6) {
+      grid-row: span 2;
+    }
   }
 `
 

@@ -6,26 +6,19 @@ import GlobalStyles from "../styles/GlobalStyles"
 import { Theme } from "../styles/Theme"
 
 const Container = styled.div`
-  padding: 1rem;
+  /* padding: 1rem; */
   margin: 0 auto;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  @media (min-width: 300px) {
-    max-width: 100vw;
-  }
-
-  /* // 태블릿 디바이스 (가로 해상도가 768px 보다 큰 화면에 적용) */
-  @media (min-width: 768px) {
-    max-width: 90vw;
-  }
+  max-width: 100%;
 `
 
 const Content = styled.div`
   flex-grow: 1;
   margin: 0 auto;
-  max-width: 90vw;
-  min-width: 90vw;
+  max-width: 95vw;
+  min-width: 95vw;
 `
 
 const Layout = props => {

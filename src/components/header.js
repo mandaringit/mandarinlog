@@ -2,6 +2,16 @@ import React from "react"
 import { Link, graphql, useStaticQuery } from "gatsby"
 import styled from "styled-components"
 
+const ExtendedHeader = styled.header`
+  padding: 1rem 2rem 1rem 2rem;
+`
+
+const HeaderTitle = styled.h1``
+
+const ExtendedNav = styled.nav`
+  margin: 1rem 0;
+`
+
 // active 시, 색상변경
 const activeClassName = "active"
 
@@ -22,10 +32,6 @@ const NavLink = styled(Link).attrs({ activeClassName })`
   }
 `
 
-const ExtendedHeader = styled.header`
-  padding: 1rem 0 3rem;
-`
-
 const NavList = styled.ul`
   display: flex;
   justify-content: space-around;
@@ -33,10 +39,15 @@ const NavList = styled.ul`
   margin: 0;
   @media (min-width: 300px) {
     flex-direction: column;
+    align-items: center;
   }
   @media (min-width: 768px) {
     flex-direction: row;
   }
+`
+
+const NavItem = styled.li`
+  margin: 0;
 `
 
 const TitleLink = styled(Link)`
@@ -64,31 +75,31 @@ const Header = () => {
   `)
   return (
     <ExtendedHeader>
-      <h1>
+      <HeaderTitle>
         <TitleLink to="/">{data.site.siteMetadata.title}</TitleLink>
-      </h1>
-      <nav>
+      </HeaderTitle>
+      <ExtendedNav>
         <NavList>
-          <li>
+          <NavItem>
             <NavLink to="/">HOME</NavLink>
-          </li>
-          <li>
+          </NavItem>
+          <NavItem>
             <NavLink to="/opinion">OPINION</NavLink>
-          </li>
-          <li>
+          </NavItem>
+          <NavItem>
             <NavLink to="/music">POP</NavLink>
-          </li>
-          <li>
+          </NavItem>
+          <NavItem>
             <NavLink to="/game">GAME</NavLink>
-          </li>
-          <li>
+          </NavItem>
+          <NavItem>
             <NavLink to="/movie">MOVIE</NavLink>
-          </li>
-          <li>
+          </NavItem>
+          <NavItem>
             <NavLink to="/code">CODE</NavLink>
-          </li>
+          </NavItem>
         </NavList>
-      </nav>
+      </ExtendedNav>
     </ExtendedHeader>
   )
 }

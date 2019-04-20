@@ -3,6 +3,7 @@ import Layout from "../components/layout"
 import { graphql } from "gatsby"
 import HelmetComponent from "../components/helmetComponent"
 import styled from "styled-components"
+import Adsense from "react-adsense"
 
 // 아직까지 useStaticQuery를 사용하여 context에 접근할 수 있는 방법이 없다.
 // 대안은 아래와 같이 export 하면, 컴포넌트에서 props로 받아서 사용 가능하다.
@@ -31,7 +32,8 @@ const Bar = styled.div`
 `
 
 const Content = styled.div`
-  margin-top: 1rem;
+  margin: 1rem auto;
+  max-width: 1200px;
 `
 
 const OpinionTemplate = props => {
@@ -43,6 +45,12 @@ const OpinionTemplate = props => {
         🗒 {props.data.markdownRemark.frontmatter.date}
       </DateContainer>
       <Bar />
+      <AdSense.Google
+        client="ca-pub-8604026265944417"
+        style={{ display: "block" }}
+        format="auto"
+        responsive="true"
+      />
       <Content
         dangerouslySetInnerHTML={{ __html: props.data.markdownRemark.html }}
       />

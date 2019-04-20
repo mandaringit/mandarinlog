@@ -2,6 +2,7 @@
 title: "맥북이 사고싶다"
 date: "2019-04-18"
 category: "OPINION"
+featuredImage: "./macbook.jpg"
 ---
 
 나는 맥북이 사고싶다..

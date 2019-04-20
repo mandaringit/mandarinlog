@@ -6,7 +6,23 @@ const ExtendedHeader = styled.header`
   padding: 1rem 2rem 1rem 2rem;
 `
 
-const HeaderTitle = styled.h1``
+const HeaderTitle = styled.h1`
+  @import url("https://fonts.googleapis.com/css?family=Merriweather");
+  font-family: "Merriweather", serif;
+  @media (min-width: 300px) {
+    font-size: 2rem;
+    text-align: center;
+  }
+  @media (min-width: 768px) {
+    font-size: 3rem;
+    text-align: start;
+  }
+`
+
+const TitleLink = styled(Link)`
+  color: ${props => props.theme.mainColor};
+  text-decoration: none;
+`
 
 const ExtendedNav = styled.nav`
   margin: 1rem 0;
@@ -48,18 +64,11 @@ const NavList = styled.ul`
 
 const NavItem = styled.li`
   margin: 0;
-`
-
-const TitleLink = styled(Link)`
-  @import url("https://fonts.googleapis.com/css?family=Merriweather");
-  font-family: "Merriweather", serif;
-  color: ${props => props.theme.mainColor};
-  text-decoration: none;
   @media (min-width: 300px) {
-    font-size: 2rem;
+    margin-bottom: 1rem;
   }
   @media (min-width: 768px) {
-    font-size: 3rem;
+    margin-bottom: none;
   }
 `
 

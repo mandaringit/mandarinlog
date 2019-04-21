@@ -14,16 +14,44 @@ export const query = graphql`
       frontmatter {
         title
         date(formatString: "YYYY년 MM월 DD일")
+        featuredImage {
+          childImageSharp {
+            fixed(width: 900) {
+              src
+            }
+          }
+        }
       }
       html
     }
   }
 `
 
-const DateContainer = styled.p`
-  font-size: 0.9rem;
+const TemplateContainer = styled.div`
+  margin: 0 auto;
+  max-width: ${props => props.theme.templateMaxWidth};
+`
+
+const FeaturedImage = styled.img`
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  max-height: 15rem;
+  object-fit: cover;
+  border-radius: 5px;
+`
+const ContentContainer = styled.article`
+  padding: 1rem;
+`
+
+const Title = styled.h1`
+  text-align: center;
+`
+
+const DateContainer = styled.h5`
   font-style: italic;
-  color: ${props => props.theme.thinMainColor};
+  text-align: center;
+  color: ${props => props.theme.barColor};
 `
 
 const Bar = styled.div`
@@ -31,22 +59,24 @@ const Bar = styled.div`
 `
 
 const Content = styled.div`
-  margin: 1rem auto;
-  max-width: 1200px;
+  margin: 1rem 0;
 `
 
 const OpinionTemplate = props => {
+  const { frontmatter, html } = props.data.markdownRemark
+  const { src } = frontmatter.featuredImage.childImageSharp.fixed
   return (
     <Layout>
-      <HelmetComponent title={props.data.markdownRemark.frontmatter.title} />
-      <h1>{props.data.markdownRemark.frontmatter.title}</h1>
-      <DateContainer>
-        🗒 {props.data.markdownRemark.frontmatter.date}
-      </DateContainer>
-      <Bar />
-      <Content
-        dangerouslySetInnerHTML={{ __html: props.data.markdownRemark.html }}
-      />
+      <HelmetComponent title={frontmatter.title} />
+      <TemplateContainer>
+        <FeaturedImage src={src} />
+        <ContentContainer>
+          <Title>{frontmatter.title}</Title>
+          <DateContainer>🗒 {frontmatter.date}</DateContainer>
+          <Bar />
+          <Content dangerouslySetInnerHTML={{ __html: html }} />
+        </ContentContainer>
+      </TemplateContainer>
     </Layout>
   )
 }

@@ -5,4 +5,5 @@ export const Theme = {
   hoverColor: "#cfd8dc",
   grayColor: "#090909",
   barColor: "#BDBDBD",
+  templateMaxWidth: "900px",
 }

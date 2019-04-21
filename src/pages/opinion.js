@@ -23,6 +23,7 @@ const Post = styled.article`
 `
 const PostLinkBox = styled(Link)`
   background-color: white;
+  border-radius: 3px;
   color: #000000;
   display: grid;
   grid-template-columns: 1fr;
@@ -37,6 +38,7 @@ const PostLinkBox = styled(Link)`
 `
 
 export const FeaturedImage = styled.img`
+  border-radius: 3px 3px 0 0;
   margin: 0;
   width: 100%;
   min-height: 8rem;

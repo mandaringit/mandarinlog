@@ -32,7 +32,7 @@ export const DateContainer = styled.div`
 export const Excerpt = styled.p`
   color: black;
   font-size: 0.8rem;
-  margin-top: 0.5rem;
+  margin: 0.5rem 0;
 `
 
 // 포스트 안의 구분을 위한 바
@@ -44,14 +44,16 @@ export const Bar = styled.div`
 export const PostLinkBox = styled(Link)`
   background-color: white;
   color: #000000;
-  display: block;
-  /* padding: 1rem; */
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto auto;
   text-decoration: none;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
   :hover {
     background: ${props => props.theme.hoverColor};
     transition-duration: 1s;
   }
+  height: 100%;
 `
 
 export const InfoBox = styled.div`

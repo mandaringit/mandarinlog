@@ -12,7 +12,6 @@ featuredImage: "./macbook.jpg"
 This example uses the default pruning method.
 
 gatsby-transformer-remark allows you to get an excerpt from a markdown post. By default, it will prune the first 140 characters, but you can optionally specify a pruneLength in the graphql query.
-<!-- end -->
 
 ```javascript
 {

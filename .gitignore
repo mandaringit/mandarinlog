@@ -69,5 +69,10 @@ yarn-error.log
 .yarn-integrity
 
 
-#
-.env.development
+# 테스트 컨텐츠
+
+/src/posts/code_category/test
+/src/posts/game_category/test
+/src/posts/movie_category/test
+/src/posts/music_category/test
+/src/posts/opinion_category/test

@@ -1,30 +1,59 @@
 import React from "react"
 import Layout from "../components/layout"
-import { useStaticQuery, graphql } from "gatsby"
+import { useStaticQuery, graphql, Link } from "gatsby"
 import styled from "styled-components"
 import HelmetComponent from "../components/helmetComponent"
-import {
-  CategoryTitle,
-  Title,
-  FeaturedImage,
-  DateContainer,
-  Excerpt,
-  Bar,
-  PostLinkBox,
-  InfoBox,
-} from "../styles/pageStyles"
+import { CategoryTitle, Title } from "../styles/pageStyles"
 
-const Posts = styled.ol`
-  list-style-type: none;
+const Posts = styled.div`
   margin: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+  grid-auto-rows: minmax(10rem, 1fr);
+  grid-gap: 0.5rem;
 `
-const Post = styled.li`
-  margin: 1rem 0;
+const Post = styled.article`
+  width: 100%;
+`
+const PostLinkBox = styled(Link)`
+  background-color: white;
+  border-radius: 3px;
+  color: #000000;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 1rem;
+  text-decoration: none;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  height: 100%;
+  padding: 1rem;
 `
 
-const Singer = styled.div`
-  font-weight: bold;
+const FeaturedImage = styled.img`
+  border-radius: 3px;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  min-height: 10rem;
+  object-fit: cover;
+`
+
+const InfoBox = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 3px;
+  padding: 1rem;
+`
+
+const Singer = styled.h5``
+
+const TranslationBadge = styled.div`
   font-size: 0.7rem;
+  padding: 0 0.4rem;
+  border-radius: 5px;
+  font-weight: bold;
+  background-color: ${props => (props.translation ? "#4CAF50" : "red")};
 `
 
 const MusicPage = () => {
@@ -32,27 +61,27 @@ const MusicPage = () => {
   const { edges, totalCount } = data.allMarkdownRemark
   return (
     <Layout>
-      <HelmetComponent title="POP" />
-      <CategoryTitle>POP ({totalCount})</CategoryTitle>
+      <HelmetComponent title="MUSIC" />
+      <CategoryTitle>MUSIC ({totalCount})</CategoryTitle>
       <Posts>
         {edges.map(edge => {
           const { slug } = edge.node.fields
           const {
             src,
           } = edge.node.frontmatter.featuredImage.childImageSharp.fixed
-          const { title, singer, date, translation } = edge.node.frontmatter
-          const { excerpt } = edge.node
+          const { title, singer, translation } = edge.node.frontmatter
           return (
             <Post key={slug}>
               <PostLinkBox to={`/music/${slug}`}>
                 <FeaturedImage src={src} />
                 <InfoBox>
                   <Title>{title}</Title>
-                  <Singer>🎤 {singer}</Singer>
-                  <DateContainer>🗒 {date}</DateContainer>
-                  {translation ? <p>"번역 완료"</p> : <p>"미번역"</p>}
-                  <Bar />
-                  <Excerpt>{excerpt}</Excerpt>
+                  <Singer>{singer}</Singer>
+                  {translation ? (
+                    <TranslationBadge translation={translation}>
+                      가사 번역
+                    </TranslationBadge>
+                  ) : null}
                 </InfoBox>
               </PostLinkBox>
             </Post>

@@ -19,7 +19,6 @@ const Posts = styled.div`
   grid-gap: 0.5rem;
 `
 const Post = styled.article`
-  margin: 1rem 0;
   width: 100%;
 `
 const PostLinkBox = styled(Link)`

@@ -96,7 +96,7 @@ const Header = () => {
             <NavLink to="/opinion">OPINION</NavLink>
           </NavItem>
           <NavItem>
-            <NavLink to="/music">POP</NavLink>
+            <NavLink to="/music">MUSIC</NavLink>
           </NavItem>
           <NavItem>
             <NavLink to="/game">GAME</NavLink>

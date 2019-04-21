@@ -37,7 +37,7 @@ const PostLinkBox = styled(Link)`
   height: 100%;
 `
 
-export const FeaturedImage = styled.img`
+const FeaturedImage = styled.img`
   border-radius: 3px 3px 0 0;
   margin: 0;
   width: 100%;
@@ -46,7 +46,7 @@ export const FeaturedImage = styled.img`
   object-fit: cover;
 `
 
-export const Excerpt = styled.p`
+const Excerpt = styled.p`
   color: black;
   font-size: 0.8rem;
   margin: 0.5rem 0;

@@ -9,7 +9,7 @@ const Posts = styled.div`
   margin: 0;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
-  grid-auto-rows: minmax(10rem, 1fr);
+  grid-auto-rows: minmax(10rem, 13rem);
   grid-gap: 0.5rem;
 `
 const Post = styled.article`

@@ -15,7 +15,7 @@ const Posts = styled.div`
   margin: 0;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
-  grid-auto-rows: minmax(20rem, 1fr);
+  grid-auto-rows: minmax(20rem, 21rem);
   grid-gap: 0.5rem;
 `
 const Post = styled.article`
@@ -30,11 +30,9 @@ const PostLinkBox = styled(Link)`
   grid-template-rows: auto auto;
   text-decoration: none;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
-  :hover {
-    background: ${props => props.theme.hoverColor};
-    transition-duration: 1s;
-  }
+
   height: 100%;
+  overflow: hidden;
 `
 
 const FeaturedImage = styled.img`
@@ -44,6 +42,10 @@ const FeaturedImage = styled.img`
   min-height: 8rem;
   height: 100%;
   object-fit: cover;
+  :hover {
+    opacity: 0.6;
+    transition-duration: 1s;
+  }
 `
 
 const Excerpt = styled.p`

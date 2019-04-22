@@ -93,6 +93,9 @@ const Header = () => {
             <NavLink to="/">HOME</NavLink>
           </NavItem>
           <NavItem>
+            <NavLink to="/code">CODE</NavLink>
+          </NavItem>
+          <NavItem>
             <NavLink to="/opinion">OPINION</NavLink>
           </NavItem>
           <NavItem>
@@ -103,9 +106,6 @@ const Header = () => {
           </NavItem>
           <NavItem>
             <NavLink to="/movie">MOVIE</NavLink>
-          </NavItem>
-          <NavItem>
-            <NavLink to="/code">CODE</NavLink>
           </NavItem>
         </NavList>
       </ExtendedNav>

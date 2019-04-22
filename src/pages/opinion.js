@@ -13,6 +13,7 @@ import {
 
 const Posts = styled.div`
   margin: 0;
+  display: -ms-grid;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
   grid-auto-rows: minmax(20rem, 21rem);
@@ -27,8 +28,6 @@ const PostLinkBox = styled(Link)`
   color: #000000;
   display: flex;
   flex-direction: column;
-  /* grid-template-columns: 1fr;
-  grid-template-rows: auto auto; */
   text-decoration: none;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
   height: 100%;

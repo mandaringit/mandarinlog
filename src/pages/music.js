@@ -3,10 +3,11 @@ import Layout from "../components/layout"
 import { useStaticQuery, graphql, Link } from "gatsby"
 import styled from "styled-components"
 import HelmetComponent from "../components/helmetComponent"
-import { CategoryTitle, Title } from "../styles/pageStyles"
+import { CategoryTitle } from "../styles/pageStyles"
 
 const Posts = styled.div`
   margin: 0;
+  display: -ms-grid;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
   grid-auto-rows: minmax(10rem, 13rem);
@@ -19,31 +20,34 @@ const PostLinkBox = styled(Link)`
   background-color: white;
   border-radius: 3px;
   color: #000000;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-gap: 1rem;
+  display: flex;
   text-decoration: none;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
   height: 100%;
-  padding: 1rem;
+  padding: 1rem 0 1rem 1rem;
 `
 
 const FeaturedImage = styled.img`
   border-radius: 3px;
   margin: 0;
-  width: 100%;
+  width: 50%;
   height: 100%;
   min-height: 10rem;
   object-fit: cover;
 `
 
 const InfoBox = styled.div`
+  width: 50%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   border-radius: 3px;
-  padding: 1rem;
+`
+
+const Title = styled.h3`
+  margin-bottom: 0.5rem;
+  text-align: center;
 `
 
 const Singer = styled.h5``

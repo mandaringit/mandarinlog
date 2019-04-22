@@ -10,14 +10,14 @@ const PostsGrid = styled.div`
   display: grid;
   margin: 0;
 
-  @media (min-width: 300px) {
+  @media screen and (min-width: 300px) {
     grid-template-columns: auto;
     grid-template-rows: repeat(7, 20rem);
     grid-gap: 0.3rem;
   }
 
   /* // 태블릿 디바이스 (가로 해상도가 768px 보다 큰 화면에 적용) */
-  @media (min-width: 768px) {
+  @media screen and (min-width: 768px) {
     grid-template-columns: auto auto;
     grid-template-rows: repeat(6, 13rem);
     grid-gap: 1rem;
@@ -28,7 +28,7 @@ const PostGridItem = styled.div`
   -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
   border-radius: 0.3rem;
-  @media (min-width: 768px) {
+  @media screen and (min-width: 768px) {
     :first-child {
       -ms-grid-row-span: 2;
       grid-row: span 2;
@@ -110,10 +110,10 @@ const TitleContainer = styled.div`
     padding: 1rem;
     background-color: rgba(92, 107, 192, 0.8);
     margin: 1rem 0 0 0;
-    @media (min-width: 300px) {
+    @media screen and (min-width: 300px) {
       font-size: 2rem;
     }
-    @media (min-width: 768px) {
+    @media screen and (min-width: 768px) {
       font-size: 3rem;
     }
   }

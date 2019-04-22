@@ -30,7 +30,6 @@ const PostLinkBox = styled(Link)`
   grid-template-rows: auto auto;
   text-decoration: none;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
-
   height: 100%;
   overflow: hidden;
 `
@@ -39,7 +38,7 @@ const FeaturedImage = styled.img`
   border-radius: 3px 3px 0 0;
   margin: 0;
   width: 100%;
-  min-height: 8rem;
+  /* min-height: 8rem; */
   height: 100%;
   object-fit: cover;
   :hover {

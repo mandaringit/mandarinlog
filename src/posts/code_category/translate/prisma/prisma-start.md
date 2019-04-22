@@ -3,6 +3,7 @@ title: "Prisma Set up ⇒ Existing DB"
 date : "2019-02-01"
 category: "CODE"
 featuredImage: "./cover.png"
+stacks: ["Prisma","NodeJs"]
 ---
 
 ## 목표

@@ -6,18 +6,17 @@ import { graphql, useStaticQuery, Link } from "gatsby"
 import styled from "styled-components"
 
 const PostsGrid = styled.div`
-  display: -ms-grid;
   display: grid;
   margin: 0;
 
-  @media screen and (min-width: 300px) {
+  @media (min-width: 300px) {
     grid-template-columns: auto;
     grid-template-rows: repeat(7, 20rem);
     grid-gap: 0.3rem;
   }
 
   /* // 태블릿 디바이스 (가로 해상도가 768px 보다 큰 화면에 적용) */
-  @media screen and (min-width: 768px) {
+  @media (min-width: 768px) {
     grid-template-columns: auto auto;
     grid-template-rows: repeat(6, 13rem);
     grid-gap: 1rem;
@@ -25,22 +24,17 @@ const PostsGrid = styled.div`
 `
 const PostGridItem = styled.div`
   overflow: hidden;
-  -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
   border-radius: 0.3rem;
-  @media screen and (min-width: 768px) {
+  @media (min-width: 768px) {
     :first-child {
-      -ms-grid-row-span: 2;
       grid-row: span 2;
-      -ms-grid-column-span: 2;
       grid-column: span 2;
     }
     :nth-child(2) {
-      -ms-grid-row-span: 2;
       grid-row: span 2;
     }
     :nth-child(6) {
-      -ms-grid-row-span: 2;
       grid-row: span 2;
     }
   }
@@ -51,24 +45,6 @@ const PostLinkBox = styled(Link)`
   height: 100%;
   display: block;
   text-decoration: none;
-  background-image: -webkit-gradient(
-      linear,
-      left top,
-      left bottom,
-      from(rgba(255, 255, 255, 0.3)),
-      to(rgba(255, 255, 255, 0.3))
-    ),
-    url(${props => props.imageUrl});
-  background-image: -webkit-linear-gradient(
-      rgba(255, 255, 255, 0.3),
-      rgba(255, 255, 255, 0.3)
-    ),
-    url(${props => props.imageUrl});
-  background-image: -o-linear-gradient(
-      rgba(255, 255, 255, 0.3),
-      rgba(255, 255, 255, 0.3)
-    ),
-    url(${props => props.imageUrl});
   background-image: linear-gradient(
       rgba(255, 255, 255, 0.3),
       rgba(255, 255, 255, 0.3)
@@ -77,11 +53,7 @@ const PostLinkBox = styled(Link)`
   background-size: cover;
   background-position: center;
   :hover {
-    -webkit-transform: scale(1.1);
-    -ms-transform: scale(1.1);
     transform: scale(1.1);
-    -webkit-transition-duration: 1s;
-    -o-transition-duration: 1s;
     transition-duration: 1s;
   }
 `
@@ -110,10 +82,10 @@ const TitleContainer = styled.div`
     padding: 1rem;
     background-color: rgba(92, 107, 192, 0.8);
     margin: 1rem 0 0 0;
-    @media screen and (min-width: 300px) {
+    @media (min-width: 300px) {
       font-size: 2rem;
     }
-    @media screen and (min-width: 768px) {
+    @media (min-width: 768px) {
       font-size: 3rem;
     }
   }

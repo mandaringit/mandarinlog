@@ -13,7 +13,6 @@ import {
 
 const Posts = styled.div`
   margin: 0;
-  display: -ms-grid;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
   grid-auto-rows: minmax(20rem, 21rem);

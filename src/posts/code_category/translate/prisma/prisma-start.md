@@ -4,6 +4,7 @@ date : "2019-02-01"
 category: "CODE"
 featuredImage: "./cover.png"
 stacks: ["Prisma","NodeJs"]
+keywords: ["Prisma","NodeJs"]
 ---
 
 ## 목표

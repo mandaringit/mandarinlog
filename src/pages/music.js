@@ -2,8 +2,8 @@ import React from "react"
 import Layout from "../components/layout"
 import { useStaticQuery, graphql, Link } from "gatsby"
 import styled from "styled-components"
-import HelmetComponent from "../components/helmetComponent"
 import { CategoryTitle, Posts, Post } from "../styles/pageStyles"
+import SEO from "../components/SEO"
 
 const ExtendPosts = styled(Posts)`
   grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
@@ -59,7 +59,12 @@ const MusicPage = () => {
   const { edges, totalCount } = data.allMarkdownRemark
   return (
     <Layout>
-      <HelmetComponent title="MUSIC" />
+      <SEO
+        title="해외음악"
+        description="해외음악 페이지 리스트"
+        pathname="/music"
+        keywords={["해외음악,POP,가사,만다린로그"]}
+      />
       <CategoryTitle>해외음악</CategoryTitle>
       <ExtendPosts>
         {edges.map(edge => {

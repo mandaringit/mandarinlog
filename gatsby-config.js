@@ -2,6 +2,10 @@ module.exports = {
   siteMetadata: {
     title: "만다린로그",
     author: "MANDARIN",
+    description:
+      "다양한 오피니언, 리뷰, 해외음악을 이야기하는 개발자의 블로그입니다.",
+    url: "https://mandarinlog.me",
+    image: "./logo.png",
   },
   plugins: [
     `gatsby-plugin-react-helmet`,

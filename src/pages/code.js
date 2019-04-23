@@ -2,7 +2,6 @@ import React from "react"
 import Layout from "../components/layout"
 import { useStaticQuery, graphql, Link } from "gatsby"
 import styled from "styled-components"
-import HelmetComponent from "../components/helmetComponent"
 import {
   CategoryTitle,
   Title,
@@ -16,13 +15,21 @@ import {
   Excerpt,
 } from "../styles/pageStyles"
 import { StackContainer, StackBadge } from "../styles/stackSharedStyles"
+import SEO from "../components/SEO"
 
 const CodePage = () => {
   const data = useStaticQuery(QUERY)
   const { edges, totalCount } = data.allMarkdownRemark
   return (
     <Layout>
-      <HelmetComponent title="CODE" />
+      <SEO
+        title="코드"
+        description="코드 페이지 리스트"
+        pathname="/code"
+        keywords={[
+          "코딩,만다린로그,코드,자바스크립트,리액트,mandarinlog,javascript,coding,react",
+        ]}
+      />
       <CategoryTitle>코드</CategoryTitle>
       <Posts>
         {edges.map(edge => {

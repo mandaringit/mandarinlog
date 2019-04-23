@@ -1,16 +1,21 @@
 import React from "react"
 import Layout from "../components/layout"
-import HelmetComponent from "../components/helmetComponent"
 import { CategoryTitle } from "../styles/pageStyles"
 import { graphql, useStaticQuery, Link } from "gatsby"
 import MainGrid from "../components/indexContent/mainGrid"
+import SEO from "../components/SEO"
 
 const IndexPage = () => {
   const data = useStaticQuery(QUERY)
   const { edges } = data.allMarkdownRemark
   return (
     <Layout>
-      <HelmetComponent title="홈" />
+      <SEO
+        title="홈"
+        description="만다린로그 홈페이지"
+        pathname="/"
+        keywords={["홈,만다린로그"]}
+      />
       <MainGrid />
     </Layout>
   )

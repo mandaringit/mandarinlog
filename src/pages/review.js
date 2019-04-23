@@ -2,7 +2,6 @@ import React from "react"
 import Layout from "../components/layout"
 import { useStaticQuery, graphql, Link } from "gatsby"
 import styled from "styled-components"
-import HelmetComponent from "../components/helmetComponent"
 import {
   CategoryTitle,
   Bar,
@@ -16,13 +15,19 @@ import {
   DateContainer,
 } from "../styles/pageStyles"
 import { PlatformBadge, TagContainer, Tag } from "../styles/tagsSharedStyles"
+import SEO from "../components/SEO"
 
 const ReviewPage = () => {
   const data = useStaticQuery(QUERY)
   const { edges, totalCount } = data.allMarkdownRemark
   return (
     <Layout>
-      <HelmetComponent title="REVIEW" />
+      <SEO
+        title="리뷰"
+        description="리뷰 페이지 리스트"
+        pathname="/review"
+        keywords={["리뷰,만다린로그,영화,게임"]}
+      />
       <CategoryTitle>리뷰</CategoryTitle>
       <Posts>
         {edges.map(edge => {

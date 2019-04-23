@@ -2,7 +2,6 @@ import React from "react"
 import Layout from "../components/layout"
 import { useStaticQuery, graphql, Link } from "gatsby"
 import styled from "styled-components"
-import HelmetComponent from "../components/helmetComponent"
 import {
   CategoryTitle,
   Title,
@@ -15,13 +14,19 @@ import {
   FeaturedImage,
   PostLinkBox,
 } from "../styles/pageStyles"
+import SEO from "../components/SEO"
 
 const OpinionPage = () => {
   const data = useStaticQuery(QUERY)
   const { edges, totalCount } = data.allMarkdownRemark
   return (
     <Layout>
-      <HelmetComponent title="OPINION" />
+      <SEO
+        title="오피니언"
+        description="오피니언 페이지 리스트"
+        pathname="/opinion"
+        keywords={["오피니언,블로그,만다린로그"]}
+      />
       <CategoryTitle>오피니언</CategoryTitle>
       {/* <div>카테고리 리스트 간단하게 추가</div> */}
       <Posts>

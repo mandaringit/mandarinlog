@@ -3,19 +3,13 @@ import Layout from "../components/layout"
 import { useStaticQuery, graphql, Link } from "gatsby"
 import styled from "styled-components"
 import HelmetComponent from "../components/helmetComponent"
-import { CategoryTitle } from "../styles/pageStyles"
+import { CategoryTitle, Posts, Post } from "../styles/pageStyles"
 
-const Posts = styled.div`
-  margin: 0;
-  display: -ms-grid;
-  display: grid;
+const ExtendPosts = styled(Posts)`
   grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
   grid-auto-rows: minmax(10rem, 13rem);
-  grid-gap: 0.5rem;
 `
-const Post = styled.article`
-  width: 100%;
-`
+
 const PostLinkBox = styled(Link)`
   background-color: white;
   border-radius: 3px;
@@ -67,7 +61,7 @@ const MusicPage = () => {
     <Layout>
       <HelmetComponent title="MUSIC" />
       <CategoryTitle>MUSIC ({totalCount})</CategoryTitle>
-      <Posts>
+      <ExtendPosts>
         {edges.map(edge => {
           const { slug } = edge.node.fields
           const {
@@ -91,7 +85,7 @@ const MusicPage = () => {
             </Post>
           )
         })}
-      </Posts>
+      </ExtendPosts>
     </Layout>
   )
 }

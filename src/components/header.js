@@ -102,10 +102,7 @@ const Header = () => {
             <NavLink to="/music">MUSIC</NavLink>
           </NavItem>
           <NavItem>
-            <NavLink to="/game">GAME</NavLink>
-          </NavItem>
-          <NavItem>
-            <NavLink to="/movie">MOVIE</NavLink>
+            <NavLink to="/review">REVIEW</NavLink>
           </NavItem>
         </NavList>
       </ExtendedNav>

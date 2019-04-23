@@ -9,51 +9,15 @@ import {
   DateContainer,
   Bar,
   InfoBox,
+  Posts,
+  Post,
+  FeaturedImage,
+  PostLinkBox,
+  Excerpt,
 } from "../styles/pageStyles"
 import { StackContainer, StackBadge } from "../styles/stackSharedStyles"
 
-const Posts = styled.div`
-  margin: 0;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
-  grid-auto-rows: minmax(20rem, 1fr);
-  grid-gap: 0.5rem;
-`
-const Post = styled.article`
-  width: 100%;
-`
-const PostLinkBox = styled(Link)`
-  background-color: white;
-  border-radius: 3px;
-  color: #000000;
-  display: flex;
-  flex-direction: column;
-  text-decoration: none;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
-  height: 100%;
-`
-
-const FeaturedImage = styled.img`
-  border-radius: 3px 3px 0 0;
-  margin: 0;
-  width: 100%;
-  min-height: 8rem;
-  height: 100%;
-  object-fit: cover;
-  opacity: 0.8;
-  :hover {
-    opacity: 1;
-    transition-duration: 1s;
-  }
-`
-
-const Excerpt = styled.p`
-  color: black;
-  font-size: 0.8rem;
-  margin: 0.5rem 0;
-`
-
-const MoviePage = () => {
+const CodePage = () => {
   const data = useStaticQuery(QUERY)
   const { edges, totalCount } = data.allMarkdownRemark
   return (
@@ -92,7 +56,7 @@ const MoviePage = () => {
   )
 }
 
-export default MoviePage
+export default CodePage
 
 const QUERY = graphql`
   query {

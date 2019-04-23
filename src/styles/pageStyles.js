@@ -3,23 +3,63 @@ import { Link } from "gatsby"
 // 이하 전부 포스트 안의 내용이 아닌
 // 페이지에 나타나는 포스트의 스타일이다.
 
+export const Posts = styled.div`
+  margin: 0;
+  display: grid;
+  grid-gap: 0.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+  grid-auto-rows: minmax(20rem, 1fr);
+`
+
+export const Post = styled.article`
+  width: 100%;
+`
+
+// 각 포스트를 감싸는 박스 겸 링크
+export const PostLinkBox = styled(Link)`
+  background-color: white;
+  border-radius: 3px;
+  color: #000000;
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  height: 100%;
+`
+
 // 카테고리 타이틀
 export const CategoryTitle = styled.h1`
   font-size: 1.5rem;
   margin-bottom: 1rem;
 `
 
+export const FeaturedImage = styled.div`
+  background-image: url(${props => props.src});
+  background-size: cover;
+  background-position: center;
+  border-radius: 3px 3px 0 0;
+  margin: 0;
+  width: 100%;
+  min-height: 8rem;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.8;
+  :hover {
+    opacity: 1;
+    transition-duration: 1s;
+  }
+  display: flex;
+  justify-content: start;
+  align-items: start;
+`
+
+export const InfoBox = styled.div`
+  padding: 1rem;
+`
+
 // 각 포스트 타이틀
 export const Title = styled.h3`
   margin-bottom: 0.5rem;
-`
-
-// 포스트 대표 이미지
-export const FeaturedImage = styled.img`
-  margin: 0;
-  width: 100%;
-  height: 15rem;
-  object-fit: cover;
 `
 
 // 각 포스트의 날짜
@@ -38,24 +78,5 @@ export const Excerpt = styled.p`
 // 포스트 안의 구분을 위한 바
 export const Bar = styled.div`
   border-bottom: 1px solid ${props => props.theme.barColor};
-`
-
-// 각 포스트를 감싸는 박스 겸 링크
-export const PostLinkBox = styled(Link)`
-  background-color: white;
-  color: #000000;
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: auto auto;
-  text-decoration: none;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
-  :hover {
-    background: ${props => props.theme.hoverColor};
-    transition-duration: 1s;
-  }
-  height: 100%;
-`
-
-export const InfoBox = styled.div`
-  padding: 1rem;
+  width: 100%;
 `

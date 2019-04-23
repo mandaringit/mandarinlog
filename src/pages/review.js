@@ -15,48 +15,7 @@ import {
   PostLinkBox,
   DateContainer,
 } from "../styles/pageStyles"
-import StarRatingComponent from "react-star-rating-component"
-
-const PlatformBadge = styled.div`
-  font-weight: bold;
-  padding: 0 0.5rem;
-  margin: 0.5rem;
-  border-radius: 5px;
-  color: ${props => {
-    if (props.platform === "Netflix") {
-      return "#e52811"
-    } else if (props.platform === "Theater") {
-      return "#FFC107"
-    } else if (props.platform === "Steam") {
-      return "white"
-    }
-  }};
-  background-color: #141414;
-  margin-bottom: 1rem;
-`
-const RatingContainer = styled.div`
-  display: flex;
-  justify-content: center;
-`
-
-const StarRating = styled(StarRatingComponent)`
-  margin-bottom: 0.5rem;
-`
-
-const TagContainer = styled.div`
-  display: flex;
-  margin-bottom: 0.5rem;
-`
-
-const Tag = styled.div`
-  background-color: ${props => props.theme.deepOrangeColor};
-  color: white;
-  padding: 0 0.3rem;
-  margin-right: 0.3rem;
-  font-size: 0.7rem;
-  font-weight: bold;
-  border-radius: 3px;
-`
+import { PlatformBadge, TagContainer, Tag } from "../styles/tagsSharedStyles"
 
 const ReviewPage = () => {
   const data = useStaticQuery(QUERY)

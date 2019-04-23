@@ -11,6 +11,7 @@ import {
   DateContainer,
   Bar,
   Content,
+  InfoContainer,
 } from "../styles/templateSharedStyle"
 import { StackContainer, StackBadge } from "../styles/stackSharedStyles"
 
@@ -47,14 +48,22 @@ const CodeTemplate = props => {
       <TemplateContainer>
         <FeaturedImage src={src} />
         <ContentContainer>
-          <Title>{frontmatter.title}</Title>
-          <DateContainer>🗒 {frontmatter.date}</DateContainer>
+          <InfoContainer>
+            <Title>{frontmatter.title}</Title>
+            <StackContainer>
+              {frontmatter.stacks.map(stack => (
+                <StackBadge stack={stack}>{stack}</StackBadge>
+              ))}
+            </StackContainer>
+            <DateContainer>
+              <span role="img" aria-label="date">
+                📝
+              </span>{" "}
+              {frontmatter.date}
+            </DateContainer>
+          </InfoContainer>
           <Bar />
-          <StackContainer>
-            {frontmatter.stacks.map(stack => (
-              <StackBadge stack={stack}>{stack}</StackBadge>
-            ))}
-          </StackContainer>
+
           <Content dangerouslySetInnerHTML={{ __html: html }} />
         </ContentContainer>
       </TemplateContainer>

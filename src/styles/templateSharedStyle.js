@@ -1,4 +1,5 @@
 import styled from "styled-components"
+import StarRatingComponent from "react-star-rating-component"
 
 export const TemplateContainer = styled.div`
   margin: 0 auto;
@@ -17,14 +18,18 @@ export const ContentContainer = styled.article`
   padding: 1rem;
 `
 
-export const Title = styled.h1`
-  text-align: center;
+export const InfoContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 `
+
+export const Title = styled.h1``
 
 export const DateContainer = styled.h5`
   font-style: italic;
-  text-align: center;
   color: ${props => props.theme.barColor};
+  margin-top: 0.5rem;
 `
 
 export const Bar = styled.div`
@@ -34,3 +39,5 @@ export const Bar = styled.div`
 export const Content = styled.div`
   margin: 1rem 0;
 `
+
+export const StarRating = styled(StarRatingComponent)``

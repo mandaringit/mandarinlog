@@ -10,6 +10,7 @@ import {
   DateContainer,
   Bar,
   Content,
+  InfoContainer,
 } from "../styles/templateSharedStyle"
 
 // 아직까지 useStaticQuery를 사용하여 context에 접근할 수 있는 방법이 없다.
@@ -44,8 +45,15 @@ const OpinionTemplate = props => {
       <TemplateContainer>
         <FeaturedImage src={src} />
         <ContentContainer>
-          <Title>{frontmatter.title}</Title>
-          <DateContainer>🗒 {frontmatter.date}</DateContainer>
+          <InfoContainer>
+            <Title>{frontmatter.title}</Title>
+            <DateContainer>
+              <span role="img" aria-label="date">
+                📝
+              </span>{" "}
+              {frontmatter.date}
+            </DateContainer>
+          </InfoContainer>
           <Bar />
           <Content dangerouslySetInnerHTML={{ __html: html }} />
         </ContentContainer>

@@ -1,5 +1,4 @@
 import React from "react"
-import Layout from "../layout"
 import { graphql, useStaticQuery, Link } from "gatsby"
 import styled from "styled-components"
 
@@ -59,7 +58,7 @@ const InfoBox = styled.div`
 `
 
 const Bagde = styled.div`
-  color: #ffc107;
+  color: ${props => props.theme.mainColor};
   background-color: black;
   display: inline;
   font-size: 0.8rem;
@@ -75,7 +74,7 @@ const TitleContainer = styled.div`
   .title_1 {
     color: #000000;
     padding: 1rem;
-    background-color: rgba(92, 107, 192, 0.8);
+    background-color: rgba(92, 107, 192, 0.6);
     margin: 1rem 0 0 0;
     @media (min-width: 300px) {
       font-size: 2rem;

@@ -14,7 +14,7 @@ const activeClassName = "active"
 const NavLink = styled(Link).attrs({ activeClassName })`
   @import url("https://fonts.googleapis.com/css?family=Merriweather");
   font-family: "Merriweather", serif;
-  color: white;
+  color: #888888;
   font-size: 0.9rem;
   font-weight: bold;
   margin-right: 1.3rem;
@@ -23,8 +23,8 @@ const NavLink = styled(Link).attrs({ activeClassName })`
     color: ${props => props.theme.mainColor};
   }
   &.${activeClassName} {
-    color: ${props => props.theme.mainColor};
-    border-bottom: 1px solid black;
+    color: white;
+    border-bottom: 1px solid white;
   }
 `
 

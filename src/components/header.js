@@ -4,7 +4,7 @@ import styled from "styled-components"
 
 const ExtendedHeader = styled.header`
   padding: 1rem;
-  background-color: ${props => props.theme.mainColor};
+  background-color: white;
 `
 
 const HeaderTitle = styled.h1`
@@ -22,7 +22,7 @@ const HeaderTitle = styled.h1`
 `
 
 const TitleLink = styled(Link)`
-  color: white;
+  color: #ffc107;
   text-decoration: none;
 `
 
@@ -39,7 +39,7 @@ const Header = () => {
   return (
     <ExtendedHeader>
       <HeaderTitle>
-        <TitleLink to="/">{data.site.siteMetadata.title}</TitleLink>
+        <TitleLink to="/">🍊{data.site.siteMetadata.title}</TitleLink>
       </HeaderTitle>
     </ExtendedHeader>
   )

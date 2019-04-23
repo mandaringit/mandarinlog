@@ -74,7 +74,7 @@ const TitleContainer = styled.div`
   .title_1 {
     color: #000000;
     padding: 1rem;
-    background-color: rgba(92, 107, 192, 0.6);
+    background-color: rgba(255, 193, 7, 0.6);
     margin: 1rem 0 0 0;
     @media (min-width: 300px) {
       font-size: 2rem;

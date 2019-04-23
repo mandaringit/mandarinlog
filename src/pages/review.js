@@ -49,7 +49,7 @@ const TagContainer = styled.div`
 `
 
 const Tag = styled.div`
-  background-color: ${props => props.theme.thinMainColor};
+  background-color: ${props => props.theme.deepOrangeColor};
   color: white;
   padding: 0 0.3rem;
   margin-right: 0.3rem;

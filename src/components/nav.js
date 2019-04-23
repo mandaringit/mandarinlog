@@ -17,7 +17,6 @@ const NavLink = styled(Link).attrs({ activeClassName })`
   color: #888888;
   font-size: 0.9rem;
   font-weight: bold;
-  margin-right: 1.3rem;
   text-decoration: none;
   :hover {
     color: ${props => props.theme.mainColor};
@@ -48,6 +47,7 @@ const NavItem = styled.div`
   }
   @media (min-width: 768px) {
     margin: 0;
+    margin-right: 1.3rem;
   }
 `
 

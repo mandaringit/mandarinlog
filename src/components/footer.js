@@ -4,14 +4,14 @@ import styled from "styled-components"
 
 const StyledFooter = styled.footer`
   margin-top: 3rem;
-  background-color: ${props => props.theme.mainColor};
+  background-color: ${props => props.theme.grayColor};
   display: flex;
   justify-content: center;
 `
 
 const FooterText = styled.div`
   padding: 1rem;
-  color: white;
+  color: ${props => props.theme.mainColor};
 `
 
 const Footer = () => {

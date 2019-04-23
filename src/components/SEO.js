@@ -72,7 +72,7 @@ function SEO({ description, lang, image, meta, keywords, title, pathname }) {
                     ]
               )
               .concat(
-                keywords.length > 0
+                keywords !== null && keywords.length > 0
                   ? {
                       name: `keywords`,
                       content: keywords.join(`, `),

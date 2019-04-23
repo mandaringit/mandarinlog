@@ -66,8 +66,6 @@ const Bagde = styled.div`
   padding: 0 0.3rem;
 `
 const TitleContainer = styled.div`
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   display: flex;
   flex-direction: column;
   height: 100%;

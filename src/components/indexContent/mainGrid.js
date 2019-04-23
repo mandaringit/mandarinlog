@@ -137,7 +137,6 @@ const QUERY = graphql`
         node {
           frontmatter {
             title
-            date(formatString: "YYYY년 MM월 DD일")
             category
             featuredImage {
               childImageSharp {
@@ -150,7 +149,6 @@ const QUERY = graphql`
           fields {
             slug
           }
-          excerpt(pruneLength: 200)
         }
       }
     }

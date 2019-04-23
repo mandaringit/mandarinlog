@@ -23,7 +23,7 @@ const ReviewPage = () => {
   return (
     <Layout>
       <HelmetComponent title="REVIEW" />
-      <CategoryTitle>리뷰 ({totalCount})</CategoryTitle>
+      <CategoryTitle>리뷰</CategoryTitle>
       <Posts>
         {edges.map(edge => {
           const { slug } = edge.node.fields

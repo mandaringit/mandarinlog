@@ -72,8 +72,6 @@ const TitleContainer = styled.div`
   justify-content: center;
   align-items: center;
   .title_1 {
-    @import url("https://fonts.googleapis.com/css?family=Noto+Sans+KR|Song+Myung");
-    font-family: "Song Myung", serif;
     color: #000000;
     padding: 1rem;
     background-color: rgba(255, 193, 7, 0.6);
@@ -91,8 +89,6 @@ const TitleContainer = styled.div`
   .title_5,
   .title_6,
   .title_7 {
-    @import url("https://fonts.googleapis.com/css?family=Noto+Sans+KR|Song+Myung");
-    font-family: "Song Myung", serif;
     color: #000000;
     padding: 1rem;
     font-size: 2rem;

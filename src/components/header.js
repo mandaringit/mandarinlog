@@ -11,14 +11,8 @@ const HeaderTitle = styled.h1`
   @import url("https://fonts.googleapis.com/css?family=Noto+Sans+KR|Song+Myung");
   font-family: "Song Myung", serif;
   margin: 0;
-  @media (min-width: 300px) {
-    font-size: 2rem;
-    text-align: center;
-  }
-  @media (min-width: 768px) {
-    font-size: 2rem;
-    text-align: start;
-  }
+  font-size: 2rem;
+  text-align: center;
 `
 
 const TitleLink = styled(Link)`

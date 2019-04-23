@@ -24,10 +24,7 @@ export const InfoContainer = styled.div`
   align-items: center;
 `
 
-export const Title = styled.h1`
-  @import url("https://fonts.googleapis.com/css?family=Noto+Sans+KR|Song+Myung");
-  font-family: "Song Myung", serif;
-`
+export const Title = styled.h1``
 
 export const DateContainer = styled.h5`
   @import url("https://fonts.googleapis.com/css?family=Noto+Sans+KR|Song+Myung");

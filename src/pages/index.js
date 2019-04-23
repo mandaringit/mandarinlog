@@ -6,8 +6,6 @@ import MainGrid from "../components/indexContent/mainGrid"
 import SEO from "../components/SEO"
 
 const IndexPage = () => {
-  const data = useStaticQuery(QUERY)
-  const { edges } = data.allMarkdownRemark
   return (
     <Layout>
       <SEO
@@ -22,33 +20,3 @@ const IndexPage = () => {
 }
 
 export default IndexPage
-
-const QUERY = graphql`
-  query {
-    allMarkdownRemark(
-      sort: { order: DESC, fields: [frontmatter___date] }
-      limit: 7
-    ) {
-      edges {
-        node {
-          frontmatter {
-            title
-            date(formatString: "YYYY년 MM월 DD일")
-            category
-            featuredImage {
-              childImageSharp {
-                fixed(width: 900) {
-                  src
-                }
-              }
-            }
-          }
-          fields {
-            slug
-          }
-          excerpt(pruneLength: 200)
-        }
-      }
-    }
-  }
-`

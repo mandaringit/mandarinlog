@@ -5,6 +5,7 @@ date: "2019-04-19"
 category: "MUSIC"
 featuredImage: "./cover.png"
 translation: false
+keywords: ["Lil Nas X"]
 ---
 
 Lil Nas X enlists established country singer Billy Ray Cyrus for a surprise remix of his smash breakout hit, “Old Town Road.” Cyrus previously co-signed the original song via Twitter, saying:

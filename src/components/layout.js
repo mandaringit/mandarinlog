@@ -1,12 +1,12 @@
 import React from "react"
 import Header from "./header"
 import Footer from "./footer"
+import Nav from "./nav"
 import styled, { ThemeProvider } from "styled-components"
 import GlobalStyles from "../styles/GlobalStyles"
 import { Theme } from "../styles/Theme"
 
 const Container = styled.div`
-  /* padding: 1rem; */
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -29,6 +29,7 @@ const Layout = props => {
         <>
           <Container>
             <Header />
+            <Nav />
             <Content>{props.children}</Content>
             <Footer />
           </Container>

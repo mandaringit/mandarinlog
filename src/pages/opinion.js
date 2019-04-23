@@ -22,7 +22,7 @@ const OpinionPage = () => {
   return (
     <Layout>
       <HelmetComponent title="OPINION" />
-      <CategoryTitle>OPINION ({totalCount})</CategoryTitle>
+      <CategoryTitle>오피니언</CategoryTitle>
       {/* <div>카테고리 리스트 간단하게 추가</div> */}
       <Posts>
         {edges.map(edge => {

@@ -29,6 +29,8 @@ export const PostLinkBox = styled(Link)`
 
 // 카테고리 타이틀
 export const CategoryTitle = styled.h1`
+  @import url("https://fonts.googleapis.com/css?family=Noto+Sans+KR|Song+Myung");
+  font-family: "Song Myung", serif;
   font-size: 1.5rem;
   margin-bottom: 1rem;
 `

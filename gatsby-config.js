@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: "mandarinlog",
+    title: "만다린로그",
     author: "MANDARIN",
   },
   plugins: [

@@ -10,6 +10,8 @@ const StyledFooter = styled.footer`
 `
 
 const FooterText = styled.div`
+  @import url("https://fonts.googleapis.com/css?family=Noto+Sans+KR|Song+Myung");
+  font-family: "Song Myung", serif;
   padding: 1rem;
   color: ${props => props.theme.mainColor};
 `

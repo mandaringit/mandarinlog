@@ -24,10 +24,14 @@ export const InfoContainer = styled.div`
   align-items: center;
 `
 
-export const Title = styled.h1``
+export const Title = styled.h1`
+  @import url("https://fonts.googleapis.com/css?family=Noto+Sans+KR|Song+Myung");
+  font-family: "Song Myung", serif;
+`
 
 export const DateContainer = styled.h5`
-  font-style: italic;
+  @import url("https://fonts.googleapis.com/css?family=Noto+Sans+KR|Song+Myung");
+  font-family: "Song Myung", serif;
   color: ${props => props.theme.barColor};
   margin-top: 0.5rem;
 `

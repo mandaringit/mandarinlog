@@ -12,8 +12,8 @@ const ExtendedNav = styled.nav`
 const activeClassName = "active"
 
 const NavLink = styled(Link).attrs({ activeClassName })`
-  @import url("https://fonts.googleapis.com/css?family=Merriweather");
-  font-family: "Merriweather", serif;
+  @import url("https://fonts.googleapis.com/css?family=Noto+Sans+KR|Song+Myung");
+  font-family: "Song Myung", serif;
   color: #888888;
   font-size: 0.9rem;
   font-weight: bold;
@@ -56,19 +56,19 @@ const Nav = () => {
     <ExtendedNav>
       <NavList>
         <NavItem>
-          <NavLink to="/">HOME</NavLink>
+          <NavLink to="/">홈으로</NavLink>
         </NavItem>
         <NavItem>
-          <NavLink to="/opinion">OPINION</NavLink>
+          <NavLink to="/opinion">오피니언</NavLink>
         </NavItem>
         <NavItem>
-          <NavLink to="/review">REVIEW</NavLink>
+          <NavLink to="/review">리뷰</NavLink>
         </NavItem>
         <NavItem>
-          <NavLink to="/code">CODE</NavLink>
+          <NavLink to="/code">코드</NavLink>
         </NavItem>
         <NavItem>
-          <NavLink to="/music">MUSIC</NavLink>
+          <NavLink to="/music">해외음악</NavLink>
         </NavItem>
       </NavList>
     </ExtendedNav>

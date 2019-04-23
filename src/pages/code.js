@@ -23,7 +23,7 @@ const CodePage = () => {
   return (
     <Layout>
       <HelmetComponent title="CODE" />
-      <CategoryTitle>CODE ({totalCount})</CategoryTitle>
+      <CategoryTitle>코드</CategoryTitle>
       <Posts>
         {edges.map(edge => {
           const { slug } = edge.node.fields

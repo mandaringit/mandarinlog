@@ -60,7 +60,7 @@ const MusicPage = () => {
   return (
     <Layout>
       <HelmetComponent title="MUSIC" />
-      <CategoryTitle>MUSIC ({totalCount})</CategoryTitle>
+      <CategoryTitle>해외음악</CategoryTitle>
       <ExtendPosts>
         {edges.map(edge => {
           const { slug } = edge.node.fields

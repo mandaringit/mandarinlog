@@ -13,6 +13,7 @@ import {
   InfoBox,
   FeaturedImage,
   PostLinkBox,
+  DateContainer,
 } from "../styles/pageStyles"
 import StarRatingComponent from "react-star-rating-component"
 
@@ -32,6 +33,10 @@ const PlatformBadge = styled.div`
   }};
   background-color: #141414;
   margin-bottom: 1rem;
+`
+const RatingContainer = styled.div`
+  display: flex;
+  justify-content: center;
 `
 
 const StarRating = styled(StarRatingComponent)`
@@ -66,11 +71,18 @@ const ReviewPage = () => {
           const {
             src,
           } = edge.node.frontmatter.featuredImage.childImageSharp.fixed
-          const { title, star, platform, tags } = edge.node.frontmatter
+          const {
+            title,
+            platform,
+            tags,
+            date,
+            category,
+          } = edge.node.frontmatter
           const { excerpt } = edge.node
+          const lowerCaseCategory = category.toLowerCase()
           return (
             <Post key={slug}>
-              <PostLinkBox to={`/review/${slug}`}>
+              <PostLinkBox to={`/${lowerCaseCategory}/${slug}`}>
                 <FeaturedImage src={src}>
                   <PlatformBadge platform={platform}>{platform}</PlatformBadge>
                 </FeaturedImage>
@@ -79,12 +91,7 @@ const ReviewPage = () => {
                     {tags ? tags.map(tag => <Tag>{tag}</Tag>) : null}
                   </TagContainer>
                   <Title>{title}</Title>
-                  <StarRating
-                    name="rate2"
-                    editing={false}
-                    starCount={5}
-                    value={star}
-                  />
+                  <DateContainer>📝 {date}</DateContainer>
                   <Bar />
                   <Excerpt>{excerpt}</Excerpt>
                 </InfoBox>
@@ -111,9 +118,9 @@ const QUERY = graphql`
           frontmatter {
             title
             date(formatString: "YYYY년 MM월 DD일")
-            star
             platform
             tags
+            category
             featuredImage {
               childImageSharp {
                 fixed(width: 900) {

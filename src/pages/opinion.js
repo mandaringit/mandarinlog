@@ -39,7 +39,7 @@ const OpinionPage = () => {
                 <FeaturedImage src={src} />
                 <InfoBox>
                   <Title>{title}</Title>
-                  <DateContainer>🗒 {date}</DateContainer>
+                  <DateContainer>📝 {date}</DateContainer>
                   <Bar />
                   <Excerpt>{excerpt}</Excerpt>
                 </InfoBox>

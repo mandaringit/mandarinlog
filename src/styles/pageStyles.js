@@ -7,7 +7,7 @@ export const Posts = styled.div`
   margin: 0;
   display: grid;
   grid-gap: 0.5rem;
-  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
   grid-auto-rows: minmax(20rem, 1fr);
 `
 

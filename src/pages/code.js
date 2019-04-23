@@ -43,7 +43,7 @@ const CodePage = () => {
                     ))}
                   </StackContainer>
                   <Title>{title}</Title>
-                  <DateContainer>🗒 {date}</DateContainer>
+                  <DateContainer>📝 {date}</DateContainer>
                   <Bar />
                   <Excerpt>{excerpt}</Excerpt>
                 </InfoBox>
@@ -82,7 +82,7 @@ const QUERY = graphql`
           fields {
             slug
           }
-          excerpt(pruneLength: 200)
+          excerpt(pruneLength: 140)
         }
       }
     }

@@ -63,7 +63,7 @@ module.exports.createPages = async ({ graphql, actions }) => {
     } else if (edge.node.frontmatter.category === "MOVIE") {
       createPage({
         component: movieTemplate,
-        path: `/review/${edge.node.fields.slug}`,
+        path: `/movie/${edge.node.fields.slug}`,
         context: {
           slug: edge.node.fields.slug,
         },
@@ -71,7 +71,7 @@ module.exports.createPages = async ({ graphql, actions }) => {
     } else if (edge.node.frontmatter.category === "GAME") {
       createPage({
         component: gameTemplate,
-        path: `/review/${edge.node.fields.slug}`,
+        path: `/game/${edge.node.fields.slug}`,
         context: {
           slug: edge.node.fields.slug,
         },

@@ -47,6 +47,7 @@ template {
 a {
   background-color: transparent;
   -webkit-text-decoration-skip: objects;
+  color:${props => props.theme.deepOrangeColor}
 }
 a:active,
 a:hover {

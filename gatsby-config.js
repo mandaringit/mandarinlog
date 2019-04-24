@@ -4,7 +4,7 @@ module.exports = {
     author: "MANDARIN",
     description:
       "다양한 오피니언, 리뷰, 해외음악을 이야기하는 개발자의 블로그입니다.",
-    url: "https://mandarinlog.me",
+    siteUrl: "https://mandarinlog.me",
     image: "./logo.png",
   },
   plugins: [

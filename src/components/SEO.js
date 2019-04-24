@@ -12,9 +12,9 @@ function SEO({ description, lang, image, meta, keywords, title, pathname }) {
           description || data.site.siteMetadata.description
         const metaImage =
           image && image.src
-            ? `${data.site.siteMetadata.url}${image.src}`
+            ? `${data.site.siteMetadata.siteUrl}${image.src}`
             : null
-        const metaUrl = `${data.site.siteMetadata.url}${pathname}`
+        const metaUrl = `${data.site.siteMetadata.siteUrl}${pathname}`
         return (
           <Helmet
             htmlAttributes={{
@@ -32,7 +32,7 @@ function SEO({ description, lang, image, meta, keywords, title, pathname }) {
                 content: title,
               },
               {
-                property: `og:url`,
+                property: `og:siteUrl`,
                 content: metaUrl,
               },
               {
@@ -111,7 +111,7 @@ const detailsQuery = graphql`
     site {
       siteMetadata {
         title
-        url
+        siteUrl
         description
         author
       }

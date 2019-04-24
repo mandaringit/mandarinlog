@@ -43,10 +43,6 @@ function SEO({ description, lang, image, meta, keywords, title, pathname }) {
                 property: `og:type`,
                 content: `website`,
               },
-              {
-                property: `naver-site-verification`,
-                content: `5675da56d439f0abb0316180f93208f73dcb418c`,
-              },
             ]
               .concat(
                 metaImage

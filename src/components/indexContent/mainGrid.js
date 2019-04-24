@@ -43,7 +43,7 @@ const PostLinkBox = styled(Link)`
       rgba(255, 255, 255, 0.3),
       rgba(255, 255, 255, 0.3)
     ),
-    url(${props => props.imageUrl});
+    url(${props => props.imageurl});
   background-size: cover;
   background-position: center;
   :hover {
@@ -110,7 +110,7 @@ const MainGrid = () => {
         } = edge.node.frontmatter.featuredImage.childImageSharp.fixed
         return (
           <PostGridItem key={slug}>
-            <PostLinkBox to={`/${lowerCaseCategory}/${slug}`} imageUrl={src}>
+            <PostLinkBox to={`/${lowerCaseCategory}/${slug}`} imageurl={src}>
               <InfoBox>
                 <TitleContainer>
                   <Bagde>{category}</Bagde>

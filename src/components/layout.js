@@ -23,15 +23,18 @@ const Content = styled.div`
 `
 
 const Layout = props => {
-  let agent = window.navigator.userAgent.toLowerCase()
   let caution = false
-  if (
-    (window.navigator.appName == "Netscape" &&
-      window.navigator.userAgent.search("Trident") != -1) ||
-    agent.indexOf("msie") != -1
-  ) {
-    caution = true
+  if (window !== "undefined") {
+    let agent = window.navigator.userAgent.toLowerCase()
+    if (
+      (window.navigator.appName == "Netscape" &&
+        window.navigator.userAgent.search("Trident") != -1) ||
+      agent.indexOf("msie") != -1
+    ) {
+      caution = true
+    }
   }
+  console.log(caution)
 
   return (
     <ThemeProvider theme={Theme}>

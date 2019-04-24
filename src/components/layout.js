@@ -23,11 +23,11 @@ const Content = styled.div`
 `
 
 const Layout = props => {
-  let agent = navigator.userAgent.toLowerCase()
+  let agent = window.navigator.userAgent.toLowerCase()
   let caution = false
   if (
-    (navigator.appName == "Netscape" &&
-      navigator.userAgent.search("Trident") != -1) ||
+    (window.navigator.appName == "Netscape" &&
+      window.navigator.userAgent.search("Trident") != -1) ||
     agent.indexOf("msie") != -1
   ) {
     caution = true

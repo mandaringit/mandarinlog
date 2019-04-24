@@ -23,6 +23,7 @@ const Content = styled.div`
 `
 
 const Layout = props => {
+  // 이하 IE 미지원 경고문 띄우기 코드
   let caution = false
   if (typeof window !== "undefined") {
     let agent = window.navigator.userAgent.toLowerCase()
@@ -34,7 +35,7 @@ const Layout = props => {
       caution = true
     }
   }
-  console.log(caution)
+  // 끝
 
   return (
     <ThemeProvider theme={Theme}>

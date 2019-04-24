@@ -11,10 +11,13 @@ export default function HTML(props) {
           name="viewport"
           content="width=device-width, initial-scale=1, shrink-to-fit=no"
         />
+        {/* 네이버 사이트인증 */}
         <meta
           name="naver-site-verification"
           content="5675da56d439f0abb0316180f93208f73dcb418c"
         />
+        {/* 빙 사이트인증 */}
+        <meta name="msvalidate.01" content="2297B21A8C05A3FC8454BCEFB3CB6BC6" />
         {props.headComponents}
         <script
           async

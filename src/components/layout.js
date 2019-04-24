@@ -24,7 +24,7 @@ const Content = styled.div`
 
 const Layout = props => {
   let caution = false
-  if (window !== "undefined") {
+  if (typeof window !== "undefined") {
     let agent = window.navigator.userAgent.toLowerCase()
     if (
       (window.navigator.appName == "Netscape" &&

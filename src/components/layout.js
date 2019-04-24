@@ -5,6 +5,7 @@ import Nav from "./nav"
 import styled, { ThemeProvider } from "styled-components"
 import GlobalStyles from "../styles/GlobalStyles"
 import { Theme } from "../styles/Theme"
+import SupportCaution from "./supportCaution"
 
 const Container = styled.div`
   margin: 0 auto;
@@ -22,12 +23,23 @@ const Content = styled.div`
 `
 
 const Layout = props => {
+  let agent = navigator.userAgent.toLowerCase()
+  let caution = false
+  if (
+    (navigator.appName == "Netscape" &&
+      navigator.userAgent.search("Trident") != -1) ||
+    agent.indexOf("msie") != -1
+  ) {
+    caution = true
+  }
+
   return (
     <ThemeProvider theme={Theme}>
       <>
         <GlobalStyles />
         <>
           <Container>
+            {caution ? <SupportCaution /> : null}
             <Header />
             <Nav />
             <Content>{props.children}</Content>

@@ -50,5 +50,13 @@ module.exports = {
       },
     },
     `gatsby-plugin-sitemap`,
+    {
+      resolve: "gatsby-plugin-robots-txt",
+      options: {
+        host: "https://mandarinlog.me",
+        sitemap: "https://mandarinlog.me/sitemap.xml",
+        policy: [{ userAgent: "*", allow: "/" }],
+      },
+    },
   ],
 }

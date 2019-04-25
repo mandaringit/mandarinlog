@@ -1,13 +1,14 @@
 import React from "react"
-import Layout from "../components/layout"
-import { CategoryTitle } from "../styles/pageStyles"
-import { graphql, useStaticQuery, Link } from "gatsby"
+import IndexLayout from "../components/Layout/indexLayout"
 import MainGrid from "../components/indexContent/mainGrid"
+import MainReview from "../components/indexContent/mainReview"
+import MainOpinion from "../components/indexContent/mainOpinion"
 import SEO from "../components/SEO"
+import MainCode from "../components/indexContent/mainCode"
 
 const IndexPage = () => {
   return (
-    <Layout>
+    <IndexLayout>
       <SEO
         title="홈"
         description="만다린로그 홈페이지"
@@ -15,7 +16,10 @@ const IndexPage = () => {
         keywords={["홈,만다린로그"]}
       />
       <MainGrid />
-    </Layout>
+      <MainOpinion />
+      <MainReview />
+      <MainCode />
+    </IndexLayout>
   )
 }
 

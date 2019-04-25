@@ -1,11 +1,15 @@
 import React from "react"
 import { graphql, useStaticQuery, Link } from "gatsby"
 import styled from "styled-components"
+import {
+  Wrapper,
+  MainPostWrapper,
+  MainTitle,
+  MainTitleLink,
+} from "../../styles/mainSharedStyles"
 
 const PostsGrid = styled.div`
   display: grid;
-  margin: 0 auto;
-  max-width: 1200px;
   @media (min-width: 300px) {
     grid-template-columns: auto;
     grid-template-rows: repeat(4, 15rem);
@@ -85,10 +89,7 @@ const TitleContainer = styled.div`
   }
   .title_2,
   .title_3,
-  .title_4,
-  .title_5,
-  .title_6,
-  .title_7 {
+  .title_4 {
     color: #000000;
     padding: 1rem;
     font-size: 2rem;
@@ -100,28 +101,38 @@ const MainGrid = () => {
   const data = useStaticQuery(QUERY)
   const { edges } = data.allMarkdownRemark
   return (
-    <PostsGrid>
-      {edges.map((edge, index) => {
-        const { slug } = edge.node.fields
-        const { category, title } = edge.node.frontmatter
-        const lowerCaseCategory = category.toLowerCase()
-        const {
-          src,
-        } = edge.node.frontmatter.featuredImage.childImageSharp.fixed
-        return (
-          <PostGridItem key={slug}>
-            <PostLinkBox to={`/${lowerCaseCategory}/${slug}`} imageurl={src}>
-              <InfoBox>
-                <TitleContainer>
-                  <Bagde>{category}</Bagde>
-                  <h1 className={`title_${index + 1}`}>{title}</h1>
-                </TitleContainer>
-              </InfoBox>
-            </PostLinkBox>
-          </PostGridItem>
-        )
-      })}
-    </PostsGrid>
+    <Wrapper>
+      <MainPostWrapper>
+        <MainTitle>
+          <MainTitleLink to={"/"}>Featured Story</MainTitleLink>
+        </MainTitle>
+        <PostsGrid>
+          {edges.map((edge, index) => {
+            const { slug } = edge.node.fields
+            const { category, title } = edge.node.frontmatter
+            const lowerCaseCategory = category.toLowerCase()
+            const {
+              src,
+            } = edge.node.frontmatter.featuredImage.childImageSharp.fixed
+            return (
+              <PostGridItem key={slug}>
+                <PostLinkBox
+                  to={`/${lowerCaseCategory}/${slug}`}
+                  imageurl={src}
+                >
+                  <InfoBox>
+                    <TitleContainer>
+                      <Bagde>{category}</Bagde>
+                      <h1 className={`title_${index + 1}`}>{title}</h1>
+                    </TitleContainer>
+                  </InfoBox>
+                </PostLinkBox>
+              </PostGridItem>
+            )
+          })}
+        </PostsGrid>
+      </MainPostWrapper>
+    </Wrapper>
   )
 }
 

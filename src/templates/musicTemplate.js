@@ -1,5 +1,5 @@
 import React from "react"
-import Layout from "../components/layout"
+import PageLayout from "../components/Layout/pageLayout"
 import { graphql } from "gatsby"
 import {
   TemplateContainer,
@@ -27,7 +27,7 @@ const MusicTemplate = props => {
     category,
   }
   return (
-    <Layout>
+    <PageLayout>
       <SEO
         title={frontmatter.title}
         description={excerpt}
@@ -51,7 +51,7 @@ const MusicTemplate = props => {
         </ContentContainer>
         {Comment(disqus)}
       </TemplateContainer>
-    </Layout>
+    </PageLayout>
   )
 }
 

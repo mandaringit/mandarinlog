@@ -1,5 +1,5 @@
 import React from "react"
-import Layout from "../components/layout"
+import PageLayout from "../components/Layout/pageLayout"
 import { useStaticQuery, graphql, Link } from "gatsby"
 import styled from "styled-components"
 import { CategoryTitle, Posts, Post } from "../styles/pageStyles"
@@ -58,7 +58,7 @@ const MusicPage = () => {
   const data = useStaticQuery(QUERY)
   const { edges, totalCount } = data.allMarkdownRemark
   return (
-    <Layout>
+    <PageLayout>
       <SEO
         title="해외음악"
         description="해외음악 페이지 리스트"
@@ -91,7 +91,7 @@ const MusicPage = () => {
           )
         })}
       </ExtendPosts>
-    </Layout>
+    </PageLayout>
   )
 }
 

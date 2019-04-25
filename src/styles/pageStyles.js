@@ -13,17 +13,18 @@ export const Posts = styled.div`
 
 export const Post = styled.article`
   width: 100%;
+  background-color: ${props => props.theme.postBackgroundColor};
+  border: 1px solid ${props => props.theme.postBorderColor};
+  border-radius: 3px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
 `
 
 // 각 포스트를 감싸는 박스 겸 링크
 export const PostLinkBox = styled(Link)`
-  background-color: white;
-  border-radius: 3px;
-  color: #000000;
+  color: black;
   display: flex;
   flex-direction: column;
   text-decoration: none;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
   height: 100%;
 `
 

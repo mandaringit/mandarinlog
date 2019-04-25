@@ -1,7 +1,6 @@
 import React from "react"
-import Layout from "../components/layout"
-import { useStaticQuery, graphql, Link } from "gatsby"
-import styled from "styled-components"
+import PageLayout from "../components/Layout/pageLayout"
+import { useStaticQuery, graphql } from "gatsby"
 import {
   CategoryTitle,
   Title,
@@ -18,10 +17,10 @@ import { StackContainer, StackBadge } from "../styles/stackSharedStyles"
 import SEO from "../components/SEO"
 
 const CodePage = () => {
-  const data = useStaticQuery(QUERY)
-  const { edges, totalCount } = data.allMarkdownRemark
+  const data = useStaticQuery(CODE_QUERY)
+  const { edges } = data.allMarkdownRemark
   return (
-    <Layout>
+    <PageLayout>
       <SEO
         title="코드"
         description="코드 페이지 리스트"
@@ -59,39 +58,19 @@ const CodePage = () => {
           )
         })}
       </Posts>
-    </Layout>
+    </PageLayout>
   )
 }
 
 export default CodePage
 
-const QUERY = graphql`
+const CODE_QUERY = graphql`
   query {
     allMarkdownRemark(
       filter: { frontmatter: { category: { eq: "CODE" } } }
       sort: { order: DESC, fields: [frontmatter___date] }
     ) {
-      totalCount
-      edges {
-        node {
-          frontmatter {
-            title
-            date(formatString: "YYYY년 MM월 DD일")
-            stacks
-            featuredImage {
-              childImageSharp {
-                fixed(width: 900) {
-                  src
-                }
-              }
-            }
-          }
-          fields {
-            slug
-          }
-          excerpt(pruneLength: 140)
-        }
-      }
+      ...CodeMarkdown
     }
   }
 `

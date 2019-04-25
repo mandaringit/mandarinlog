@@ -7,4 +7,8 @@ export const Theme = {
   barColor: "#BDBDBD",
   templateMaxWidth: "900px",
   deepOrangeColor: "#FF8A65",
+  mainCardHeight: "15rem",
+  mainBackgroundColor: "#FAFAFA",
+  postBackgroundColor: "#FAFAFA",
+  postBorderColor: "#e6e6e6",
 }

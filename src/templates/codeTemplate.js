@@ -1,7 +1,6 @@
 import React from "react"
-import Layout from "../components/layout"
+import PageLayout from "../components/Layout/pageLayout"
 import { graphql } from "gatsby"
-import styled from "styled-components"
 import {
   TemplateContainer,
   FeaturedImage,
@@ -29,7 +28,7 @@ const CodeTemplate = props => {
     category,
   }
   return (
-    <Layout>
+    <PageLayout>
       <SEO
         title={frontmatter.title}
         description={excerpt}
@@ -58,7 +57,7 @@ const CodeTemplate = props => {
         </ContentContainer>
         {Comment(disqus)}
       </TemplateContainer>
-    </Layout>
+    </PageLayout>
   )
 }
 

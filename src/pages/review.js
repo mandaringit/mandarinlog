@@ -1,7 +1,6 @@
 import React from "react"
-import Layout from "../components/layout"
+import PageLayout from "../components/Layout/pageLayout"
 import { useStaticQuery, graphql, Link } from "gatsby"
-import styled from "styled-components"
 import {
   CategoryTitle,
   Bar,
@@ -18,10 +17,10 @@ import { PlatformBadge, TagContainer, Tag } from "../styles/tagsSharedStyles"
 import SEO from "../components/SEO"
 
 const ReviewPage = () => {
-  const data = useStaticQuery(QUERY)
-  const { edges, totalCount } = data.allMarkdownRemark
+  const data = useStaticQuery(REVIEW_QUERY)
+  const { edges } = data.allMarkdownRemark
   return (
-    <Layout>
+    <PageLayout>
       <SEO
         title="리뷰"
         description="리뷰 페이지 리스트"
@@ -64,41 +63,19 @@ const ReviewPage = () => {
           )
         })}
       </Posts>
-    </Layout>
+    </PageLayout>
   )
 }
 
 export default ReviewPage
 
-const QUERY = graphql`
+const REVIEW_QUERY = graphql`
   query {
     allMarkdownRemark(
       filter: { frontmatter: { category: { in: ["MOVIE", "GAME"] } } }
       sort: { order: DESC, fields: [frontmatter___date] }
     ) {
-      totalCount
-      edges {
-        node {
-          frontmatter {
-            title
-            date(formatString: "YYYY년 MM월 DD일")
-            platform
-            tags
-            category
-            featuredImage {
-              childImageSharp {
-                fixed(width: 900) {
-                  src
-                }
-              }
-            }
-          }
-          fields {
-            slug
-          }
-          excerpt(pruneLength: 200)
-        }
-      }
+      ...ReviewMarkdown
     }
   }
 `

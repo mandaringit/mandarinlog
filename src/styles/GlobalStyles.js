@@ -6,7 +6,7 @@ html {
   font-family: sans-serif;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
-  background-color:#F0F0F0;
+  background-color:${props => props.theme.mainBackgroundColor};
 }
 body {
   margin: 0;

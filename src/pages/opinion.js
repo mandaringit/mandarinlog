@@ -1,7 +1,6 @@
 import React from "react"
-import Layout from "../components/layout"
+import PageLayout from "../components/Layout/pageLayout"
 import { useStaticQuery, graphql, Link } from "gatsby"
-import styled from "styled-components"
 import {
   CategoryTitle,
   Title,
@@ -17,10 +16,10 @@ import {
 import SEO from "../components/SEO"
 
 const OpinionPage = () => {
-  const data = useStaticQuery(QUERY)
-  const { edges, totalCount } = data.allMarkdownRemark
+  const data = useStaticQuery(OPINION_QUERY)
+  const { edges } = data.allMarkdownRemark
   return (
-    <Layout>
+    <PageLayout>
       <SEO
         title="오피니언"
         description="오피니언 페이지 리스트"
@@ -53,38 +52,19 @@ const OpinionPage = () => {
           )
         })}
       </Posts>
-    </Layout>
+    </PageLayout>
   )
 }
 
 export default OpinionPage
 
-const QUERY = graphql`
+const OPINION_QUERY = graphql`
   query {
     allMarkdownRemark(
       filter: { frontmatter: { category: { eq: "OPINION" } } }
       sort: { order: DESC, fields: [frontmatter___date] }
     ) {
-      totalCount
-      edges {
-        node {
-          frontmatter {
-            title
-            date(formatString: "YYYY년 MM월 DD일")
-            featuredImage {
-              childImageSharp {
-                fixed(width: 900) {
-                  src
-                }
-              }
-            }
-          }
-          fields {
-            slug
-          }
-          excerpt(pruneLength: 200)
-        }
-      }
+      ...OpinionMarkdown
     }
   }
 `

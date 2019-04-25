@@ -12,6 +12,7 @@ import {
   InfoContainer,
 } from "../styles/templateSharedStyle"
 import SEO from "../components/SEO"
+import { DiscussionEmbed } from "disqus-react"
 
 // 아직까지 useStaticQuery를 사용하여 context에 접근할 수 있는 방법이 없다.
 // 대안은 아래와 같이 export 하면, 컴포넌트에서 props로 받아서 사용 가능하다.
@@ -42,8 +43,13 @@ export const query = graphql`
 `
 
 const OpinionTemplate = props => {
-  const { frontmatter, html, excerpt, fields } = props.data.markdownRemark
+  const { id, frontmatter, html, excerpt, fields } = props.data.markdownRemark
   const { src } = frontmatter.featuredImage.childImageSharp.fixed
+  const disqusShortname = "mandarinlog"
+  const disqusConfig = {
+    identifier: id,
+    title: frontmatter.title,
+  }
   return (
     <Layout>
       <SEO
@@ -67,6 +73,7 @@ const OpinionTemplate = props => {
           <Bar />
           <Content dangerouslySetInnerHTML={{ __html: html }} />
         </ContentContainer>
+        <DiscussionEmbed shortname={disqusShortname} config={disqusConfig} />
       </TemplateContainer>
     </Layout>
   )

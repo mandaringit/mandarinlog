@@ -26,6 +26,7 @@ const OpinionTemplate = props => {
     title: frontmatter.title,
     category,
   }
+  console.log("test")
   return (
     <Layout>
       <SEO

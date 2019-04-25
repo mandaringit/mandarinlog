@@ -12,43 +12,19 @@ import {
   InfoContainer,
 } from "../styles/templateSharedStyle"
 import SEO from "../components/SEO"
-import { DiscussionEmbed } from "disqus-react"
-
-// 아직까지 useStaticQuery를 사용하여 context에 접근할 수 있는 방법이 없다.
-// 대안은 아래와 같이 export 하면, 컴포넌트에서 props로 받아서 사용 가능하다.
-
-export const query = graphql`
-  query($slug: String!) {
-    #  $slug는 gatsby-node에서 createPage의 context에서 온다.
-    markdownRemark(fields: { slug: { eq: $slug } }) {
-      frontmatter {
-        title
-        keywords
-        date(formatString: "YYYY년 MM월 DD일")
-        featuredImage {
-          childImageSharp {
-            fixed(width: 900) {
-              src
-            }
-          }
-        }
-      }
-      html
-      excerpt
-      fields {
-        slug
-      }
-    }
-  }
-`
+import { Comment } from "../components/disqus"
 
 const OpinionTemplate = props => {
   const { id, frontmatter, html, excerpt, fields } = props.data.markdownRemark
   const { src } = frontmatter.featuredImage.childImageSharp.fixed
-  const disqusShortname = "mandarinlog"
-  const disqusConfig = {
-    identifier: id,
+  const { siteUrl } = props.data.site.siteMetadata
+  const category = frontmatter.category.toLowerCase()
+  const disqus = {
+    siteUrl,
+    slug: fields.slug,
+    id,
     title: frontmatter.title,
+    category,
   }
   return (
     <Layout>
@@ -73,10 +49,45 @@ const OpinionTemplate = props => {
           <Bar />
           <Content dangerouslySetInnerHTML={{ __html: html }} />
         </ContentContainer>
-        <DiscussionEmbed shortname={disqusShortname} config={disqusConfig} />
+        {Comment(disqus)}
       </TemplateContainer>
     </Layout>
   )
 }
 
 export default OpinionTemplate
+
+// 아직까지 useStaticQuery를 사용하여 context에 접근할 수 있는 방법이 없다.
+// 대안은 아래와 같이 export 하면, 컴포넌트에서 props로 받아서 사용 가능하다.
+
+export const query = graphql`
+  query($slug: String!) {
+    #  $slug는 gatsby-node에서 createPage의 context에서 온다.
+    site {
+      siteMetadata {
+        siteUrl
+      }
+    }
+    markdownRemark(fields: { slug: { eq: $slug } }) {
+      id
+      frontmatter {
+        title
+        keywords
+        category
+        date(formatString: "YYYY년 MM월 DD일")
+        featuredImage {
+          childImageSharp {
+            fixed(width: 900) {
+              src
+            }
+          }
+        }
+      }
+      html
+      excerpt
+      fields {
+        slug
+      }
+    }
+  }
+`

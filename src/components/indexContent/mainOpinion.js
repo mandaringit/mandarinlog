@@ -31,7 +31,7 @@ const MainOpinion = () => {
     <Wrapper color={"white"}>
       <MainPostWrapper>
         <MainTitle>
-          <MainTitleLink to={"/opinion"}>오피니언</MainTitleLink>
+          <MainTitleLink to={"/opinion"}>🖋 오피니언</MainTitleLink>
         </MainTitle>
         <Posts>
           {edges.map(edge => {

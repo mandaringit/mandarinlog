@@ -35,7 +35,7 @@ const MainReview = () => {
     <Wrapper>
       <MainPostWrapper>
         <MainTitle>
-          <MainTitleLink to={"/review"}>리뷰</MainTitleLink>
+          <MainTitleLink to={"/review"}>👀 리뷰</MainTitleLink>
         </MainTitle>
         <Posts>
           {edges.map(edge => {

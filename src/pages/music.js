@@ -55,7 +55,7 @@ const TranslationBadge = styled.div`
 `
 
 const MusicPage = () => {
-  const data = useStaticQuery(QUERY)
+  const data = useStaticQuery(MUSIC_QUERY)
   const { edges, totalCount } = data.allMarkdownRemark
   return (
     <PageLayout>
@@ -97,34 +97,13 @@ const MusicPage = () => {
 
 export default MusicPage
 
-const QUERY = graphql`
+const MUSIC_QUERY = graphql`
   query {
     allMarkdownRemark(
       filter: { frontmatter: { category: { eq: "MUSIC" } } }
       sort: { order: DESC, fields: [frontmatter___date] }
     ) {
-      totalCount
-      edges {
-        node {
-          frontmatter {
-            title
-            date(formatString: "YYYY년 MM월 DD일")
-            singer
-            translation
-            featuredImage {
-              childImageSharp {
-                fixed(width: 900) {
-                  src
-                }
-              }
-            }
-          }
-          fields {
-            slug
-          }
-          excerpt(pruneLength: 200)
-        }
-      }
+      ...MusicMarkdown
     }
   }
 `

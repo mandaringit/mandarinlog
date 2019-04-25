@@ -31,7 +31,7 @@ const MainCode = () => {
     <Wrapper>
       <MainPostWrapper>
         <MainTitle>
-          <MainTitleLink to={"/code"}>코드</MainTitleLink>
+          <MainTitleLink to={"/code"}>💻 코드</MainTitleLink>
         </MainTitle>
         <Posts>
           {edges.map(edge => {

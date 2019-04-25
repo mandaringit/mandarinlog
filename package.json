@@ -13,6 +13,7 @@
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\""
   },
   "dependencies": {
+    "axios": "^0.18.0",
     "babel-plugin-styled-components": "^1.10.0",
     "disqus-react": "^1.0.5",
     "gatsby": "^2.3.16",
@@ -33,6 +34,7 @@
     "react-dom": "^16.8.6",
     "react-facebook": "^8.0.4",
     "react-helmet": "^5.2.0",
+    "react-instagram-embed": "^1.5.0",
     "react-star-rating-component": "^1.4.1",
     "styled-components": "^4.2.0"
   },

@@ -1,7 +1,7 @@
 import { graphql } from "gatsby"
 
 export const query = graphql`
-  fragment OpinionMarkdown on MarkdownRemarkConnection {
+  fragment MusicMarkdown on MarkdownRemarkConnection {
     totalCount
     edges {
       node {
@@ -9,6 +9,8 @@ export const query = graphql`
           title
           date(formatString: "YYYY년 MM월 DD일")
           category
+          singer
+          translation
           featuredImage {
             childImageSharp {
               fixed(width: 900) {

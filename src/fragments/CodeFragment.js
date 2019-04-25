@@ -8,6 +8,7 @@ export const query = graphql`
         frontmatter {
           title
           date(formatString: "YYYY년 MM월 DD일")
+          category
           stacks
           featuredImage {
             childImageSharp {

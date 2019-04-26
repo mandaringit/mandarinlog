@@ -6,7 +6,8 @@ export const StackContainer = styled.div`
   margin-bottom: 0.5rem;
 `
 
-export const StackBadge = styled.div`
+export const StackBadge = styled.span`
+  display: block;
   margin-right: 0.5rem;
   font-size: 0.8rem;
   font-weight: bold;

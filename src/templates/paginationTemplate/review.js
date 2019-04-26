@@ -1,5 +1,5 @@
 import React from "react"
-import PageLayout from "../components/Layout/pageLayout"
+import PageLayout from "../../components/Layout/pageLayout"
 import { useStaticQuery, graphql, Link } from "gatsby"
 import {
   CategoryTitle,
@@ -12,12 +12,13 @@ import {
   FeaturedImage,
   PostLinkBox,
   DateContainer,
-} from "../styles/pageStyles"
-import { PlatformBadge, TagContainer, Tag } from "../styles/tagsSharedStyles"
-import SEO from "../components/SEO"
+} from "../../styles/pageStyles"
+import { PlatformBadge, TagContainer, Tag } from "../../styles/tagsSharedStyles"
+import SEO from "../../components/SEO"
+import PageLink from "../../components/pageLink"
 
-const ReviewPage = () => {
-  const data = useStaticQuery(REVIEW_QUERY)
+const ReviewPage = props => {
+  const { data, pageContext } = props
   const { edges } = data.allMarkdownRemark
   return (
     <PageLayout>
@@ -63,17 +64,20 @@ const ReviewPage = () => {
           )
         })}
       </Posts>
+      <PageLink route={"review"} numPages={pageContext.numPages} />
     </PageLayout>
   )
 }
 
 export default ReviewPage
 
-const REVIEW_QUERY = graphql`
-  query {
+export const query = graphql`
+  query($limit: Int!, $skip: Int!) {
     allMarkdownRemark(
       filter: { frontmatter: { category: { in: ["MOVIE", "GAME"] } } }
       sort: { order: DESC, fields: [frontmatter___date] }
+      limit: $limit
+      skip: $skip
     ) {
       ...ReviewMarkdown
     }

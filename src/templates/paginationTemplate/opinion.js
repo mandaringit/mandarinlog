@@ -1,6 +1,6 @@
 import React from "react"
 import PageLayout from "../../components/Layout/pageLayout"
-import { useStaticQuery, graphql } from "gatsby"
+import { graphql } from "gatsby"
 import {
   CategoryTitle,
   Title,

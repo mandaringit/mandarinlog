@@ -1,6 +1,6 @@
 import React from "react"
-import PageLayout from "../components/Layout/pageLayout"
-import { useStaticQuery, graphql } from "gatsby"
+import PageLayout from "../../components/Layout/pageLayout"
+import { graphql } from "gatsby"
 import {
   CategoryTitle,
   Title,
@@ -12,12 +12,13 @@ import {
   FeaturedImage,
   PostLinkBox,
   Excerpt,
-} from "../styles/pageStyles"
-import { StackContainer, StackBadge } from "../styles/stackSharedStyles"
-import SEO from "../components/SEO"
+} from "../../styles/pageStyles"
+import { StackContainer, StackBadge } from "../../styles/stackSharedStyles"
+import SEO from "../../components/SEO"
+import PageLink from "../../components/pageLink"
 
-const CodePage = () => {
-  const data = useStaticQuery(CODE_QUERY)
+const CodePage = props => {
+  const { data, pageContext } = props
   const { edges } = data.allMarkdownRemark
   return (
     <PageLayout>
@@ -63,17 +64,20 @@ const CodePage = () => {
           )
         })}
       </Posts>
+      <PageLink route={"code"} numPages={pageContext.numPages} />
     </PageLayout>
   )
 }
 
 export default CodePage
 
-const CODE_QUERY = graphql`
-  query {
+export const query = graphql`
+  query($limit: Int!, $skip: Int!) {
     allMarkdownRemark(
       filter: { frontmatter: { category: { eq: "CODE" } } }
       sort: { order: DESC, fields: [frontmatter___date] }
+      limit: $limit
+      skip: $skip
     ) {
       ...CodeMarkdown
     }

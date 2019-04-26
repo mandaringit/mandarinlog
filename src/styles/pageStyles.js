@@ -8,7 +8,7 @@ export const Posts = styled.div`
   display: grid;
   grid-gap: 0.5rem;
   grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
-  grid-auto-rows: minmax(20rem, 1fr);
+  grid-auto-rows: minmax(10rem, 1fr);
 `
 
 export const Post = styled.article`
@@ -25,7 +25,6 @@ export const PostLinkBox = styled(Link)`
   display: flex;
   flex-direction: column;
   text-decoration: none;
-  height: 100%;
 `
 
 // 카테고리 타이틀
@@ -43,7 +42,7 @@ export const FeaturedImage = styled.div`
   border-radius: 3px 3px 0 0;
   margin: 0;
   width: 100%;
-  min-height: 8rem;
+  min-height: 10rem;
   height: 100%;
   object-fit: cover;
   opacity: 0.8;

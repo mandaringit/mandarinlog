@@ -17,7 +17,7 @@ const Posts = styled.div`
 
 const Post = styled.article`
   width: 100%;
-  background-color: ${props => props.theme.postBackgroundColor};
+  background-color: transparent;
   border-radius: 3px;
 `
 

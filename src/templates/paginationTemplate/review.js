@@ -71,7 +71,11 @@ const ReviewPage = props => {
           )
         })}
       </Posts>
-      <PageLink route={"review"} numPages={pageContext.numPages} />
+      <PageLink
+        route={"review"}
+        numPages={pageContext.numPages}
+        currentPage={pageContext.currentPage}
+      />
     </PageLayout>
   )
 }

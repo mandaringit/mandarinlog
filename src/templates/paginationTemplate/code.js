@@ -64,7 +64,11 @@ const CodePage = props => {
           )
         })}
       </Posts>
-      <PageLink route={"code"} numPages={pageContext.numPages} />
+      <PageLink
+        route={"code"}
+        numPages={pageContext.numPages}
+        currentPage={pageContext.currentPage}
+      />
     </PageLayout>
   )
 }

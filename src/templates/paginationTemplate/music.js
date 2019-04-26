@@ -1,6 +1,6 @@
 import React from "react"
 import PageLayout from "../../components/Layout/pageLayout"
-import { useStaticQuery, graphql, Link } from "gatsby"
+import { graphql, Link } from "gatsby"
 import styled from "styled-components"
 import { CategoryTitle, Posts, Post } from "../../styles/pageStyles"
 import SEO from "../../components/SEO"
@@ -92,7 +92,11 @@ const MusicPage = props => {
           )
         })}
       </ExtendPosts>
-      <PageLink route={"review"} numPages={pageContext.numPages} />
+      <PageLink
+        route={"music"}
+        numPages={pageContext.numPages}
+        currentPage={pageContext.currentPage}
+      />
     </PageLayout>
   )
 }

@@ -58,7 +58,11 @@ const OpinionPage = props => {
           )
         })}
       </Posts>
-      <PageLink route={"opinion"} numPages={pageContext.numPages} />
+      <PageLink
+        route={"opinion"}
+        numPages={pageContext.numPages}
+        currentPage={pageContext.currentPage}
+      />
     </PageLayout>
   )
 }

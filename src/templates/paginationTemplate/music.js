@@ -1,9 +1,10 @@
 import React from "react"
-import PageLayout from "../components/Layout/pageLayout"
+import PageLayout from "../../components/Layout/pageLayout"
 import { useStaticQuery, graphql, Link } from "gatsby"
 import styled from "styled-components"
-import { CategoryTitle, Posts, Post } from "../styles/pageStyles"
-import SEO from "../components/SEO"
+import { CategoryTitle, Posts, Post } from "../../styles/pageStyles"
+import SEO from "../../components/SEO"
+import PageLink from "../../components/pageLink"
 
 const ExtendPosts = styled(Posts)`
   grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
@@ -54,8 +55,8 @@ const TranslationBadge = styled.div`
   background-color: ${props => (props.translation ? "#4CAF50" : "red")};
 `
 
-const MusicPage = () => {
-  const data = useStaticQuery(MUSIC_QUERY)
+const MusicPage = props => {
+  const { data, pageContext } = props
   const { edges } = data.allMarkdownRemark
   return (
     <PageLayout>
@@ -91,17 +92,20 @@ const MusicPage = () => {
           )
         })}
       </ExtendPosts>
+      <PageLink route={"review"} numPages={pageContext.numPages} />
     </PageLayout>
   )
 }
 
 export default MusicPage
 
-const MUSIC_QUERY = graphql`
-  query {
+export const query = graphql`
+  query($limit: Int!, $skip: Int!) {
     allMarkdownRemark(
       filter: { frontmatter: { category: { eq: "MUSIC" } } }
       sort: { order: DESC, fields: [frontmatter___date] }
+      limit: $limit
+      skip: $skip
     ) {
       ...MusicMarkdown
     }

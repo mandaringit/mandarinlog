@@ -7,7 +7,6 @@ import {
   Posts,
   Post,
   FeaturedImage,
-  PostLinkBox,
 } from "../../styles/pageStyles"
 import { StackContainer, StackBadge } from "../../styles/stackSharedStyles"
 import {
@@ -16,6 +15,17 @@ import {
   MainTitle,
   MainTitleLink,
 } from "../../styles/mainSharedStyles"
+
+const PostLinkBox = styled(Link)`
+  color: black;
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+`
+
+const ExtendFeaturedImage = styled(FeaturedImage)`
+  min-height: 15rem;
+`
 
 const ExtendInfoBox = styled(InfoBox)`
   display: flex;
@@ -43,7 +53,7 @@ const MainCode = () => {
             return (
               <Post key={slug}>
                 <PostLinkBox to={`/code/${slug}`}>
-                  <FeaturedImage src={src} />
+                  <ExtendFeaturedImage src={src} />
                   <ExtendInfoBox>
                     <StackContainer>
                       {stacks.map(stack => (

@@ -10,7 +10,6 @@ import {
   Excerpt,
   InfoBox,
   FeaturedImage,
-  PostLinkBox,
   DateContainer,
 } from "../../styles/pageStyles"
 import { PlatformBadge, TagContainer, Tag } from "../../styles/tagsSharedStyles"
@@ -20,6 +19,17 @@ import {
   MainTitle,
   MainTitleLink,
 } from "../../styles/mainSharedStyles"
+
+const PostLinkBox = styled(Link)`
+  color: black;
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+`
+
+const ExtendFeaturedImage = styled(FeaturedImage)`
+  min-height: 15rem;
+`
 
 const ExtendInfoBox = styled(InfoBox)`
   display: flex;
@@ -48,11 +58,11 @@ const MainReview = () => {
             return (
               <Post key={slug}>
                 <PostLinkBox to={`/${lowerCaseCategory}/${slug}`}>
-                  <FeaturedImage src={src}>
+                  <ExtendFeaturedImage src={src}>
                     <PlatformBadge platform={platform}>
                       {platform}
                     </PlatformBadge>
-                  </FeaturedImage>
+                  </ExtendFeaturedImage>
                   <ExtendInfoBox>
                     <TagContainer>
                       {tags ? tags.map(tag => <Tag>{tag}</Tag>) : null}

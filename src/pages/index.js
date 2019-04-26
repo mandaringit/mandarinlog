@@ -5,6 +5,7 @@ import MainReview from "../components/indexContent/mainReview"
 import MainOpinion from "../components/indexContent/mainOpinion"
 import SEO from "../components/SEO"
 import MainCode from "../components/indexContent/mainCode"
+import MainMusic from "../components/indexContent/mainMusic"
 
 const IndexPage = () => {
   return (
@@ -19,6 +20,7 @@ const IndexPage = () => {
       {/* <MainOpinion /> */}
       <MainReview />
       <MainCode />
+      <MainMusic />
     </IndexLayout>
   )
 }

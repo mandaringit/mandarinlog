@@ -2,13 +2,22 @@ import React from "react"
 import PageLayout from "../../components/Layout/pageLayout"
 import { graphql, Link } from "gatsby"
 import styled from "styled-components"
-import { CategoryTitle, Posts, Post } from "../../styles/pageStyles"
+import { CategoryTitle } from "../../styles/pageStyles"
 import SEO from "../../components/SEO"
 import PageLink from "../../components/pageLink"
 
-const ExtendPosts = styled(Posts)`
-  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
-  grid-auto-rows: minmax(10rem, 13rem);
+const Posts = styled.div`
+  margin: 0;
+  display: grid;
+  grid-gap: 0.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr));
+  grid-auto-rows: minmax(13rem, 1fr);
+`
+
+const Post = styled.article`
+  width: 100%;
+  background-color: ${props => props.theme.postBackgroundColor};
+  border-radius: 3px;
 `
 
 const PostLinkBox = styled(Link)`
@@ -16,43 +25,56 @@ const PostLinkBox = styled(Link)`
   border-radius: 3px;
   color: #000000;
   display: flex;
+  flex-direction: column;
   text-decoration: none;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
-  height: 100%;
-  padding: 1rem 0 1rem 1rem;
 `
 
-const FeaturedImage = styled.img`
+const FeaturedImage = styled.div`
+  background-color: white; /* fallback */
+  background-image: url(${props => props.src});
+  background-size: cover;
+  background-position: center;
   border-radius: 3px;
-  margin: 0;
-  width: 50%;
-  height: 100%;
-  min-height: 10rem;
-  object-fit: cover;
+  min-height: 13rem;
+  border: 1px solid ${props => props.theme.postBorderColor};
+  display: flex;
+  justify-content: start;
+  align-items: start;
+  margin-bottom: 0.3rem;
+`
+
+const AlbumCategoryBadge = styled.div`
+  font-size: 0.7rem;
+  padding: 0 0.4rem;
+  margin: 0.5rem 0 0 0.5rem;
+  border-radius: 5px;
+  font-weight: bold;
+  background-color: ${props => {
+    if (props.category === "싱글") {
+      return "#f3a683"
+    } else if (props.category === "EP") {
+      return "#574b90"
+    } else if (props.category === "정규") {
+      return "#f5cd79"
+    }
+  }};
 `
 
 const InfoBox = styled.div`
-  width: 50%;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
   border-radius: 3px;
 `
 
-const Title = styled.h3`
-  margin-bottom: 0.5rem;
-  text-align: center;
+const Title = styled.span`
+  font-size: 1rem;
+  font-weight: bold;
+  color: #010101;
 `
 
-const Singer = styled.h5``
-
-const TranslationBadge = styled.div`
-  font-size: 0.7rem;
-  padding: 0 0.4rem;
-  border-radius: 5px;
-  font-weight: bold;
-  background-color: ${props => (props.translation ? "#4CAF50" : "red")};
+const Singer = styled.span`
+  font-size: 0.8rem;
+  color: #aaaaaa;
 `
 
 const MusicPage = props => {
@@ -67,31 +89,30 @@ const MusicPage = props => {
         keywords={["해외음악,POP,가사,만다린로그"]}
       />
       <CategoryTitle>해외음악</CategoryTitle>
-      <ExtendPosts>
+      <Posts>
         {edges.map(edge => {
           const { slug } = edge.node.fields
           const {
             src,
           } = edge.node.frontmatter.featuredImage.childImageSharp.fixed
-          const { title, singer, translation } = edge.node.frontmatter
+          const { singer, album, albumCategory } = edge.node.frontmatter
           return (
             <Post key={slug}>
               <PostLinkBox to={`/music/${slug}`}>
-                <FeaturedImage src={src} />
+                <FeaturedImage src={src}>
+                  <AlbumCategoryBadge category={albumCategory}>
+                    {albumCategory}
+                  </AlbumCategoryBadge>
+                </FeaturedImage>
                 <InfoBox>
-                  <Title>{title}</Title>
+                  <Title>{album}</Title>
                   <Singer>{singer}</Singer>
-                  {translation ? (
-                    <TranslationBadge translation={translation}>
-                      가사 번역
-                    </TranslationBadge>
-                  ) : null}
                 </InfoBox>
               </PostLinkBox>
             </Post>
           )
         })}
-      </ExtendPosts>
+      </Posts>
       <PageLink
         route={"music"}
         numPages={pageContext.numPages}

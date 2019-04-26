@@ -11,8 +11,27 @@ import {
   Content,
   InfoContainer,
 } from "../styles/templateSharedStyle"
+import styled from "styled-components"
 import SEO from "../components/SEO"
 import { Comment } from "../components/disqus"
+
+const ExtendTitle = styled(Title)`
+  margin-bottom: 1rem;
+`
+
+const Singer = styled.div`
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  font-weight: bold;
+`
+
+const SubTitle = styled.div`
+  font-size: 1.3rem;
+  font-style: italic;
+  margin-bottom: 0.5rem;
+  color: ${props => props.theme.deepOrangeColor};
+  text-align: center;
+`
 
 const MusicTemplate = props => {
   const { id, frontmatter, html, excerpt, fields } = props.data.markdownRemark
@@ -38,7 +57,14 @@ const MusicTemplate = props => {
         <FeaturedImage src={src} />
         <ContentContainer>
           <InfoContainer>
-            <Title>{frontmatter.title}</Title>
+            <SubTitle>"{frontmatter.title}"</SubTitle>
+            <ExtendTitle>{frontmatter.album}</ExtendTitle>
+            <Singer>
+              <span role="img" aria-label="mike">
+                🎤
+              </span>{" "}
+              {frontmatter.singer}
+            </Singer>
             <DateContainer>
               <span role="img" aria-label="date">
                 📝
@@ -72,6 +98,9 @@ export const query = graphql`
       id
       frontmatter {
         title
+        album
+        albumCategory
+        singer
         keywords
         date(formatString: "YYYY년 MM월 DD일")
         category

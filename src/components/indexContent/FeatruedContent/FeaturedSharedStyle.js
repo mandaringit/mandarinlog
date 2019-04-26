@@ -3,6 +3,7 @@ import { Link } from "gatsby"
 
 export const PostGridItem = styled.div`
   overflow: hidden;
+  border-radius: 3px;
 `
 
 export const PostLinkBox = styled(Link)`
@@ -50,4 +51,5 @@ export const Title = styled.h1`
   padding: 1rem;
   margin: 1rem 0 0 0;
   font-size: 2rem;
+  text-align: center;
 `

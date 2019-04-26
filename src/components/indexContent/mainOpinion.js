@@ -1,5 +1,5 @@
 import React from "react"
-import { graphql, useStaticQuery, Link } from "gatsby"
+import { graphql, useStaticQuery } from "gatsby"
 import styled from "styled-components"
 import {
   Title,
@@ -31,7 +31,12 @@ const MainOpinion = () => {
     <Wrapper color={"white"}>
       <MainPostWrapper>
         <MainTitle>
-          <MainTitleLink to={"/opinion"}>🖋 오피니언</MainTitleLink>
+          <MainTitleLink to={"/opinion"}>
+            <span role="img" aria-label="pen">
+              🖋
+            </span>{" "}
+            오피니언
+          </MainTitleLink>
         </MainTitle>
         <Posts>
           {edges.map(edge => {

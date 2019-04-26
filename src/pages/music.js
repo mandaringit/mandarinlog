@@ -56,7 +56,7 @@ const TranslationBadge = styled.div`
 
 const MusicPage = () => {
   const data = useStaticQuery(MUSIC_QUERY)
-  const { edges, totalCount } = data.allMarkdownRemark
+  const { edges } = data.allMarkdownRemark
   return (
     <PageLayout>
       <SEO

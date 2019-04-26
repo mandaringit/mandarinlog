@@ -32,7 +32,12 @@ const MainGrid = () => {
     <Wrapper>
       <MainPostWrapper>
         <MainTitle>
-          <MainTitleLink to={"/"}>🔥 LATEST</MainTitleLink>
+          <MainTitleLink to={"/"}>
+            <span role="img" aria-label="fire">
+              🔥
+            </span>{" "}
+            LATEST
+          </MainTitleLink>
         </MainTitle>
         <PostsGrid>
           <FeaturedReview />

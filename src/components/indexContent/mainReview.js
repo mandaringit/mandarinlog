@@ -2,15 +2,11 @@ import React from "react"
 import { graphql, useStaticQuery, Link } from "gatsby"
 import styled from "styled-components"
 import {
-  CategoryTitle,
-  Bar,
   Title,
   Posts,
   Post,
-  Excerpt,
   InfoBox,
   FeaturedImage,
-  DateContainer,
 } from "../../styles/pageStyles"
 import { PlatformBadge, TagContainer, Tag } from "../../styles/tagsSharedStyles"
 import {
@@ -45,7 +41,12 @@ const MainReview = () => {
     <Wrapper>
       <MainPostWrapper>
         <MainTitle>
-          <MainTitleLink to={"/review"}>👀 리뷰</MainTitleLink>
+          <MainTitleLink to={"/review"}>
+            <span role="img" aria-label="eye">
+              👀
+            </span>{" "}
+            리뷰
+          </MainTitleLink>
         </MainTitle>
         <Posts>
           {edges.map(edge => {

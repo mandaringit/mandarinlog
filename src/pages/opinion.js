@@ -1,6 +1,6 @@
 import React from "react"
 import PageLayout from "../components/Layout/pageLayout"
-import { useStaticQuery, graphql, Link } from "gatsby"
+import { useStaticQuery, graphql } from "gatsby"
 import {
   CategoryTitle,
   Title,
@@ -43,7 +43,12 @@ const OpinionPage = () => {
                 <FeaturedImage src={src} />
                 <InfoBox>
                   <Title>{title}</Title>
-                  <DateContainer>📝 {date}</DateContainer>
+                  <DateContainer>
+                    <span role="img" aria-label="memo">
+                      📝
+                    </span>{" "}
+                    {date}
+                  </DateContainer>
                   <Bar />
                   <Excerpt>{excerpt}</Excerpt>
                 </InfoBox>

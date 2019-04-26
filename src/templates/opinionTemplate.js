@@ -48,8 +48,8 @@ const OpinionTemplate = props => {
           </InfoContainer>
           <Bar />
           <Content dangerouslySetInnerHTML={{ __html: html }} />
+          <Bar />
         </ContentContainer>
-        <Bar />
         {Comment(disqus)}
       </TemplateContainer>
     </PageLayout>

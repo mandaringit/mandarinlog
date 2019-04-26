@@ -93,7 +93,12 @@ const MovieTemplate = props => {
               starCount={5}
               value={frontmatter.star}
             />
-            <DateContainer>📝 {frontmatter.date}</DateContainer>
+            <DateContainer>
+              <span role="img" aria-label="memo">
+                📝
+              </span>{" "}
+              {frontmatter.date}
+            </DateContainer>
           </InfoContainer>
           <Bar />
           <Content dangerouslySetInnerHTML={{ __html: html }} />

@@ -1,6 +1,6 @@
 import React from "react"
 import PageLayout from "../../components/Layout/pageLayout"
-import { useStaticQuery, graphql, Link } from "gatsby"
+import { graphql } from "gatsby"
 import {
   CategoryTitle,
   Bar,
@@ -52,10 +52,17 @@ const ReviewPage = props => {
                 </FeaturedImage>
                 <InfoBox>
                   <TagContainer>
-                    {tags ? tags.map(tag => <Tag>{tag}</Tag>) : null}
+                    {tags
+                      ? tags.map((tag, index) => <Tag key={index}>{tag}</Tag>)
+                      : null}
                   </TagContainer>
                   <Title>{title}</Title>
-                  <DateContainer>📝 {date}</DateContainer>
+                  <DateContainer>
+                    <span role="img" aria-label="memo">
+                      📝
+                    </span>{" "}
+                    {date}
+                  </DateContainer>
                   <Bar />
                   <Excerpt>{excerpt}</Excerpt>
                 </InfoBox>

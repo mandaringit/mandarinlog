@@ -49,7 +49,12 @@ const CodePage = () => {
                     ))}
                   </StackContainer>
                   <Title>{title}</Title>
-                  <DateContainer>📝 {date}</DateContainer>
+                  <DateContainer>
+                    <span role="img" aria-label="memo">
+                      📝
+                    </span>{" "}
+                    {date}
+                  </DateContainer>
                   <Bar />
                   <Excerpt>{excerpt}</Excerpt>
                 </InfoBox>

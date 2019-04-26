@@ -41,7 +41,12 @@ const MainCode = () => {
     <Wrapper>
       <MainPostWrapper>
         <MainTitle>
-          <MainTitleLink to={"/code"}>💻 코드</MainTitleLink>
+          <MainTitleLink to={"/code"}>
+            <span role="img" aria-label="notebook">
+              💻
+            </span>{" "}
+            코드
+          </MainTitleLink>
         </MainTitle>
         <Posts>
           {edges.map(edge => {

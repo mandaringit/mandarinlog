@@ -1,5 +1,5 @@
 import React from "react"
-import PageLayout from "../components/Layout/pageLayout"
+import PageLayout from "../../components/Layout/pageLayout"
 import { useStaticQuery, graphql } from "gatsby"
 import {
   CategoryTitle,
@@ -12,11 +12,12 @@ import {
   Excerpt,
   FeaturedImage,
   PostLinkBox,
-} from "../styles/pageStyles"
-import SEO from "../components/SEO"
+} from "../../styles/pageStyles"
+import SEO from "../../components/SEO"
+import PageLink from "../../components/pageLink"
 
-const OpinionPage = () => {
-  const data = useStaticQuery(OPINION_QUERY)
+const OpinionPage = props => {
+  const { data, pageContext } = props
   const { edges } = data.allMarkdownRemark
   return (
     <PageLayout>
@@ -57,17 +58,20 @@ const OpinionPage = () => {
           )
         })}
       </Posts>
+      <PageLink route={"opinion"} numPages={pageContext.numPages} />
     </PageLayout>
   )
 }
 
 export default OpinionPage
 
-const OPINION_QUERY = graphql`
-  query {
+export const query = graphql`
+  query($limit: Int!, $skip: Int!) {
     allMarkdownRemark(
       filter: { frontmatter: { category: { eq: "OPINION" } } }
       sort: { order: DESC, fields: [frontmatter___date] }
+      limit: $limit
+      skip: $skip
     ) {
       ...OpinionMarkdown
     }

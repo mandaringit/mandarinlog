@@ -1,5 +1,6 @@
 const path = require("path")
 const createReviewPages = require("./pagination/create-review-pages")
+const createOpinionPages = require("./pagination/create-opinion-pages")
 
 const createPages = async ({ graphql, actions }) => {
   const { createPage } = actions
@@ -71,6 +72,7 @@ const createPages = async ({ graphql, actions }) => {
   })
 
   await createReviewPages(graphql, actions)
+  await createOpinionPages(graphql, actions)
 }
 
 module.exports = createPages

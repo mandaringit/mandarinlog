@@ -16,12 +16,11 @@ const Posts = styled.div`
 
 const Post = styled.article`
   width: 100%;
-  background-color: transparent;
+  /* background-color: transparent; */
   border-radius: 3px;
 `
 
 const PostLinkBox = styled(Link)`
-  background-color: white;
   border-radius: 3px;
   color: #000000;
   display: flex;

@@ -7,6 +7,11 @@ import {
   MainTitle,
   MainTitleLink,
 } from "../../styles/mainSharedStyles"
+
+const ExtendMainTitleLink = styled(MainTitleLink)`
+  background-color: ${props => props.theme.grayColor};
+`
+
 const Posts = styled.div`
   margin: 0;
   display: grid;
@@ -17,12 +22,11 @@ const Posts = styled.div`
 
 const Post = styled.article`
   width: 100%;
-  background-color: transparent;
+  background-color: none;
   border-radius: 3px;
 `
 
 const PostLinkBox = styled(Link)`
-  background-color: white;
   border-radius: 3px;
   color: #000000;
   display: flex;
@@ -37,7 +41,7 @@ const FeaturedImage = styled.div`
   background-position: center;
   border-radius: 3px;
   min-height: 13rem;
-  border: 1px solid ${props => props.theme.postBorderColor};
+  /* border: 1px solid ${props => props.theme.postBorderColor}; */
   display: flex;
   justify-content: start;
   align-items: start;
@@ -71,7 +75,7 @@ const Title = styled.span`
   text-align: center;
   font-size: 1rem;
   font-weight: bold;
-  color: #010101;
+  color: white;
 `
 
 const Singer = styled.span`
@@ -84,15 +88,15 @@ const MainMusic = () => {
   const data = useStaticQuery(MUSIC_QUERY)
   const { edges } = data.allMarkdownRemark
   return (
-    <Wrapper>
+    <Wrapper color={"black"}>
       <MainPostWrapper>
         <MainTitle>
-          <MainTitleLink to={"/music"}>
+          <ExtendMainTitleLink to={"/music"}>
             <span role="img" aria-label="music">
               🎧
             </span>{" "}
             해외음악
-          </MainTitleLink>
+          </ExtendMainTitleLink>
         </MainTitle>
         <Posts>
           {edges.map(edge => {

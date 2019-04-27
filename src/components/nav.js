@@ -12,6 +12,7 @@ const ExtendedNav = styled.nav`
 const activeClassName = "active"
 
 const NavLink = styled(Link).attrs({ activeClassName })`
+  padding: 0.3rem 0.5rem;
   @import url("https://fonts.googleapis.com/css?family=Noto+Sans+KR|Song+Myung");
   font-family: "Song Myung", serif;
   color: #888888;
@@ -69,6 +70,9 @@ const Nav = () => {
         </NavItem>
         <NavItem>
           <NavLink to="/music">해외음악</NavLink>
+        </NavItem>
+        <NavItem>
+          <NavLink to="/about">ABOUT</NavLink>
         </NavItem>
       </NavList>
     </ExtendedNav>

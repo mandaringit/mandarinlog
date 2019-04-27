@@ -14,7 +14,7 @@ const IndexPage = () => {
         title="홈"
         description="만다린로그 홈페이지"
         pathname="/"
-        keywords={["홈,만다린로그"]}
+        keywords={["홈", "만다린로그"]}
       />
       <MainGrid />
       {/* <MainOpinion /> */}

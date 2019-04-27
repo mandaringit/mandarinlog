@@ -18,11 +18,7 @@ export const MainTitleLink = styled(Link)`
   padding: 0.5rem 1rem;
 `
 
-export const MainTitle = styled.h3`
-  @import url("https://fonts.googleapis.com/css?family=Black+Han+Sans");
-  font-family: "Black Han Sans", sans-serif;
-  font-weight: 100;
-`
+export const MainTitle = styled.h3``
 
 export const Posts = styled.div`
   margin: 0;

@@ -2,7 +2,7 @@
 title: "AVENGERS4 - ENDGAME 리뷰"
 date : "2019-04-24"
 category: "MOVIE"
-featuredImage: "./cover.png"
+featuredImage: "./cover.jpg"
 platform: "Theater"
 star: 5
 tags: ["IMAX","3D","MCU"]

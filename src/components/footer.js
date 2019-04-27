@@ -9,8 +9,6 @@ const StyledFooter = styled.footer`
 `
 
 const FooterText = styled.div`
-  @import url("https://fonts.googleapis.com/css?family=Black+Han+Sans");
-  font-family: "Black Han Sans", sans-serif;
   padding: 1rem;
   color: ${props => props.theme.mainColor};
 `

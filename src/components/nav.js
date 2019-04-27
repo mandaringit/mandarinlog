@@ -13,11 +13,9 @@ const activeClassName = "active"
 
 const NavLink = styled(Link).attrs({ activeClassName })`
   padding: 0.3rem 0.5rem;
-  @import url("https://fonts.googleapis.com/css?family=Black+Han+Sans");
-  font-family: "Black Han Sans", sans-serif;
   color: #888888;
   font-size: 0.9rem;
-  font-weight: 100;
+  font-weight: bold;
   text-decoration: none;
   :hover {
     color: ${props => props.theme.mainColor};

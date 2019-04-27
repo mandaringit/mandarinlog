@@ -58,5 +58,18 @@ module.exports = {
         policy: [{ userAgent: "*", allow: "/" }],
       },
     },
+    {
+      resolve: "gatsby-plugin-manifest",
+      options: {
+        name: "mandarinlog",
+        short_name: "mandarinlog",
+        start_url: "/",
+        background_color: "#1d69ab",
+        theme_color: "#1d69ab",
+        display: "standalone",
+        icon: "./static/logo.png",
+      },
+    },
+    `gatsby-plugin-offline`,
   ],
 }

@@ -3,7 +3,7 @@ import { Link } from "gatsby"
 
 export const Wrapper = styled.div`
   background-color: ${props => (props.color ? props.color : "")};
-  padding: 2rem 0;
+  padding: 1rem 0.5rem;
 `
 
 export const MainPostWrapper = styled.div`
@@ -18,4 +18,62 @@ export const MainTitleLink = styled(Link)`
   padding: 0.5rem 1rem;
 `
 
-export const MainTitle = styled.h3``
+export const MainTitle = styled.h3`
+  @import url("https://fonts.googleapis.com/css?family=Black+Han+Sans");
+  font-family: "Black Han Sans", sans-serif;
+  font-weight: 100;
+`
+
+export const Posts = styled.div`
+  margin: 0;
+  display: grid;
+  grid-gap: 0.3rem;
+  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+  grid-auto-rows: minmax(13rem, 1fr);
+`
+
+export const Post = styled.article`
+  width: 100%;
+  background-color: none;
+  border-radius: 3px;
+`
+
+export const PostLinkBox = styled(Link)`
+  border-radius: 3px;
+  text-decoration: none;
+  color: black;
+`
+
+export const FeaturedImage = styled.div`
+  background-color: white; /* fallback */
+  background-image: linear-gradient(
+      rgba(255, 255, 255, 0.2),
+      rgba(255, 255, 255, 0.2)
+    ),
+    url(${props => props.src});
+  background-size: cover;
+  background-position: center;
+  border-radius: 3px;
+  margin-bottom: 0.3rem;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 15rem;
+`
+
+export const Title = styled.span`
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: black;
+  padding: 0.5rem;
+`
+
+export const InfoBox = styled.div`
+  display: flex;
+  flex-direction: column;
+  /* margin: 2rem; */
+  /* background-color: rgba(255, 193, 7, 0.3); */
+`

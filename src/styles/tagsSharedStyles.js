@@ -10,7 +10,7 @@ export const PlatformBadge = styled.div`
       return "#e52811"
     } else if (props.platform === "Theater") {
       return "#FFC107"
-    } else if (props.platform === "Steam") {
+    } else {
       return "white"
     }
   }};

@@ -1,37 +1,22 @@
 import React from "react"
 import { graphql, useStaticQuery, Link } from "gatsby"
 import styled from "styled-components"
-import {
-  Title,
-  Posts,
-  Post,
-  InfoBox,
-  FeaturedImage,
-} from "../../styles/pageStyles"
-import { PlatformBadge, TagContainer, Tag } from "../../styles/tagsSharedStyles"
+import { PlatformBadge } from "../../styles/tagsSharedStyles"
 import {
   Wrapper,
   MainPostWrapper,
   MainTitle,
   MainTitleLink,
+  Posts,
+  Post,
+  PostLinkBox,
+  FeaturedImage,
+  Title,
+  InfoBox,
 } from "../../styles/mainSharedStyles"
 
-const PostLinkBox = styled(Link)`
-  color: black;
-  display: flex;
-  flex-direction: column;
-  text-decoration: none;
-`
-
-const ExtendFeaturedImage = styled(FeaturedImage)`
-  min-height: 15rem;
-`
-
-const ExtendInfoBox = styled(InfoBox)`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+const ExtendPlatformBadge = styled(PlatformBadge)`
+  /* align-self: center; */
 `
 
 const MainReview = () => {
@@ -59,17 +44,14 @@ const MainReview = () => {
             return (
               <Post key={slug}>
                 <PostLinkBox to={`/${lowerCaseCategory}/${slug}`}>
-                  <ExtendFeaturedImage src={src}>
-                    <PlatformBadge platform={platform}>
+                  <FeaturedImage src={src}>
+                    <ExtendPlatformBadge platform={platform}>
                       {platform}
-                    </PlatformBadge>
-                  </ExtendFeaturedImage>
-                  <ExtendInfoBox>
-                    <TagContainer>
-                      {tags ? tags.map(tag => <Tag>{tag}</Tag>) : null}
-                    </TagContainer>
-                    <Title>{title}</Title>
-                  </ExtendInfoBox>
+                    </ExtendPlatformBadge>
+                    <InfoBox>
+                      <Title>{title}</Title>
+                    </InfoBox>
+                  </FeaturedImage>
                 </PostLinkBox>
               </Post>
             )

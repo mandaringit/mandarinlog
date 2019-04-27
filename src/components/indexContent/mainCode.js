@@ -1,37 +1,24 @@
 import React from "react"
-import { graphql, useStaticQuery, Link } from "gatsby"
+import { graphql, useStaticQuery } from "gatsby"
 import styled from "styled-components"
-import {
-  Title,
-  InfoBox,
-  Posts,
-  Post,
-  FeaturedImage,
-} from "../../styles/pageStyles"
 import { StackContainer, StackBadge } from "../../styles/stackSharedStyles"
 import {
   Wrapper,
   MainPostWrapper,
   MainTitle,
   MainTitleLink,
+  Title,
+  InfoBox,
+  Posts,
+  Post,
+  FeaturedImage,
+  PostLinkBox,
 } from "../../styles/mainSharedStyles"
 
-const PostLinkBox = styled(Link)`
-  color: black;
-  display: flex;
-  flex-direction: column;
-  text-decoration: none;
-`
-
-const ExtendFeaturedImage = styled(FeaturedImage)`
-  min-height: 15rem;
-`
-
-const ExtendInfoBox = styled(InfoBox)`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+const ExtendStackContainer = styled(StackContainer)`
+  /* align-self: start; */
+  padding: 0.5rem;
+  margin-bottom: 0;
 `
 
 const MainCode = () => {
@@ -58,15 +45,16 @@ const MainCode = () => {
             return (
               <Post key={slug}>
                 <PostLinkBox to={`/code/${slug}`}>
-                  <ExtendFeaturedImage src={src} />
-                  <ExtendInfoBox>
-                    <StackContainer>
+                  <FeaturedImage src={src}>
+                    <ExtendStackContainer>
                       {stacks.map(stack => (
                         <StackBadge stack={stack}>{stack}</StackBadge>
                       ))}
-                    </StackContainer>
-                    <Title>{title}</Title>
-                  </ExtendInfoBox>
+                    </ExtendStackContainer>
+                    <InfoBox>
+                      <Title>{title}</Title>
+                    </InfoBox>
+                  </FeaturedImage>
                 </PostLinkBox>
               </Post>
             )

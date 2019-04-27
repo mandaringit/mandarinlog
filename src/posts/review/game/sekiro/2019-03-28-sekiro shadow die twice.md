@@ -4,7 +4,7 @@ date: "2019-03-28"
 category: "GAME"
 featuredImage: "./cover.jpg"
 star: 4
-platform: "Steam"
+platform: "FROM SOFTWARE"
 tags: ["프롬소프트웨어","잠입액션","도전욕구","깊은빡침"]
 keywords: ["세키로","프롬소프트","sekiro"]
 ---

@@ -6,46 +6,16 @@ import {
   MainPostWrapper,
   MainTitle,
   MainTitleLink,
+  Posts,
+  Post,
+  PostLinkBox,
+  InfoBox,
+  Title,
+  FeaturedImage,
 } from "../../styles/mainSharedStyles"
 
 const ExtendMainTitleLink = styled(MainTitleLink)`
   background-color: ${props => props.theme.grayColor};
-`
-
-const Posts = styled.div`
-  margin: 0;
-  display: grid;
-  grid-gap: 0.5rem;
-  grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr));
-  grid-auto-rows: minmax(13rem, 1fr);
-`
-
-const Post = styled.article`
-  width: 100%;
-  background-color: none;
-  border-radius: 3px;
-`
-
-const PostLinkBox = styled(Link)`
-  border-radius: 3px;
-  color: #000000;
-  display: flex;
-  flex-direction: column;
-  text-decoration: none;
-`
-
-const FeaturedImage = styled.div`
-  background-color: white; /* fallback */
-  background-image: url(${props => props.src});
-  background-size: cover;
-  background-position: center;
-  border-radius: 3px;
-  min-height: 13rem;
-  /* border: 1px solid ${props => props.theme.postBorderColor}; */
-  display: flex;
-  justify-content: start;
-  align-items: start;
-  margin-bottom: 0.3rem;
 `
 
 const AlbumCategoryBadge = styled.div`
@@ -65,23 +35,11 @@ const AlbumCategoryBadge = styled.div`
   }};
 `
 
-const InfoBox = styled.div`
-  display: flex;
-  flex-direction: column;
-  border-radius: 3px;
-`
-
-const Title = styled.span`
-  text-align: center;
-  font-size: 1rem;
-  font-weight: bold;
-  color: white;
-`
-
 const Singer = styled.span`
   text-align: center;
-  font-size: 0.8rem;
-  color: #aaaaaa;
+  font-size: 1rem;
+  color: white;
+  padding: 0.5rem;
 `
 
 const MainMusic = () => {
@@ -112,11 +70,11 @@ const MainMusic = () => {
                     <AlbumCategoryBadge category={albumCategory}>
                       {albumCategory}
                     </AlbumCategoryBadge>
+                    <InfoBox>
+                      <Title>{album}</Title>
+                      <Singer>{singer}</Singer>
+                    </InfoBox>
                   </FeaturedImage>
-                  <InfoBox>
-                    <Title>{album}</Title>
-                    <Singer>{singer}</Singer>
-                  </InfoBox>
                 </PostLinkBox>
               </Post>
             )

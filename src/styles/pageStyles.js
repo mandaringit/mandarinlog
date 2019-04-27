@@ -30,8 +30,9 @@ export const PostLinkBox = styled(Link)`
 
 // 카테고리 타이틀
 export const CategoryTitle = styled.h1`
-  @import url("https://fonts.googleapis.com/css?family=Noto+Sans+KR|Song+Myung");
-  font-family: "Song Myung", serif;
+  @import url("https://fonts.googleapis.com/css?family=Black+Han+Sans");
+  font-family: "Black Han Sans", sans-serif;
+  font-weight: 100;
   font-size: 1.5rem;
   margin-bottom: 1rem;
 `
@@ -62,7 +63,7 @@ export const InfoBox = styled.div`
 
 // 각 포스트 타이틀
 export const Title = styled.h3`
-  margin-bottom: 0.5rem;
+  margin-bottom: 0;
 `
 
 // 각 포스트의 날짜

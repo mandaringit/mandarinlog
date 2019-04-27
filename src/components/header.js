@@ -8,11 +8,12 @@ const ExtendedHeader = styled.header`
 `
 
 const HeaderTitle = styled.h1`
-  @import url("https://fonts.googleapis.com/css?family=Noto+Sans+KR|Song+Myung");
-  font-family: "Song Myung", serif;
+  @import url("https://fonts.googleapis.com/css?family=Black+Han+Sans");
+  font-family: "Black Han Sans", sans-serif;
   margin: 0;
   font-size: 2rem;
   text-align: center;
+  font-weight: 100;
 `
 
 const TitleLink = styled(Link)`

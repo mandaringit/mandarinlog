@@ -45,8 +45,10 @@ const CodePage = props => {
                 <FeaturedImage src={src} />
                 <InfoBox>
                   <StackContainer>
-                    {stacks.map(stack => (
-                      <StackBadge stack={stack}>{stack}</StackBadge>
+                    {stacks.map((stack, index) => (
+                      <StackBadge key={index} stack={stack}>
+                        {stack}
+                      </StackBadge>
                     ))}
                   </StackContainer>
                   <Title>{title}</Title>

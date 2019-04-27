@@ -5,7 +5,7 @@ import styled from "styled-components"
 import { InstagramLogo, GithubLogo, GmailLogo } from "../styles/icons"
 
 const Wrapper = styled.div`
-  padding: 0;
+  padding: 3rem 1rem;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -74,6 +74,7 @@ const About = () => {
               <MailAddress>@gmail.com</MailAddress>
             </div>
           </SnsWrapper>
+          <Text>게시글 문제 / 사이트 오류 연락 주시면 감사하겠습니다.</Text>
         </AccountWrapper>
         <Title>MANDARIN</Title>
         <Text>

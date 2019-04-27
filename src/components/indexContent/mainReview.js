@@ -1,6 +1,5 @@
 import React from "react"
-import { graphql, useStaticQuery, Link } from "gatsby"
-import styled from "styled-components"
+import { graphql, useStaticQuery } from "gatsby"
 import { PlatformBadge } from "../../styles/tagsSharedStyles"
 import {
   Wrapper,
@@ -14,10 +13,6 @@ import {
   Title,
   InfoBox,
 } from "../../styles/mainSharedStyles"
-
-const ExtendPlatformBadge = styled(PlatformBadge)`
-  /* align-self: center; */
-`
 
 const MainReview = () => {
   const data = useStaticQuery(REVIEW_QUERY)
@@ -39,15 +34,15 @@ const MainReview = () => {
             const {
               src,
             } = edge.node.frontmatter.featuredImage.childImageSharp.fixed
-            const { title, platform, tags, category } = edge.node.frontmatter
+            const { title, platform, category } = edge.node.frontmatter
             const lowerCaseCategory = category.toLowerCase()
             return (
               <Post key={slug}>
                 <PostLinkBox to={`/${lowerCaseCategory}/${slug}`}>
                   <FeaturedImage src={src}>
-                    <ExtendPlatformBadge platform={platform}>
+                    <PlatformBadge platform={platform}>
                       {platform}
-                    </ExtendPlatformBadge>
+                    </PlatformBadge>
                     <InfoBox>
                       <Title>{title}</Title>
                     </InfoBox>

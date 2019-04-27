@@ -47,8 +47,10 @@ const MainCode = () => {
                 <PostLinkBox to={`/code/${slug}`}>
                   <FeaturedImage src={src}>
                     <ExtendStackContainer>
-                      {stacks.map(stack => (
-                        <StackBadge stack={stack}>{stack}</StackBadge>
+                      {stacks.map((stack, index) => (
+                        <StackBadge key={index} stack={stack}>
+                          {stack}
+                        </StackBadge>
                       ))}
                     </ExtendStackContainer>
                     <InfoBox>

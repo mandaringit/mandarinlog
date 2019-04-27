@@ -6,7 +6,7 @@ const ExtendLink = styled(Link)`
   text-decoration: none;
   color: ${props => props.theme.mainColor};
   background-color: ${props => {
-    if (props.currentPage === props.linkNumber) {
+    if (props.currentpage === props.linknumber) {
       return "black"
     } else {
       return "#999999"
@@ -35,8 +35,8 @@ const PageLink = data => {
     if (i === 1) {
       items.push(
         <ExtendLink
-          currentPage={data.currentPage}
-          linkNumber={i}
+          currentpage={data.currentPage}
+          linknumber={i}
           key={i}
           to={`/${data.route}`}
         >
@@ -46,8 +46,8 @@ const PageLink = data => {
     } else {
       items.push(
         <ExtendLink
-          currentPage={data.currentPage}
-          linkNumber={i}
+          currentpage={data.currentPage}
+          linknumber={i}
           key={i}
           to={`/${data.route}/page/${i}`}
         >

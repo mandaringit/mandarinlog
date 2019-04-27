@@ -68,7 +68,7 @@ export const Title = styled.span`
   font-size: 1.5rem;
   font-weight: bold;
   color: black;
-  padding: 0.5rem;
+  padding: 1rem;
 `
 
 export const InfoBox = styled.div`

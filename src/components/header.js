@@ -1,17 +1,29 @@
 import React from "react"
-import { Link, graphql, useStaticQuery } from "gatsby"
+import { Link } from "gatsby"
 import styled from "styled-components"
+import RealSearchBar from "./Search/RealSearchBar"
 
 const ExtendedHeader = styled.header`
   padding: 1rem;
   background-color: #333333;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  @media (min-width: 500px) {
+    flex-direction: row;
+  }
 `
 
-const HeaderTitle = styled.h1`
-  margin: 0;
+const HeaderTitle = styled.div`
+  display: flex;
   font-size: 2rem;
   text-align: center;
   font-weight: bold;
+  margin-bottom: 1rem;
+  @media (min-width: 500px) {
+    margin-bottom: 0;
+  }
 `
 
 const TitleLink = styled(Link)`
@@ -25,6 +37,7 @@ const Header = () => {
       <HeaderTitle>
         <TitleLink to="/">mandarinlog</TitleLink>
       </HeaderTitle>
+      <RealSearchBar />
     </ExtendedHeader>
   )
 }

@@ -7,6 +7,8 @@ const Form = styled.form`
   margin: 0;
   border: 2px solid ${props => props.theme.mainColor};
   border-radius: 3px;
+  display: flex;
+  align-items: center;
 `
 
 const Input = styled.input`
@@ -51,7 +53,7 @@ class RealSearchBar extends React.Component {
     if (search.length > 0) {
       navigate(`/search?query=${search}`)
     } else {
-      alert("검색어는 한글자 이상이어야합니다.")
+      alert("검색어는 한 글자 이상이어야 합니다.")
     }
     this.setState({
       search: "",

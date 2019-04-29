@@ -6,11 +6,22 @@ const StyledFooter = styled.footer`
   background-color: ${props => props.theme.grayColor};
   display: flex;
   justify-content: center;
+  padding: 1rem;
+  align-items: center;
 `
 
 const FooterText = styled.div`
-  padding: 1rem;
   color: ${props => props.theme.mainColor};
+`
+
+const Logo = styled.div`
+  background-image: url(logo.png);
+  background-position: center;
+  background-size: cover;
+  width: 30px;
+  height: 30px;
+  margin-right: 0.5rem;
+  border-radius: 3px;
 `
 
 const Footer = () => {
@@ -25,6 +36,7 @@ const Footer = () => {
   `)
   return (
     <StyledFooter>
+      <Logo />
       <FooterText>
         © {data.site.siteMetadata.author}, {new Date().getFullYear()}
       </FooterText>

@@ -8,6 +8,20 @@ const ExtendedNav = styled.nav`
   margin-bottom: 1rem;
 `
 
+const NavList = styled.div`
+  display: flex;
+  justify-content: center;
+  list-style-type: none;
+  margin: 0;
+  @media (min-width: 300px) {
+    flex-direction: column;
+    align-items: center;
+  }
+  @media (min-width: 768px) {
+    flex-direction: row;
+  }
+`
+
 // active 시, 색상변경
 const activeClassName = "active"
 
@@ -23,20 +37,6 @@ const NavLink = styled(Link).attrs({ activeClassName })`
   &.${activeClassName} {
     color: white;
     border-bottom: 1px solid white;
-  }
-`
-
-const NavList = styled.div`
-  display: flex;
-  justify-content: center;
-  list-style-type: none;
-  margin: 0;
-  @media (min-width: 300px) {
-    flex-direction: column;
-    align-items: center;
-  }
-  @media (min-width: 768px) {
-    flex-direction: row;
   }
 `
 

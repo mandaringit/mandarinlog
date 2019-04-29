@@ -24,7 +24,7 @@ const Input = styled.input`
     transition: width 1s;
   }
   ::placeholder {
-    color: gray;
+    color: white;
     text-align: center;
     font-size: 0.8rem;
   }

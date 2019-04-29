@@ -1,17 +1,17 @@
 import React from "react"
 import { Link } from "gatsby"
 import styled from "styled-components"
-import RealSearchBar from "./Search/RealSearchBar"
 
 const ExtendedHeader = styled.header`
+  /* 기본상태는 숨김. 작은화면은 네비게이션에 있는 헤더로 대체 */
+  display: none;
   padding: 1rem;
   background-color: #333333;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  @media (min-width: 500px) {
-    flex-direction: row;
+  @media (min-width: 768px) {
+    /* 화면이 커지면 나옴 */
+    display: flex;
   }
 `
 
@@ -37,7 +37,6 @@ const Header = () => {
       <HeaderTitle>
         <TitleLink to="/">mandarinlog</TitleLink>
       </HeaderTitle>
-      <RealSearchBar />
     </ExtendedHeader>
   )
 }

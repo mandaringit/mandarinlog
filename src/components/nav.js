@@ -3,6 +3,7 @@ import { Link } from "gatsby"
 import styled from "styled-components"
 import RealSearchBar from "./Search/RealSearchBar"
 import { Menu } from "styled-icons/icomoon/Menu"
+import logo from "../../static/logo.png"
 
 const ExtendedNav = styled.nav`
   background-color: black;
@@ -71,7 +72,7 @@ const SmallMenu = styled.div`
 `
 
 const Logo = styled.div`
-  background-image: url(logo.png);
+  background-image: url(${logo});
   background-position: center;
   background-size: cover;
   width: 40px;

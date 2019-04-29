@@ -1,6 +1,7 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import styled from "styled-components"
+import logo from "../../static/logo.png"
 
 const StyledFooter = styled.footer`
   background-color: ${props => props.theme.grayColor};
@@ -15,7 +16,7 @@ const FooterText = styled.div`
 `
 
 const Logo = styled.div`
-  background-image: url(logo.png);
+  background-image: url(${logo});
   background-position: center;
   background-size: cover;
   width: 30px;

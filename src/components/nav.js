@@ -3,7 +3,8 @@ import { Link } from "gatsby"
 import styled from "styled-components"
 import RealSearchBar from "./Search/RealSearchBar"
 import { Menu } from "styled-icons/icomoon/Menu"
-import logo from "../../static/logo.png"
+import logo from "../../static/logo.svg"
+import { MandarinLogo } from "../styles/icons"
 
 const ExtendedNav = styled.nav`
   background-color: black;
@@ -70,14 +71,7 @@ const SmallMenu = styled.div`
     display: none;
   }
 `
-
-const Logo = styled.div`
-  background-image: url(${logo});
-  background-position: center;
-  background-size: cover;
-  width: 40px;
-  height: 40px;
-`
+const Logo = styled(MandarinLogo)``
 
 const ToggleButton = styled.button`
   background-color: transparent;

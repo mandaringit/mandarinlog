@@ -414,18 +414,15 @@ pre {
   padding: 1.45rem;
 }
 table {
-  margin-left: 0;
-  margin-right: 0;
-  margin-top: 0;
+  margin:0 auto 1.45rem auto;
   padding-bottom: 0;
   padding-left: 0;
   padding-right: 0;
   padding-top: 0;
-  margin-bottom: 1.45rem;
   font-size: 1rem;
   line-height: 1.45rem;
   border-collapse: collapse;
-  width: 100%;
+  /* width: 100%; */
 }
 fieldset {
   margin-left: 0;
@@ -574,15 +571,15 @@ thead {
 }
 td,
 th {
-  text-align: left;
+  text-align: center;
   border-bottom: 1px solid hsla(0, 0%, 0%, 0.12);
   font-feature-settings: "tnum";
   -moz-font-feature-settings: "tnum";
   -ms-font-feature-settings: "tnum";
   -webkit-font-feature-settings: "tnum";
-  padding-left: 0.96667rem;
-  padding-right: 0.96667rem;
-  padding-top: 0.725rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  padding-top: 0.7rem;
   padding-bottom: calc(0.725rem - 1px);
 }
 th:first-child,

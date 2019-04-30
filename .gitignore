@@ -71,8 +71,4 @@ yarn-error.log
 
 # 테스트 컨텐츠
 
-/src/posts/code/test
-/src/posts/music/test
-/src/posts/opinion/test
-/src/posts/review/movie/test
-/src/posts/review/game/test
+/src/posts/draft

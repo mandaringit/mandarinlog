@@ -25,14 +25,6 @@ const Singer = styled.div`
   font-weight: bold;
 `
 
-const SubTitle = styled.div`
-  font-size: 1.3rem;
-  font-style: italic;
-  margin-bottom: 0.5rem;
-  color: ${props => props.theme.deepOrangeColor};
-  text-align: center;
-`
-
 const MusicTemplate = props => {
   const { id, frontmatter, html, excerpt, fields } = props.data.markdownRemark
   const { src } = frontmatter.featuredImage.childImageSharp.fixed
@@ -57,7 +49,6 @@ const MusicTemplate = props => {
         <FeaturedImage src={src} />
         <ContentContainer>
           <InfoContainer>
-            <SubTitle>"{frontmatter.title}"</SubTitle>
             <ExtendTitle>{frontmatter.album}</ExtendTitle>
             <Singer>
               <span role="img" aria-label="mike">

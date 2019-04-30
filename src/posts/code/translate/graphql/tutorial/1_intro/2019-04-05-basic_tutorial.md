@@ -1,13 +1,13 @@
 ---
-title: "How To GraphQL? #1 기본 튜토리얼 - 소개"
+title: "GRAPHQL FUNDAMENTALS #1 기본 튜토리얼 - 소개"
 date : "2019-04-05"
 category: "CODE"
 featuredImage: "../cover.png"
-stacks: ["GraphQL","NodeJs"]
-keywords: ["Prisma","NodeJs"]
+stacks: ["번역","GraphQL","NodeJs"]
+keywords: ["GraphQL","NodeJs","CODE"]
 ---
 
-[How To GraphQL - Introduction](https://www.howtographql.com/basics/0-introduction/)의 번역본입니다.
+[How To GraphQL? GRAPHQL FUNDAMENTALS - #1 Introduction](https://www.howtographql.com/basics/0-introduction/)의 번역본입니다.
 
 > API는 소프트웨어 인프라구조의 유비쿼터스(언제어디든 존재하는) 구성 요소가 되었습니다. 즉, **API**는 "**클라이언트**가 **서버**에서 데이터를 로드하는 방법"을 정의합니다.
 

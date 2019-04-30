@@ -38,7 +38,7 @@ const AlbumCategoryBadge = styled.div`
 const Singer = styled.span`
   text-align: center;
   font-size: 1rem;
-  color: white;
+  color: ${props => props.theme.barColor};
   padding: 0.5rem;
 `
 
@@ -67,9 +67,6 @@ const MainMusic = () => {
               <Post key={slug}>
                 <PostLinkBox to={`/music/${slug}`}>
                   <FeaturedImage src={src}>
-                    <AlbumCategoryBadge category={albumCategory}>
-                      {albumCategory}
-                    </AlbumCategoryBadge>
                     <InfoBox>
                       <Title>{album}</Title>
                       <Singer>{singer}</Singer>

@@ -11,6 +11,11 @@ import FeaturedCode from "./FeatruedContent/FeaturedCode"
 import FeaturedMusic from "./FeatruedContent/FeaturedMusic"
 import FeaturedOpinion from "./FeatruedContent/FeaturedOpinion"
 
+const TopGrid = styled.div`
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+`
+
 const PostsGrid = styled.div`
   display: grid;
   @media (min-width: 300px) {
@@ -27,10 +32,13 @@ const PostsGrid = styled.div`
   }
 `
 
+// 사이드 컨텐츠는 아직 주석처리
 const MainGrid = () => {
   return (
     <Wrapper>
       <MainPostWrapper>
+        {/* <TopGrid> */}
+        {/* <div> */}
         <MainTitle>
           <MainTitleLink to={"/"}>
             <span role="img" aria-label="fire">
@@ -45,6 +53,9 @@ const MainGrid = () => {
           <FeaturedCode />
           <FeaturedMusic />
         </PostsGrid>
+        {/* </div> */}
+        {/* <div>사이드 컨텐츠</div> */}
+        {/* </TopGrid> */}
       </MainPostWrapper>
     </Wrapper>
   )

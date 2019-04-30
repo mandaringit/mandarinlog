@@ -11,17 +11,15 @@ export const PostLinkBox = styled(Link)`
   height: 100%;
   display: block;
   text-decoration: none;
-  background-image: linear-gradient(
-      rgba(255, 255, 255, 0.3),
-      rgba(255, 255, 255, 0.3)
-    ),
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0, #000 100%),
     url(${props => props.imageurl});
   background-size: cover;
   background-position: center;
-  :hover {
-    transform: scale(1.1);
+  /* :hover {
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0, #000 100%),
+      url(${props => props.imageurl});
     transition-duration: 1s;
-  }
+  } */
 `
 
 export const InfoBox = styled.div`
@@ -47,9 +45,9 @@ export const TitleContainer = styled.div`
 `
 
 export const Title = styled.h1`
-  color: #000000;
+  color: white;
   padding: 1rem;
   margin: 1rem 0 0 0;
-  font-size: 2rem;
+  font-size: 1.5rem;
   text-align: center;
 `

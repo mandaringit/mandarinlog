@@ -15,7 +15,6 @@ export const PlatformBadge = styled.div`
     }
   }};
   background-color: #141414;
-  margin-bottom: 1rem;
 `
 
 export const TagContainer = styled.div`

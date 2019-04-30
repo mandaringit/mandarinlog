@@ -42,16 +42,12 @@ export const PostLinkBox = styled(Link)`
 
 export const FeaturedImage = styled.div`
   background-color: white; /* fallback */
-  background-image: linear-gradient(
-      rgba(255, 255, 255, 0.2),
-      rgba(255, 255, 255, 0.2)
-    ),
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0, #000 100%),
     url(${props => props.src});
   background-size: cover;
   background-position: center;
   border-radius: 3px;
   margin-bottom: 0.3rem;
-
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -63,13 +59,14 @@ export const Title = styled.span`
   text-align: center;
   font-size: 1.5rem;
   font-weight: bold;
-  color: black;
+  color: white;
   padding: 1rem;
 `
 
 export const InfoBox = styled.div`
   display: flex;
   flex-direction: column;
+  padding: 0 1rem 1rem 1rem;
   /* margin: 2rem; */
   /* background-color: rgba(255, 193, 7, 0.3); */
 `

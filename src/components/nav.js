@@ -3,8 +3,7 @@ import { Link } from "gatsby"
 import styled from "styled-components"
 import RealSearchBar from "./Search/RealSearchBar"
 import { Menu } from "styled-icons/icomoon/Menu"
-import logo from "../../static/logo.svg"
-import { MandarinLogo } from "../styles/icons"
+import { MandarinLogo, TitleLogo } from "../styles/icons"
 
 const ExtendedNav = styled.nav`
   background-color: black;
@@ -71,7 +70,6 @@ const SmallMenu = styled.div`
     display: none;
   }
 `
-const Logo = styled(MandarinLogo)``
 
 const ToggleButton = styled.button`
   background-color: transparent;
@@ -85,6 +83,9 @@ const ToggleButton = styled.button`
 const ExtendMenu = styled(Menu)`
   color: black;
   width: 2rem;
+`
+const ExtendLink = styled(Link)`
+  margin-left: 0.5rem;
 `
 
 class Nav extends React.Component {
@@ -103,9 +104,9 @@ class Nav extends React.Component {
       <ExtendedNav>
         {/* 모바일용 헤더/네비 */}
         <SmallMenu>
-          <Link to="/">
-            <Logo />
-          </Link>
+          <ExtendLink to="/">
+            <TitleLogo width="200px" height="50px" color="black" />
+          </ExtendLink>
           <ToggleButton visibilty={menuOn} onClick={this.onClickHandler}>
             <ExtendMenu />
           </ToggleButton>

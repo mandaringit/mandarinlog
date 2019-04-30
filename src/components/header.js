@@ -1,11 +1,12 @@
 import React from "react"
 import { Link } from "gatsby"
 import styled from "styled-components"
+import { TitleLogo } from "../styles/icons"
 
 const ExtendedHeader = styled.header`
   /* 기본상태는 숨김. 작은화면은 네비게이션에 있는 헤더로 대체 */
   display: none;
-  padding: 1rem;
+  padding: 0.5rem;
   background-color: #333333;
   justify-content: center;
   align-items: center;
@@ -35,7 +36,9 @@ const Header = () => {
   return (
     <ExtendedHeader>
       <HeaderTitle>
-        <TitleLink to="/">mandarinlog</TitleLink>
+        <TitleLink to="/">
+          <TitleLogo width="200px" height="50px" color="#ffc107" />
+        </TitleLink>
       </HeaderTitle>
     </ExtendedHeader>
   )

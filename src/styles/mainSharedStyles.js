@@ -8,7 +8,7 @@ export const Wrapper = styled.div`
 
 export const MainPostWrapper = styled.div`
   margin: 0 auto;
-  max-width: 1200px;
+  max-width: 1080px;
 `
 
 export const MainTitleLink = styled(Link)`

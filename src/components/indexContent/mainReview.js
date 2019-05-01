@@ -1,18 +1,59 @@
 import React from "react"
-import { graphql, useStaticQuery } from "gatsby"
-import { PlatformBadge } from "../../styles/tagsSharedStyles"
+import { graphql, useStaticQuery, Link } from "gatsby"
 import {
   Wrapper,
   MainPostWrapper,
   MainTitle,
   MainTitleLink,
-  Posts,
-  Post,
-  PostLinkBox,
-  FeaturedImage,
-  Title,
-  InfoBox,
 } from "../../styles/mainSharedStyles"
+import styled from "styled-components"
+
+const PostContainer = styled.div`
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+  grid-template-rows: 1fr;
+  grid-gap: 1rem;
+`
+
+const LinkContainer = styled(Link)`
+  text-decoration: none;
+  color: black;
+  cursor: pointer;
+`
+
+const Post = styled.article`
+  background-color: none;
+  display: flex;
+  flex-direction: column;
+`
+
+const FeaturedImage = styled.img`
+  margin: 0;
+  object-fit: cover;
+  width: 100%;
+  height: 7rem;
+`
+
+const PlatformBadge = styled.div`
+  color: ${props => {
+    if (props.platform === "Netflix") {
+      return "#e52811"
+    } else if (props.platform === "영화관") {
+      return "#6c5ce7"
+    } else {
+      return "gray"
+    }
+  }};
+  font-size: 0.7rem;
+  font-weight: bold;
+  text-align: center;
+  margin: 0.2rem;
+`
+
+const Title = styled.h5`
+  font-weight: bold;
+  margin: 0.3rem 0.3rem 0.5rem 0.3rem;
+`
 
 const MainReview = () => {
   const data = useStaticQuery(REVIEW_QUERY)
@@ -28,7 +69,7 @@ const MainReview = () => {
             리뷰
           </MainTitleLink>
         </MainTitle>
-        <Posts>
+        <PostContainer>
           {edges.map(edge => {
             const { slug } = edge.node.fields
             const {
@@ -37,21 +78,16 @@ const MainReview = () => {
             const { title, platform, category } = edge.node.frontmatter
             const lowerCaseCategory = category.toLowerCase()
             return (
-              <Post key={slug}>
-                <PostLinkBox to={`/${lowerCaseCategory}/${slug}`}>
-                  <FeaturedImage src={src}>
-                    <PlatformBadge platform={platform}>
-                      {platform}
-                    </PlatformBadge>
-                    <InfoBox>
-                      <Title>{title}</Title>
-                    </InfoBox>
-                  </FeaturedImage>
-                </PostLinkBox>
-              </Post>
+              <LinkContainer to={`/${lowerCaseCategory}/${slug}`}>
+                <Post key={slug}>
+                  <PlatformBadge platform={platform}>{platform}</PlatformBadge>
+                  <FeaturedImage src={src} />
+                  <Title>{title}</Title>
+                </Post>
+              </LinkContainer>
             )
           })}
-        </Posts>
+        </PostContainer>
       </MainPostWrapper>
     </Wrapper>
   )

@@ -1,67 +1,79 @@
 import React from "react"
-import { graphql, useStaticQuery } from "gatsby"
+import { graphql, useStaticQuery, Link } from "gatsby"
 import styled from "styled-components"
-import { StackContainer, StackBadge } from "../../styles/stackSharedStyles"
 import {
   Wrapper,
   MainPostWrapper,
-  MainTitle,
-  MainTitleLink,
-  Title,
-  InfoBox,
-  Posts,
-  Post,
-  FeaturedImage,
-  PostLinkBox,
+  MainTitleBar,
 } from "../../styles/mainSharedStyles"
 
-const ExtendStackContainer = styled(StackContainer)`
-  /* align-self: start; */
-  padding: 0.5rem;
-  margin-bottom: 0;
+const PostsContainer = styled.div`
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+  grid-template-rows: 1fr;
+  grid-gap: 1rem;
+`
+
+const LinkContainer = styled(Link)`
+  text-decoration: none;
+  color: black;
+  cursor: pointer;
+`
+
+const Post = styled.article`
+  display: flex;
+  flex-direction: column;
+  border: 1px solid ${props => props.theme.postBorderColor};
+  background-color: white;
+`
+
+const StackContainer = styled.div`
+  display: flex;
+  justify-content: flex-start;
+  border-bottom: 1px solid ${props => props.theme.postBorderColor};
+  padding: 0.3rem 0.3rem 0.3rem 0.5rem;
+`
+
+const StackBadge = styled.h6`
+  font-size: 0.6rem;
+  font-weight: bold;
+  margin: 0 0.5rem 0 0;
+  color: ${props => props.theme.stackColor};
+`
+
+const Title = styled.h5`
+  font-weight: bold;
+  text-align: center;
+  margin: 0.5rem;
 `
 
 const MainCode = () => {
   const data = useStaticQuery(CODE_QUERY)
   const { edges } = data.allMarkdownRemark
   return (
-    <Wrapper>
+    <Wrapper color="#F7F7F7">
       <MainPostWrapper>
-        <MainTitle>
-          <MainTitleLink to={"/code"}>
-            <span role="img" aria-label="notebook">
-              💻
-            </span>{" "}
-            코드
-          </MainTitleLink>
-        </MainTitle>
-        <Posts>
+        <MainTitleBar icon="💻" label="notebook" title="코드" route="/code" />
+        <PostsContainer>
           {edges.map(edge => {
             const { slug } = edge.node.fields
-            const {
-              src,
-            } = edge.node.frontmatter.featuredImage.childImageSharp.fixed
             const { title, stacks } = edge.node.frontmatter
             return (
-              <Post key={slug}>
-                <PostLinkBox to={`/code/${slug}`}>
-                  <FeaturedImage src={src}>
-                    <ExtendStackContainer>
-                      {stacks.map((stack, index) => (
-                        <StackBadge key={index} stack={stack}>
-                          {stack}
-                        </StackBadge>
-                      ))}
-                    </ExtendStackContainer>
-                    <InfoBox>
-                      <Title>{title}</Title>
-                    </InfoBox>
-                  </FeaturedImage>
-                </PostLinkBox>
-              </Post>
+              <LinkContainer to={`/code/${slug}`}>
+                <Post key={slug}>
+                  <StackContainer>
+                    {stacks.map((stack, index) => (
+                      <StackBadge key={index} stack={stack}>
+                        {stack}
+                      </StackBadge>
+                    ))}
+                  </StackContainer>
+                  <Title>{title}</Title>
+                </Post>
+              </LinkContainer>
             )
           })}
-        </Posts>
+        </PostsContainer>
       </MainPostWrapper>
     </Wrapper>
   )
@@ -75,7 +87,7 @@ const CODE_QUERY = graphql`
       filter: { frontmatter: { category: { eq: "CODE" } } }
       sort: { order: DESC, fields: [frontmatter___date] }
       skip: 1
-      limit: 8
+      limit: 6
     ) {
       ...CodeMarkdown
     }

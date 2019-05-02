@@ -3,16 +3,18 @@ import { graphql, useStaticQuery, Link } from "gatsby"
 import {
   Wrapper,
   MainPostWrapper,
-  MainTitle,
-  MainTitleLink,
+  MainTitleBar,
 } from "../../styles/mainSharedStyles"
 import styled from "styled-components"
 
-const PostContainer = styled.div`
+const PostsContainer = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(9rem, 1fr));
   grid-template-rows: 1fr;
   grid-gap: 1rem;
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+  }
 `
 
 const LinkContainer = styled(Link)`
@@ -35,24 +37,16 @@ const FeaturedImage = styled.img`
 `
 
 const PlatformBadge = styled.div`
-  color: ${props => {
-    if (props.platform === "Netflix") {
-      return "#e52811"
-    } else if (props.platform === "영화관") {
-      return "#6c5ce7"
-    } else {
-      return "gray"
-    }
-  }};
+  color: ${props => props.theme.platformColor};
   font-size: 0.7rem;
   font-weight: bold;
   text-align: center;
-  margin: 0.2rem;
+  margin: 0 0.2rem 0.2rem 0.2rem;
 `
 
 const Title = styled.h5`
   font-weight: bold;
-  margin: 0.3rem 0.3rem 0.5rem 0.3rem;
+  margin: 0.5rem 0.2rem 0.5rem 0.2rem;
 `
 
 const MainReview = () => {
@@ -61,15 +55,8 @@ const MainReview = () => {
   return (
     <Wrapper>
       <MainPostWrapper>
-        <MainTitle>
-          <MainTitleLink to={"/review"}>
-            <span role="img" aria-label="eye">
-              👀
-            </span>{" "}
-            리뷰
-          </MainTitleLink>
-        </MainTitle>
-        <PostContainer>
+        <MainTitleBar icon="👀" label="eye" title="리뷰" route="/review" />
+        <PostsContainer>
           {edges.map(edge => {
             const { slug } = edge.node.fields
             const {
@@ -87,7 +74,7 @@ const MainReview = () => {
               </LinkContainer>
             )
           })}
-        </PostContainer>
+        </PostsContainer>
       </MainPostWrapper>
     </Wrapper>
   )

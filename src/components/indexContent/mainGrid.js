@@ -5,6 +5,7 @@ import {
   MainPostWrapper,
   MainTitle,
   MainTitleLink,
+  MainTitleBar,
 } from "../../styles/mainSharedStyles"
 import FeaturedReview from "./FeatruedContent/FeaturedReview"
 import FeaturedCode from "./FeatruedContent/FeaturedCode"
@@ -39,14 +40,7 @@ const MainGrid = () => {
       <MainPostWrapper>
         {/* <TopGrid> */}
         {/* <div> */}
-        <MainTitle>
-          <MainTitleLink to={"/"}>
-            <span role="img" aria-label="fire">
-              🔥
-            </span>{" "}
-            LATEST
-          </MainTitleLink>
-        </MainTitle>
+        <MainTitleBar icon="🔥" label="fire" title="LATEST" route="/" />
         <PostsGrid>
           <FeaturedReview />
           <FeaturedOpinion />

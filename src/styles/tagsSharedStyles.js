@@ -5,15 +5,7 @@ export const PlatformBadge = styled.div`
   padding: 0 0.5rem;
   margin: 0.5rem;
   border-radius: 5px;
-  color: ${props => {
-    if (props.platform === "Netflix") {
-      return "#e52811"
-    } else if (props.platform === "Theater") {
-      return "#FFC107"
-    } else {
-      return "white"
-    }
-  }};
+  color: ${props => props.theme.platformColor};
   background-color: #141414;
 `
 

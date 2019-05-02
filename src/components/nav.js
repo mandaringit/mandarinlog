@@ -8,7 +8,6 @@ import { MandarinLogo, TitleLogo } from "../styles/icons"
 const ExtendedNav = styled.nav`
   background-color: black;
   padding: 0;
-  margin-bottom: 1rem;
   @media (min-width: 768px) {
     padding: 0.5rem;
   }

@@ -1,27 +1,44 @@
 import React from "react"
-import { graphql, useStaticQuery } from "gatsby"
+import { graphql, useStaticQuery, Link } from "gatsby"
 import styled from "styled-components"
-import {
-  Title,
-  Posts,
-  Post,
-  FeaturedImage,
-  PostLinkBox,
-} from "../../styles/pageStyles"
 import {
   Wrapper,
   MainPostWrapper,
-  MainTitle,
-  MainTitleLink,
+  MainTitleBar,
 } from "../../styles/mainSharedStyles"
 
-const ExtendFeaturedImage = styled(FeaturedImage)`
-  justify-content: center;
-  align-items: center;
+const PostsContainer = styled.div`
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(9rem, 1fr));
+  grid-template-rows: 1fr;
+  grid-gap: 1rem;
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+  }
 `
 
-const ExtendTitle = styled(Title)`
-  font-size: 2rem;
+const LinkContainer = styled(Link)`
+  text-decoration: none;
+  color: black;
+  cursor: pointer;
+`
+
+const Post = styled.article`
+  background-color: none;
+  display: flex;
+  flex-direction: column;
+`
+
+const FeaturedImage = styled.img`
+  margin: 0;
+  object-fit: cover;
+  width: 100%;
+  height: 7rem;
+`
+
+const Title = styled.h5`
+  font-weight: bold;
+  margin: 0.2rem 0.2rem 0.5rem 0.2rem;
 `
 
 const MainOpinion = () => {
@@ -30,15 +47,8 @@ const MainOpinion = () => {
   return (
     <Wrapper color={"white"}>
       <MainPostWrapper>
-        <MainTitle>
-          <MainTitleLink to={"/opinion"}>
-            <span role="img" aria-label="pen">
-              🖋
-            </span>{" "}
-            오피니언
-          </MainTitleLink>
-        </MainTitle>
-        <Posts>
+        <MainTitleBar icon="🖋" label="pen" title="오피니언" route="/opinion" />
+        <PostsContainer>
           {edges.map(edge => {
             const { slug } = edge.node.fields
             const {
@@ -47,15 +57,14 @@ const MainOpinion = () => {
             const { title } = edge.node.frontmatter
             return (
               <Post key={slug}>
-                <PostLinkBox to={`/opinion/${slug}`}>
-                  <ExtendFeaturedImage src={src}>
-                    <ExtendTitle>{title}</ExtendTitle>
-                  </ExtendFeaturedImage>
-                </PostLinkBox>
+                <LinkContainer to={`/opinion/${slug}`}>
+                  <FeaturedImage src={src} />
+                  <Title>{title}</Title>
+                </LinkContainer>
               </Post>
             )
           })}
-        </Posts>
+        </PostsContainer>
       </MainPostWrapper>
     </Wrapper>
   )

@@ -32,7 +32,7 @@ const IndexPage = () => {
         keywords={["홈", "만다린로그"]}
       />
       <MainGrid />
-      {/* <MainOpinion /> */}
+      <MainOpinion />
       <MainReview />
       <MainCode />
       <MainMusic />

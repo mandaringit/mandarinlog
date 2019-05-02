@@ -2,7 +2,7 @@ import React from "react"
 import PageLayout from "../../components/Layout/pageLayout"
 import { graphql, Link } from "gatsby"
 import styled from "styled-components"
-import { CategoryTitle } from "../../styles/pageStyles"
+import { CategoryTitle, PageWrapper } from "../../styles/pageStyles"
 import SEO from "../../components/SEO"
 import PageLink from "../../components/pageLink"
 
@@ -87,36 +87,38 @@ const MusicPage = props => {
         pathname="/music"
         keywords={["해외음악,POP,가사,만다린로그"]}
       />
-      <CategoryTitle>해외음악</CategoryTitle>
-      <Posts>
-        {edges.map(edge => {
-          const { slug } = edge.node.fields
-          const {
-            src,
-          } = edge.node.frontmatter.featuredImage.childImageSharp.fixed
-          const { singer, album, albumCategory } = edge.node.frontmatter
-          return (
-            <Post key={slug}>
-              <PostLinkBox to={`/music/${slug}`}>
-                <FeaturedImage src={src}>
-                  <AlbumCategoryBadge category={albumCategory}>
-                    {albumCategory}
-                  </AlbumCategoryBadge>
-                </FeaturedImage>
-                <InfoBox>
-                  <Title>{album}</Title>
-                  <Singer>{singer}</Singer>
-                </InfoBox>
-              </PostLinkBox>
-            </Post>
-          )
-        })}
-      </Posts>
-      <PageLink
-        route={"music"}
-        numPages={pageContext.numPages}
-        currentPage={pageContext.currentPage}
-      />
+      <PageWrapper>
+        <CategoryTitle>해외음악</CategoryTitle>
+        <Posts>
+          {edges.map(edge => {
+            const { slug } = edge.node.fields
+            const {
+              src,
+            } = edge.node.frontmatter.featuredImage.childImageSharp.fixed
+            const { singer, album, albumCategory } = edge.node.frontmatter
+            return (
+              <Post key={slug}>
+                <PostLinkBox to={`/music/${slug}`}>
+                  <FeaturedImage src={src}>
+                    <AlbumCategoryBadge category={albumCategory}>
+                      {albumCategory}
+                    </AlbumCategoryBadge>
+                  </FeaturedImage>
+                  <InfoBox>
+                    <Title>{album}</Title>
+                    <Singer>{singer}</Singer>
+                  </InfoBox>
+                </PostLinkBox>
+              </Post>
+            )
+          })}
+        </Posts>
+        <PageLink
+          route={"music"}
+          numPages={pageContext.numPages}
+          currentPage={pageContext.currentPage}
+        />
+      </PageWrapper>
     </PageLayout>
   )
 }

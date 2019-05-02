@@ -2,6 +2,7 @@ import React from "react"
 import PageLayout from "../../components/Layout/pageLayout"
 import { graphql } from "gatsby"
 import {
+  PageWrapper,
   CategoryTitle,
   Title,
   DateContainer,
@@ -30,47 +31,49 @@ const CodePage = props => {
           "코딩,만다린로그,코드,자바스크립트,리액트,mandarinlog,javascript,coding,react",
         ]}
       />
-      <CategoryTitle>코드</CategoryTitle>
-      <Posts>
-        {edges.map(edge => {
-          const { slug } = edge.node.fields
-          const {
-            src,
-          } = edge.node.frontmatter.featuredImage.childImageSharp.fixed
-          const { title, date, stacks } = edge.node.frontmatter
-          const { excerpt } = edge.node
-          return (
-            <Post key={slug}>
-              <PostLinkBox to={`/code/${slug}`}>
-                <FeaturedImage src={src} />
-                <InfoBox>
-                  <StackContainer>
-                    {stacks.map((stack, index) => (
-                      <StackBadge key={index} stack={stack}>
-                        {stack}
-                      </StackBadge>
-                    ))}
-                  </StackContainer>
-                  <Title>{title}</Title>
-                  <DateContainer>
-                    <span role="img" aria-label="memo">
-                      📝
-                    </span>{" "}
-                    {date}
-                  </DateContainer>
-                  <Bar />
-                  <Excerpt>{excerpt}</Excerpt>
-                </InfoBox>
-              </PostLinkBox>
-            </Post>
-          )
-        })}
-      </Posts>
-      <PageLink
-        route={"code"}
-        numPages={pageContext.numPages}
-        currentPage={pageContext.currentPage}
-      />
+      <PageWrapper>
+        <CategoryTitle>코드</CategoryTitle>
+        <Posts>
+          {edges.map(edge => {
+            const { slug } = edge.node.fields
+            const {
+              src,
+            } = edge.node.frontmatter.featuredImage.childImageSharp.fixed
+            const { title, date, stacks } = edge.node.frontmatter
+            const { excerpt } = edge.node
+            return (
+              <Post key={slug}>
+                <PostLinkBox to={`/code/${slug}`}>
+                  <FeaturedImage src={src} />
+                  <InfoBox>
+                    <StackContainer>
+                      {stacks.map((stack, index) => (
+                        <StackBadge key={index} stack={stack}>
+                          {stack}
+                        </StackBadge>
+                      ))}
+                    </StackContainer>
+                    <Title>{title}</Title>
+                    <DateContainer>
+                      <span role="img" aria-label="memo">
+                        📝
+                      </span>{" "}
+                      {date}
+                    </DateContainer>
+                    <Bar />
+                    <Excerpt>{excerpt}</Excerpt>
+                  </InfoBox>
+                </PostLinkBox>
+              </Post>
+            )
+          })}
+        </Posts>
+        <PageLink
+          route={"code"}
+          numPages={pageContext.numPages}
+          currentPage={pageContext.currentPage}
+        />
+      </PageWrapper>
     </PageLayout>
   )
 }

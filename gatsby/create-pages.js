@@ -6,11 +6,7 @@ const createMusicPages = require("./pagination/create-music-pages")
 
 const createPages = async ({ graphql, actions }) => {
   const { createPage } = actions
-  const opinionTemplate = path.resolve("./src/templates/opinionTemplate.js")
-  const musicTemplate = path.resolve("./src/templates/musicTemplate.js")
-  const movieTemplate = path.resolve("./src/templates/movieTemplate.js")
-  const gameTemplate = path.resolve("./src/templates/gameTemplate.js")
-  const codeTemplate = path.resolve("./src/templates/codeTemplate.js")
+  const PostTemplate = path.resolve("./src/templates/PostTemplate.js")
 
   const res = await graphql(`
     query {
@@ -32,7 +28,7 @@ const createPages = async ({ graphql, actions }) => {
   res.data.allMarkdownRemark.edges.forEach(edge => {
     if (edge.node.frontmatter.category === "OPINION") {
       createPage({
-        component: opinionTemplate,
+        component: PostTemplate,
         path: `/opinion/${edge.node.fields.slug}`,
         context: {
           slug: edge.node.fields.slug,
@@ -40,7 +36,7 @@ const createPages = async ({ graphql, actions }) => {
       })
     } else if (edge.node.frontmatter.category === "MUSIC") {
       createPage({
-        component: musicTemplate,
+        component: PostTemplate,
         path: `/music/${edge.node.fields.slug}`,
         context: {
           slug: edge.node.fields.slug,
@@ -48,7 +44,7 @@ const createPages = async ({ graphql, actions }) => {
       })
     } else if (edge.node.frontmatter.category === "MOVIE") {
       createPage({
-        component: movieTemplate,
+        component: PostTemplate,
         path: `/movie/${edge.node.fields.slug}`,
         context: {
           slug: edge.node.fields.slug,
@@ -56,7 +52,7 @@ const createPages = async ({ graphql, actions }) => {
       })
     } else if (edge.node.frontmatter.category === "GAME") {
       createPage({
-        component: gameTemplate,
+        component: PostTemplate,
         path: `/game/${edge.node.fields.slug}`,
         context: {
           slug: edge.node.fields.slug,
@@ -64,7 +60,7 @@ const createPages = async ({ graphql, actions }) => {
       })
     } else if (edge.node.frontmatter.category === "CODE") {
       createPage({
-        component: codeTemplate,
+        component: PostTemplate,
         path: `/code/${edge.node.fields.slug}`,
         context: {
           slug: edge.node.fields.slug,

@@ -2,6 +2,7 @@ import React from "react"
 import PageLayout from "../../components/Layout/pageLayout"
 import { graphql } from "gatsby"
 import {
+  PageWrapper,
   CategoryTitle,
   Title,
   DateContainer,
@@ -27,42 +28,44 @@ const OpinionPage = props => {
         pathname="/opinion"
         keywords={["오피니언,블로그,만다린로그"]}
       />
-      <CategoryTitle>오피니언</CategoryTitle>
-      {/* <div>카테고리 리스트 간단하게 추가</div> */}
-      <Posts>
-        {edges.map(edge => {
-          const { slug } = edge.node.fields
-          const {
-            src,
-          } = edge.node.frontmatter.featuredImage.childImageSharp.fixed
+      <PageWrapper>
+        <CategoryTitle>오피니언</CategoryTitle>
+        {/* <div>카테고리 리스트 간단하게 추가</div> */}
+        <Posts>
+          {edges.map(edge => {
+            const { slug } = edge.node.fields
+            const {
+              src,
+            } = edge.node.frontmatter.featuredImage.childImageSharp.fixed
 
-          const { title, date } = edge.node.frontmatter
-          const { excerpt } = edge.node
-          return (
-            <Post key={slug}>
-              <PostLinkBox to={`/opinion/${slug}`}>
-                <FeaturedImage src={src} />
-                <InfoBox>
-                  <Title>{title}</Title>
-                  <DateContainer>
-                    <span role="img" aria-label="memo">
-                      📝
-                    </span>{" "}
-                    {date}
-                  </DateContainer>
-                  <Bar />
-                  <Excerpt>{excerpt}</Excerpt>
-                </InfoBox>
-              </PostLinkBox>
-            </Post>
-          )
-        })}
-      </Posts>
-      <PageLink
-        route={"opinion"}
-        numPages={pageContext.numPages}
-        currentPage={pageContext.currentPage}
-      />
+            const { title, date } = edge.node.frontmatter
+            const { excerpt } = edge.node
+            return (
+              <Post key={slug}>
+                <PostLinkBox to={`/opinion/${slug}`}>
+                  <FeaturedImage src={src} />
+                  <InfoBox>
+                    <Title>{title}</Title>
+                    <DateContainer>
+                      <span role="img" aria-label="memo">
+                        📝
+                      </span>{" "}
+                      {date}
+                    </DateContainer>
+                    <Bar />
+                    <Excerpt>{excerpt}</Excerpt>
+                  </InfoBox>
+                </PostLinkBox>
+              </Post>
+            )
+          })}
+        </Posts>
+        <PageLink
+          route={"opinion"}
+          numPages={pageContext.numPages}
+          currentPage={pageContext.currentPage}
+        />
+      </PageWrapper>
     </PageLayout>
   )
 }

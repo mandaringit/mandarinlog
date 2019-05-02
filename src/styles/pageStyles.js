@@ -3,6 +3,19 @@ import { Link } from "gatsby"
 // 이하 전부 포스트 안의 내용이 아닌
 // 페이지에 나타나는 포스트의 스타일이다.
 
+export const PageWrapper = styled.div`
+  margin: 0 auto;
+  max-width: 1080px;
+  padding: 1rem 0;
+`
+
+// 카테고리 타이틀
+export const CategoryTitle = styled.div`
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+`
+
 export const Posts = styled.div`
   margin: 0;
   display: grid;
@@ -26,12 +39,6 @@ export const PostLinkBox = styled(Link)`
   flex-direction: column;
   text-decoration: none;
   height: 100%;
-`
-
-// 카테고리 타이틀
-export const CategoryTitle = styled.h1`
-  font-size: 1.5rem;
-  margin-bottom: 1rem;
 `
 
 export const FeaturedImage = styled.div`

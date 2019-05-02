@@ -1,11 +1,11 @@
 import React from "react"
 import { graphql, useStaticQuery, Link } from "gatsby"
-import styled from "styled-components"
 import {
   Wrapper,
   MainPostWrapper,
   MainTitleBar,
 } from "../../styles/mainSharedStyles"
+import styled from "styled-components"
 
 const PostsContainer = styled.div`
   display: grid;
@@ -36,32 +36,52 @@ const FeaturedImage = styled.img`
   height: 7rem;
 `
 
-const Title = styled.h5`
+const PlatformBadge = styled.h6`
+  color: ${props => props.theme.platformColor};
+  font-size: 0.7rem;
   font-weight: bold;
-  margin: 0.2rem 0.2rem 0.5rem 0.2rem;
+  margin: 0 0.2rem 0.2rem 0.2rem;
+  padding: 0.2rem 0.3rem;
+  align-self: center;
+  background-color: ${props => props.theme.platformBackColor};
 `
 
-const MainOpinion = () => {
-  const data = useStaticQuery(OPINION_QUERY)
+const Title = styled.h5`
+  font-weight: bold;
+  margin: 0.5rem 0.2rem 0.5rem 0.2rem;
+`
+
+const MainLog = () => {
+  const data = useStaticQuery(LOG_QUERY)
   const { edges } = data.allMarkdownRemark
   return (
-    <Wrapper color={"white"}>
+    <Wrapper>
       <MainPostWrapper>
-        <MainTitleBar icon="🖋" label="pen" title="오피니언" route="/opinion" />
+        <MainTitleBar icon="📇" label="write" title="로그" route="/log" />
         <PostsContainer>
           {edges.map(edge => {
             const { slug } = edge.node.fields
             const {
               src,
             } = edge.node.frontmatter.featuredImage.childImageSharp.fixed
-            const { title } = edge.node.frontmatter
+            const {
+              title,
+              platform,
+              category,
+              subCategory,
+            } = edge.node.frontmatter
+            const lowerCaseCategory = category.toLowerCase()
             return (
-              <Post key={slug}>
-                <LinkContainer to={`/opinion/${slug}`}>
+              <LinkContainer key={slug} to={`/${lowerCaseCategory}/${slug}`}>
+                <Post>
+                  <PlatformBadge platform={platform}>{platform}</PlatformBadge>
                   <FeaturedImage src={src} />
-                  <Title>{title}</Title>
-                </LinkContainer>
-              </Post>
+                  <Title>
+                    {subCategory ? `[${subCategory}] ` : null}
+                    {title}
+                  </Title>
+                </Post>
+              </LinkContainer>
             )
           })}
         </PostsContainer>
@@ -70,17 +90,17 @@ const MainOpinion = () => {
   )
 }
 
-export default MainOpinion
+export default MainLog
 
-const OPINION_QUERY = graphql`
+const LOG_QUERY = graphql`
   query {
     allMarkdownRemark(
-      filter: { frontmatter: { category: { eq: "OPINION" } } }
+      filter: { frontmatter: { category: { eq: "LOG" } } }
       sort: { order: DESC, fields: [frontmatter___date] }
-      skip: 1
+      skip: 2
       limit: 8
     ) {
-      ...OpinionMarkdown
+      ...LogMarkdown
     }
   }
 `

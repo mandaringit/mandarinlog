@@ -2,22 +2,22 @@ import React from "react"
 import { graphql, useStaticQuery } from "gatsby"
 import FeaturedContentCard from "./FeaturedContentCard"
 
-const FeaturedReview = () => {
-  const data = useStaticQuery(REVIEW_QUERY)
+const FeaturedLog = () => {
+  const data = useStaticQuery(LOG_QUERY)
   const { edges } = data.allMarkdownRemark
   return <FeaturedContentCard edges={edges} />
 }
 
-export default FeaturedReview
+export default FeaturedLog
 
-const REVIEW_QUERY = graphql`
+const LOG_QUERY = graphql`
   query {
     allMarkdownRemark(
-      filter: { frontmatter: { category: { eq: "REVIEW" } } }
+      filter: { frontmatter: { category: { eq: "LOG" } } }
       sort: { order: DESC, fields: [frontmatter___date] }
-      limit: 1
+      limit: 2
     ) {
-      ...ReviewMarkdown
+      ...LogMarkdown
     }
   }
 `

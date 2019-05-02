@@ -15,11 +15,6 @@ export const PostLinkBox = styled(Link)`
     url(${props => props.imageurl});
   background-size: cover;
   background-position: center;
-  /* :hover {
-    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0, #000 100%),
-      url(${props => props.imageurl});
-    transition-duration: 1s;
-  } */
 `
 
 export const InfoBox = styled.div`

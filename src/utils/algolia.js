@@ -1,36 +1,9 @@
-const opinionQuery = `{
-  opinions: allMarkdownRemark(
-    filter: {
-      frontmatter: {
-        category: {
-          eq: "OPINION"
-        }
-      }
-    }
-  ) {
-    edges {
-      node {
-        objectID: id
-        frontmatter {
-          title
-          date(fromNow:true,locale:"ko")
-          category
-        }
-        fields{
-          slug
-        }
-        excerpt(pruneLength: 5000)
-      }
-    }
-  }
-}`
-
-const reviewQuery = `{
-  reviews: allMarkdownRemark(
+const logQuery = `{
+  logs: allMarkdownRemark(
     filter: { 
       frontmatter: {
         category: {
-          eq:"REVIEW"
+          eq:"LOG"
         }
       } 
     }
@@ -45,6 +18,7 @@ const reviewQuery = `{
           star
           platform
           tags
+          subCategory
         }
         fields{
           slug
@@ -152,15 +126,9 @@ const queries = [
     settings,
   },
   {
-    query: opinionQuery,
-    transformer: ({ data }) => flatten(data.opinions.edges),
-    indexName: `opinions`,
-    settings,
-  },
-  {
-    query: reviewQuery,
-    transformer: ({ data }) => flatten(data.reviews.edges),
-    indexName: `reviews`,
+    query: logQuery,
+    transformer: ({ data }) => flatten(data.logs.edges),
+    indexName: `logs`,
     settings,
   },
   {

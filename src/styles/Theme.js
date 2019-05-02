@@ -33,8 +33,21 @@ export const Theme = {
       return "#e52811"
     } else if (props.platform === "영화관") {
       return "#6c5ce7"
+    } else if (props.platform === "MARVEL") {
+      return "white"
     } else {
-      return "gray"
+      return "black"
+    }
+  },
+  platformBackColor: props => {
+    if (props.platform === "Netflix") {
+      return "black"
+    } else if (props.platform === "영화관") {
+      return "black"
+    } else if (props.platform === "MARVEL") {
+      return "#D74124"
+    } else {
+      return "white"
     }
   },
   albumCategoryColor: props => {

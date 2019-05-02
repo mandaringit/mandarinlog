@@ -116,16 +116,13 @@ class Nav extends React.Component {
             <NavLink to="/">홈으로</NavLink>
           </NavItem>
           <NavItem>
-            <NavLink to="/opinion">오피니언</NavLink>
-          </NavItem>
-          <NavItem>
-            <NavLink to="/review">리뷰</NavLink>
-          </NavItem>
-          <NavItem>
-            <NavLink to="/code">코드</NavLink>
+            <NavLink to="/log">로그</NavLink>
           </NavItem>
           <NavItem>
             <NavLink to="/music">해외음악</NavLink>
+          </NavItem>
+          <NavItem>
+            <NavLink to="/code">코드</NavLink>
           </NavItem>
           <NavItem>
             <NavLink to="/about">ABOUT</NavLink>

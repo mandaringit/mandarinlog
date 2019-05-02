@@ -5,10 +5,9 @@ import {
   MainPostWrapper,
   MainTitleBar,
 } from "../../styles/mainSharedStyles"
-import FeaturedReview from "./FeatruedContent/FeaturedReview"
+import FeaturedLog from "./FeatruedContent/FeaturedLog"
 import FeaturedCode from "./FeatruedContent/FeaturedCode"
 import FeaturedMusic from "./FeatruedContent/FeaturedMusic"
-import FeaturedOpinion from "./FeatruedContent/FeaturedOpinion"
 
 const TopGrid = styled.div`
   display: grid;
@@ -40,8 +39,7 @@ const MainGrid = () => {
         {/* <div> */}
         <MainTitleBar icon="🔥" label="fire" title="LATEST" route="/" />
         <PostsGrid>
-          <FeaturedReview />
-          <FeaturedOpinion />
+          <FeaturedLog />
           <FeaturedCode />
           <FeaturedMusic />
         </PostsGrid>

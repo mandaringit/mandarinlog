@@ -1,6 +1,5 @@
 const path = require("path")
-const createReviewPages = require("./pagination/create-review-pages")
-const createOpinionPages = require("./pagination/create-opinion-pages")
+const createLogPages = require("./pagination/create-log-pages")
 const createCodePages = require("./pagination/create-code-pages")
 const createMusicPages = require("./pagination/create-music-pages")
 
@@ -26,15 +25,7 @@ const createPages = async ({ graphql, actions }) => {
   `)
 
   res.data.allMarkdownRemark.edges.forEach(edge => {
-    if (edge.node.frontmatter.category === "OPINION") {
-      createPage({
-        component: PostTemplate,
-        path: `/opinion/${edge.node.fields.slug}`,
-        context: {
-          slug: edge.node.fields.slug,
-        },
-      })
-    } else if (edge.node.frontmatter.category === "MUSIC") {
+    if (edge.node.frontmatter.category === "MUSIC") {
       createPage({
         component: PostTemplate,
         path: `/music/${edge.node.fields.slug}`,
@@ -42,10 +33,10 @@ const createPages = async ({ graphql, actions }) => {
           slug: edge.node.fields.slug,
         },
       })
-    } else if (edge.node.frontmatter.category === "REVIEW") {
+    } else if (edge.node.frontmatter.category === "LOG") {
       createPage({
         component: PostTemplate,
-        path: `/review/${edge.node.fields.slug}`,
+        path: `/log/${edge.node.fields.slug}`,
         context: {
           slug: edge.node.fields.slug,
         },
@@ -62,8 +53,7 @@ const createPages = async ({ graphql, actions }) => {
   })
 
   // Pagination
-  await createReviewPages(graphql, actions)
-  await createOpinionPages(graphql, actions)
+  await createLogPages(graphql, actions)
   await createCodePages(graphql, actions)
   await createMusicPages(graphql, actions)
 }

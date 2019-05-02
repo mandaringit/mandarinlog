@@ -1,8 +1,6 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import styled from "styled-components"
-import logo from "../../static/logo.png"
-import { MandarinLogo } from "../styles/icons"
 
 const StyledFooter = styled.footer`
   background-color: ${props => props.theme.grayColor};

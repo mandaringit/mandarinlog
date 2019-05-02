@@ -1,13 +1,16 @@
 import { graphql } from "gatsby"
 
 export const query = graphql`
-  fragment OpinionMarkdown on MarkdownRemarkConnection {
+  fragment LogMarkdown on MarkdownRemarkConnection {
     totalCount
     edges {
       node {
         frontmatter {
           title
           date(formatString: "YYYY년 MM월 DD일")
+          platform
+          tags
+          subCategory
           category
           featuredImage {
             childImageSharp {

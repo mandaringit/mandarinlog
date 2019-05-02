@@ -98,7 +98,7 @@ export const AllHit = props => {
             {props.hit.date}
           </Day>
 
-          {props.hit.category === "REVIEW" ? (
+          {props.hit.category === "LOG" ? (
             <Platform>
               <Highlight attribute="platform" hit={props.hit} tagName="mark" />
             </Platform>

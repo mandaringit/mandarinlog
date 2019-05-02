@@ -1,9 +1,10 @@
 ---
 title: "AVENGERS4 - ENDGAME 리뷰"
 date : "2019-04-24"
-category: "REVIEW"
+category: "LOG"
 featuredImage: "./cover.jpg"
-platform: "영화관"
+platform: "MARVEL"
+subCategory: "영화"
 star: 5
 tags: ["IMAX","3D","MCU"]
 keywords: ["avengers4","endgame","thanos"]

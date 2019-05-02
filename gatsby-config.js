@@ -6,7 +6,7 @@ module.exports = {
     title: "만다린로그",
     author: "MANDARIN",
     description:
-      "다양한 오피니언, 리뷰, 해외음악을 이야기하는 개발자의 블로그입니다.",
+      "다양한 리뷰와 이야기, 해외음악을 이야기하는 개발자의 블로그입니다.",
     siteUrl: "https://mandarinlog.me",
     image: "./logo.png",
   },

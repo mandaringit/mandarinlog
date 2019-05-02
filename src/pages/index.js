@@ -1,8 +1,7 @@
 import React from "react"
 import IndexLayout from "../components/Layout/indexLayout"
 import MainGrid from "../components/indexContent/mainGrid"
-import MainReview from "../components/indexContent/mainReview"
-import MainOpinion from "../components/indexContent/mainOpinion"
+import MainLog from "../components/indexContent/mainLog"
 import SEO from "../components/SEO"
 import MainCode from "../components/indexContent/mainCode"
 import MainMusic from "../components/indexContent/mainMusic"
@@ -32,8 +31,7 @@ const IndexPage = () => {
         keywords={["홈", "만다린로그"]}
       />
       <MainGrid />
-      <MainOpinion />
-      <MainReview />
+      <MainLog />
       <MainCode />
       <MainMusic />
       <GotoTop>

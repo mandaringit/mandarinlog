@@ -69,8 +69,8 @@ const MainMusic = () => {
             } = edge.node.frontmatter.featuredImage.childImageSharp.fixed
             const { singer, album } = edge.node.frontmatter
             return (
-              <LinkContainer to={`/music/${slug}`}>
-                <Post key={slug}>
+              <LinkContainer key={slug} to={`/music/${slug}`}>
+                <Post>
                   <FeaturedImage src={src}>
                     <InfoBox>
                       <Title>{album}</Title>

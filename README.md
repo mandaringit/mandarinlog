@@ -2,13 +2,13 @@
 
 ## (.md)컨텐츠별 필수 항목
 
-### OPINION
+### LOG
 
 ```text
 ---
 title: "제목"
 date : "2019-01-01"
-category: "OPINION"
+category: "LOG"
 featuredImage: "경로"
 ---
 ```
@@ -23,17 +23,6 @@ date : "2019-01-01"
 category: "MUSIC"
 featuredImage: "경로"
 translation: Boolean => true 또는 false
----
-```
-
-### REVIEW
-
-```text
----
-title: "제목"
-date : "2019-01-01"
-category: "REVIEW"
-featuredImage: "경로"
 ---
 ```
 

@@ -54,7 +54,7 @@ const Day = styled.div`
   margin-right: 0.5rem;
 `
 
-export const ReviewsHit = props => {
+export const LogsHit = props => {
   const { category } = props.hit
   const lowerCategory = category.toLowerCase()
 
@@ -104,29 +104,6 @@ export const CodesHit = props => {
             ))}
           </StackContainer>
         </ContainData>
-      </InfoContainer>
-      <Excerpt>
-        <Snippet attribute="excerpt" hit={props.hit} tagName="mark" />
-        ...
-      </Excerpt>
-    </Wrapper>
-  )
-}
-
-export const OpinionsHit = props => {
-  const { category } = props.hit
-  const lowerCategory = category.toLowerCase()
-  return (
-    <Wrapper>
-      <InfoContainer>
-        <ExtendLink to={`/${lowerCategory}/${props.hit.fields.slug}`}>
-          <Title>
-            <Highlight attribute="title" hit={props.hit} tagName="mark" />
-          </Title>
-        </ExtendLink>
-        <Day>
-          <Highlight attribute="date" hit={props.hit} tagName="mark" />
-        </Day>
       </InfoContainer>
       <Excerpt>
         <Snippet attribute="excerpt" hit={props.hit} tagName="mark" />

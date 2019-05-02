@@ -59,8 +59,8 @@ const MainCode = () => {
             const { slug } = edge.node.fields
             const { title, stacks } = edge.node.frontmatter
             return (
-              <LinkContainer to={`/code/${slug}`}>
-                <Post key={slug}>
+              <LinkContainer key={slug} to={`/code/${slug}`}>
+                <Post>
                   <StackContainer>
                     {stacks.map((stack, index) => (
                       <StackBadge key={index} stack={stack}>

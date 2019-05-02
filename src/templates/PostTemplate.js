@@ -52,7 +52,7 @@ const Content = styled.div`
   margin: 1rem 0;
 `
 
-// Review
+// Log
 
 const StarRating = styled(StarRatingComponent)``
 
@@ -90,10 +90,28 @@ const PostTemplate = props => {
         <FeaturedImage src={src} />
         <ContentContainer>
           <InfoContainer>
-            {/* 오피니언 */}
-            {frontmatter.category === "OPINION" ? (
+            {/* 로그 */}
+            {frontmatter.category === "LOG" ? (
               <>
+                <PlatformBadge platform={frontmatter.platform}>
+                  {frontmatter.platform}
+                </PlatformBadge>
                 <Title>{frontmatter.title}</Title>
+                <TagContainer>
+                  {frontmatter.tags
+                    ? frontmatter.tags.map((tag, index) => (
+                        <Tag key={index}>{tag}</Tag>
+                      ))
+                    : null}
+                </TagContainer>
+                {frontmatter.star === 0 ? null : (
+                  <StarRating
+                    name="rate2"
+                    editing={false}
+                    starCount={5}
+                    value={frontmatter.star}
+                  />
+                )}
               </>
             ) : null}
             {/* 코드 */}
@@ -107,28 +125,6 @@ const PostTemplate = props => {
                     </StackBadge>
                   ))}
                 </StackContainer>
-              </>
-            ) : null}
-            {/* 리뷰 */}
-            {frontmatter.category === "REVIEW" ? (
-              <>
-                <PlatformBadge platform={frontmatter.platform}>
-                  {frontmatter.platform}
-                </PlatformBadge>
-                <Title>{frontmatter.title}</Title>
-                <TagContainer>
-                  {frontmatter.tags
-                    ? frontmatter.tags.map((tag, index) => (
-                        <Tag key={index}>{tag}</Tag>
-                      ))
-                    : null}
-                </TagContainer>
-                <StarRating
-                  name="rate2"
-                  editing={false}
-                  starCount={5}
-                  value={frontmatter.star}
-                />
               </>
             ) : null}
             {/* 뮤직 */}
@@ -173,7 +169,7 @@ export const query = graphql`
         title
         category
         keywords
-        # review
+        # log
         platform
         star
         tags

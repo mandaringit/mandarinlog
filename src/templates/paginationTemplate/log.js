@@ -18,23 +18,23 @@ import { PlatformBadge, TagContainer, Tag } from "../../styles/tagsSharedStyles"
 import SEO from "../../components/SEO"
 import PageLink from "../../components/pageLink"
 
-const ReviewPage = props => {
+const LogPage = props => {
   const { data, pageContext } = props
   const { edges } = data.allMarkdownRemark
   return (
     <PageLayout>
       <SEO
-        title="리뷰"
-        description="리뷰 페이지 리스트"
-        pathname="/review"
-        keywords={["리뷰,만다린로그,영화,게임"]}
+        title="로그"
+        description="로그 페이지 리스트"
+        pathname="/log"
+        keywords={["블로그,리뷰,만다린로그,영화,게임,IT"]}
       />
       <PageWrapper>
         <CategoryTitle>
           <span role="img" aria-label="pen">
-            👀
+            📇
           </span>{" "}
-          리뷰
+          로그
         </CategoryTitle>
         <Posts>
           {edges.map(edge => {
@@ -48,6 +48,7 @@ const ReviewPage = props => {
               tags,
               date,
               category,
+              subCategory,
             } = edge.node.frontmatter
             const { excerpt } = edge.node
             const lowerCaseCategory = category.toLowerCase()
@@ -65,7 +66,10 @@ const ReviewPage = props => {
                         ? tags.map((tag, index) => <Tag key={index}>{tag}</Tag>)
                         : null}
                     </TagContainer>
-                    <Title>{title}</Title>
+                    <Title>
+                      {subCategory ? `[${subCategory}] ` : null}
+                      {title}
+                    </Title>
                     <DateContainer>
                       <span role="img" aria-label="memo">
                         📝
@@ -81,7 +85,7 @@ const ReviewPage = props => {
           })}
         </Posts>
         <PageLink
-          route={"review"}
+          route={"log"}
           numPages={pageContext.numPages}
           currentPage={pageContext.currentPage}
         />
@@ -90,17 +94,17 @@ const ReviewPage = props => {
   )
 }
 
-export default ReviewPage
+export default LogPage
 
 export const query = graphql`
   query($limit: Int!, $skip: Int!) {
     allMarkdownRemark(
-      filter: { frontmatter: { category: { eq: "REVIEW" } } }
+      filter: { frontmatter: { category: { eq: "LOG" } } }
       sort: { order: DESC, fields: [frontmatter___date] }
       limit: $limit
       skip: $skip
     ) {
-      ...ReviewMarkdown
+      ...LogMarkdown
     }
   }
 `

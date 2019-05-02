@@ -3,8 +3,6 @@ import styled from "styled-components"
 import {
   Wrapper,
   MainPostWrapper,
-  MainTitle,
-  MainTitleLink,
   MainTitleBar,
 } from "../../styles/mainSharedStyles"
 import FeaturedReview from "./FeatruedContent/FeaturedReview"

@@ -3,7 +3,7 @@ import { Link } from "gatsby"
 import styled from "styled-components"
 import RealSearchBar from "./Search/RealSearchBar"
 import { Menu } from "styled-icons/icomoon/Menu"
-import { MandarinLogo, TitleLogo } from "../styles/icons"
+import { TitleLogo } from "../styles/icons"
 
 const ExtendedNav = styled.nav`
   background-color: black;

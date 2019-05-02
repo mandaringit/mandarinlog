@@ -29,7 +29,12 @@ const OpinionPage = props => {
         keywords={["오피니언,블로그,만다린로그"]}
       />
       <PageWrapper>
-        <CategoryTitle>오피니언</CategoryTitle>
+        <CategoryTitle>
+          <span role="img" aria-label="pen">
+            🖋
+          </span>{" "}
+          오피니언
+        </CategoryTitle>
         {/* <div>카테고리 리스트 간단하게 추가</div> */}
         <Posts>
           {edges.map(edge => {

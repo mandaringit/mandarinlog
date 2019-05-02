@@ -3,15 +3,14 @@ import styled from "styled-components"
 export const StackContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
-  margin-bottom: 0.5rem;
+  margin: 0.3rem 0;
 `
 
-export const StackBadge = styled.div`
+export const StackBadge = styled.h6`
   display: flex;
-  margin-right: 0.5rem;
-  font-size: 0.8rem;
+  margin: 0 0.5rem 0 0;
+  font-size: 0.7rem;
   font-weight: bold;
-  padding: 0 0.5rem;
   border-radius: 5px;
-  background-color: ${props => props.theme.stackColor};
+  color: ${props => props.theme.stackColor};
 `

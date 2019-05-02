@@ -101,8 +101,10 @@ const PostTemplate = props => {
               <>
                 <Title>{frontmatter.title}</Title>
                 <StackContainer>
-                  {frontmatter.stacks.map(stack => (
-                    <StackBadge stack={stack}>{stack}</StackBadge>
+                  {frontmatter.stacks.map((stack, index) => (
+                    <StackBadge key={index} stack={stack}>
+                      {stack}
+                    </StackBadge>
                   ))}
                 </StackContainer>
               </>
@@ -116,7 +118,9 @@ const PostTemplate = props => {
                 <Title>{frontmatter.title}</Title>
                 <TagContainer>
                   {frontmatter.tags
-                    ? frontmatter.tags.map(tag => <Tag>{tag}</Tag>)
+                    ? frontmatter.tags.map((tag, index) => (
+                        <Tag key={index}>{tag}</Tag>
+                      ))
                     : null}
                 </TagContainer>
                 <StarRating

@@ -37,4 +37,13 @@ export const Theme = {
       return "gray"
     }
   },
+  albumCategoryColor: props => {
+    if (props.category === "싱글") {
+      return "#487eb0"
+    } else if (props.category === "EP") {
+      return "#673AB7"
+    } else if (props.category === "정규") {
+      return "#273c75"
+    }
+  },
 }

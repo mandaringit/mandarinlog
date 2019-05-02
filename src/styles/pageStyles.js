@@ -4,14 +4,13 @@ import { Link } from "gatsby"
 // 페이지에 나타나는 포스트의 스타일이다.
 
 export const PageWrapper = styled.div`
-  margin: 0 auto;
+  margin: 1rem auto;
   max-width: 1080px;
-  padding: 1rem 0;
 `
 
 // 카테고리 타이틀
 export const CategoryTitle = styled.div`
-  font-size: 1.5rem;
+  font-size: 1rem;
   font-weight: bold;
   margin-bottom: 1rem;
 `
@@ -21,11 +20,10 @@ export const Posts = styled.div`
   display: grid;
   grid-gap: 0.5rem;
   grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
-  grid-auto-rows: minmax(20rem, 1fr);
+  grid-auto-rows: auto;
 `
 
 export const Post = styled.article`
-  width: 100%;
   background-color: ${props => props.theme.postBackgroundColor};
   border: 1px solid ${props => props.theme.postBorderColor};
   border-radius: 3px;
@@ -38,48 +36,47 @@ export const PostLinkBox = styled(Link)`
   display: flex;
   flex-direction: column;
   text-decoration: none;
-  height: 100%;
 `
 
 export const FeaturedImage = styled.div`
+  /* 이미지 정렬 */
   background-image: url(${props => props.src});
   background-size: cover;
   background-position: center;
-  border-radius: 3px 3px 0 0;
-  margin: 0;
   width: 100%;
-  min-height: 8rem;
   height: 100%;
-  object-fit: cover;
+  min-height: 8rem;
+  border-radius: 3px 3px 0 0;
   opacity: 0.8;
   :hover {
     opacity: 1;
     transition-duration: 1s;
   }
+  /* 이미지 내부 뱃지 정렬 */
   display: flex;
   justify-content: start;
   align-items: start;
 `
 
 export const InfoBox = styled.div`
-  padding: 1rem;
+  padding: 0.5rem 1rem;
 `
 
 // 각 포스트 타이틀
-export const Title = styled.h3`
-  margin-bottom: 0;
+export const Title = styled.h4`
+  margin-bottom: 0.3rem;
 `
 
 // 각 포스트의 날짜
 export const DateContainer = styled.div`
   color: ${props => props.theme.barColor};
   font-size: 0.7rem;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.3rem;
 `
 // 각 포스트의 발췌 부분
 export const Excerpt = styled.p`
   color: black;
-  font-size: 0.8rem;
+  font-size: 0.7rem;
   margin: 0.5rem 0;
 `
 

@@ -30,7 +30,12 @@ const ReviewPage = props => {
         keywords={["리뷰,만다린로그,영화,게임"]}
       />
       <PageWrapper>
-        <CategoryTitle>리뷰</CategoryTitle>
+        <CategoryTitle>
+          <span role="img" aria-label="pen">
+            👀
+          </span>{" "}
+          리뷰
+        </CategoryTitle>
         <Posts>
           {edges.map(edge => {
             const { slug } = edge.node.fields

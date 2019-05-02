@@ -10,19 +10,18 @@ const Posts = styled.div`
   margin: 0;
   display: grid;
   grid-gap: 0.5rem;
-  grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(9rem, 1fr));
   grid-auto-rows: minmax(13rem, 1fr);
 `
 
 const Post = styled.article`
   width: 100%;
-  /* background-color: transparent; */
   border-radius: 3px;
 `
 
 const PostLinkBox = styled(Link)`
   border-radius: 3px;
-  color: #000000;
+  color: black;
   display: flex;
   flex-direction: column;
   text-decoration: none;
@@ -34,7 +33,7 @@ const FeaturedImage = styled.div`
   background-size: cover;
   background-position: center;
   border-radius: 3px;
-  min-height: 13rem;
+  min-height: 9rem;
   border: 1px solid ${props => props.theme.postBorderColor};
   display: flex;
   justify-content: start;
@@ -42,21 +41,13 @@ const FeaturedImage = styled.div`
   margin-bottom: 0.3rem;
 `
 
-const AlbumCategoryBadge = styled.div`
-  font-size: 0.7rem;
-  padding: 0 0.4rem;
-  margin: 0.5rem 0 0 0.5rem;
-  border-radius: 5px;
+const AlbumCategoryBadge = styled.h6`
+  font-size: 0.6rem;
+  padding: 0.3rem 0.3rem;
+  margin: 0;
   font-weight: bold;
-  background-color: ${props => {
-    if (props.category === "싱글") {
-      return "#f3a683"
-    } else if (props.category === "EP") {
-      return "#574b90"
-    } else if (props.category === "정규") {
-      return "#f5cd79"
-    }
-  }};
+  background-color: ${props => props.theme.albumCategoryColor};
+  color: white;
 `
 
 const InfoBox = styled.div`
@@ -71,7 +62,7 @@ const Title = styled.span`
   color: #010101;
 `
 
-const Singer = styled.span`
+const Singer = styled.div`
   font-size: 0.8rem;
   color: #aaaaaa;
 `
@@ -88,7 +79,12 @@ const MusicPage = props => {
         keywords={["해외음악,POP,가사,만다린로그"]}
       />
       <PageWrapper>
-        <CategoryTitle>해외음악</CategoryTitle>
+        <CategoryTitle>
+          <span role="img" aria-label="pen">
+            🎧
+          </span>{" "}
+          해외음악
+        </CategoryTitle>
         <Posts>
           {edges.map(edge => {
             const { slug } = edge.node.fields

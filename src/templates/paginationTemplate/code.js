@@ -10,13 +10,17 @@ import {
   InfoBox,
   Posts,
   Post,
-  FeaturedImage,
   PostLinkBox,
   Excerpt,
 } from "../../styles/pageStyles"
 import { StackContainer, StackBadge } from "../../styles/stackSharedStyles"
 import SEO from "../../components/SEO"
 import PageLink from "../../components/pageLink"
+import styled from "styled-components"
+
+const ExtendTitle = styled(Title)`
+  padding: 0.3rem 0;
+`
 
 const CodePage = props => {
   const { data, pageContext } = props
@@ -32,20 +36,22 @@ const CodePage = props => {
         ]}
       />
       <PageWrapper>
-        <CategoryTitle>코드</CategoryTitle>
+        <CategoryTitle>
+          <span role="img" aria-label="notebook">
+            💻
+          </span>{" "}
+          코드
+        </CategoryTitle>
         <Posts>
           {edges.map(edge => {
             const { slug } = edge.node.fields
-            const {
-              src,
-            } = edge.node.frontmatter.featuredImage.childImageSharp.fixed
             const { title, date, stacks } = edge.node.frontmatter
             const { excerpt } = edge.node
             return (
               <Post key={slug}>
                 <PostLinkBox to={`/code/${slug}`}>
-                  <FeaturedImage src={src} />
                   <InfoBox>
+                    <ExtendTitle>{title}</ExtendTitle>
                     <StackContainer>
                       {stacks.map((stack, index) => (
                         <StackBadge key={index} stack={stack}>
@@ -53,7 +59,6 @@ const CodePage = props => {
                         </StackBadge>
                       ))}
                     </StackContainer>
-                    <Title>{title}</Title>
                     <DateContainer>
                       <span role="img" aria-label="memo">
                         📝

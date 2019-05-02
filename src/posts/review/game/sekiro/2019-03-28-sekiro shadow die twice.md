@@ -1,7 +1,7 @@
 ---
 title: "SEKIRO - SHADOW DIE TWICE 리뷰"
 date: "2019-03-28"
-category: "GAME"
+category: "REVIEW"
 featuredImage: "./cover.jpg"
 star: 4
 platform: "FROM SOFTWARE"

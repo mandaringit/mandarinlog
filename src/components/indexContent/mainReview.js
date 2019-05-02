@@ -85,7 +85,7 @@ export default MainReview
 const REVIEW_QUERY = graphql`
   query {
     allMarkdownRemark(
-      filter: { frontmatter: { category: { in: ["MOVIE", "GAME"] } } }
+      filter: { frontmatter: { category: { eq: "REVIEW" } } }
       sort: { order: DESC, fields: [frontmatter___date] }
       skip: 1
       limit: 8

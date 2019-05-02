@@ -42,18 +42,10 @@ const createPages = async ({ graphql, actions }) => {
           slug: edge.node.fields.slug,
         },
       })
-    } else if (edge.node.frontmatter.category === "MOVIE") {
+    } else if (edge.node.frontmatter.category === "REVIEW") {
       createPage({
         component: PostTemplate,
-        path: `/movie/${edge.node.fields.slug}`,
-        context: {
-          slug: edge.node.fields.slug,
-        },
-      })
-    } else if (edge.node.frontmatter.category === "GAME") {
-      createPage({
-        component: PostTemplate,
-        path: `/game/${edge.node.fields.slug}`,
+        path: `/review/${edge.node.fields.slug}`,
         context: {
           slug: edge.node.fields.slug,
         },

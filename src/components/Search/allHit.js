@@ -98,20 +98,8 @@ export const AllHit = props => {
             {props.hit.date}
           </Day>
 
-          {props.hit.category === "MOVIE" ? (
+          {props.hit.category === "REVIEW" ? (
             <Platform>
-              <span role="img" aria-label="video">
-                🎬
-              </span>{" "}
-              <Highlight attribute="platform" hit={props.hit} tagName="mark" />
-            </Platform>
-          ) : null}
-
-          {props.hit.category === "GAME" ? (
-            <Platform>
-              <span role="img" aria-label="game">
-                🕹
-              </span>{" "}
               <Highlight attribute="platform" hit={props.hit} tagName="mark" />
             </Platform>
           ) : null}

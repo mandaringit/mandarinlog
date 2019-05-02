@@ -26,24 +26,13 @@ translation: Boolean => true 또는 false
 ---
 ```
 
-### GAME
+### REVIEW
 
 ```text
 ---
 title: "제목"
 date : "2019-01-01"
-category: "GAME"
-featuredImage: "경로"
----
-```
-
-### MOVIE
-
-```text
----
-title: "제목"
-date : "2019-01-01"
-category: "MOVIE"
+category: "REVIEW"
 featuredImage: "경로"
 ---
 ```

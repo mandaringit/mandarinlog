@@ -30,7 +30,7 @@ const reviewQuery = `{
     filter: { 
       frontmatter: {
         category: {
-          in:["MOVIE","GAME"]
+          eq:"REVIEW"
         }
       } 
     }

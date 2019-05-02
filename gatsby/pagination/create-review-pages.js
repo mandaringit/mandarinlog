@@ -11,7 +11,7 @@ module.exports = async (graphql, actions) => {
   const res = await graphql(`
     query {
       allMarkdownRemark(
-        filter: { frontmatter: { category: { in: ["MOVIE", "GAME"] } } }
+        filter: { frontmatter: { category: { eq: "REVIEW" } } }
         sort: { fields: [frontmatter___date], order: DESC }
       ) {
         totalCount

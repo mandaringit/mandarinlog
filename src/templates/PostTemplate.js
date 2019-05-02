@@ -107,28 +107,8 @@ const PostTemplate = props => {
                 </StackContainer>
               </>
             ) : null}
-            {/* 무비 */}
-            {frontmatter.category === "MOVIE" ? (
-              <>
-                <PlatformBadge platform={frontmatter.platform}>
-                  {frontmatter.platform}
-                </PlatformBadge>
-                <Title>{frontmatter.title}</Title>
-                <TagContainer>
-                  {frontmatter.tags
-                    ? frontmatter.tags.map(tag => <Tag>{tag}</Tag>)
-                    : null}
-                </TagContainer>
-                <StarRating
-                  name="rate2"
-                  editing={false}
-                  starCount={5}
-                  value={frontmatter.star}
-                />
-              </>
-            ) : null}
-            {/* 게임 */}
-            {frontmatter.category === "GAME" ? (
+            {/* 리뷰 */}
+            {frontmatter.category === "REVIEW" ? (
               <>
                 <PlatformBadge platform={frontmatter.platform}>
                   {frontmatter.platform}
@@ -189,7 +169,7 @@ export const query = graphql`
         title
         category
         keywords
-        # movie, game
+        # review
         platform
         star
         tags

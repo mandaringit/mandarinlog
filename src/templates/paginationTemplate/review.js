@@ -90,7 +90,7 @@ export default ReviewPage
 export const query = graphql`
   query($limit: Int!, $skip: Int!) {
     allMarkdownRemark(
-      filter: { frontmatter: { category: { in: ["MOVIE", "GAME"] } } }
+      filter: { frontmatter: { category: { eq: "REVIEW" } } }
       sort: { order: DESC, fields: [frontmatter___date] }
       limit: $limit
       skip: $skip

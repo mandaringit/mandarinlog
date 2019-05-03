@@ -37,6 +37,7 @@ module.exports = {
             resolve: `gatsby-remark-images`,
             options: {
               maxWidth: 900,
+              showCaptions: true,
               linkImagesToOriginal: false,
             },
           },
@@ -50,6 +51,14 @@ module.exports = {
               showLineNumbers: false,
               noInlineHighlight: false,
             },
+          },
+          // gif 파일 지원을 위한 플러그인
+          "gatsby-remark-copy-linked-files",
+          // gif 파일들은 gatsby-remark-images영향을 받지 않으므로
+          // 따로 캡션이 나오도록 플러그인 설치 후 .md-figure 스타일링
+          {
+            resolve: `gatsby-remark-figure-caption`,
+            options: { figureClassName: "md-figure" },
           },
         ],
       },

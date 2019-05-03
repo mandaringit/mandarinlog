@@ -741,4 +741,27 @@ pre[class*="language-"] {
 	cursor: help;
 }
 /* 끝 prism okaidia.css */
+
+/* 마크다운 이미지 캡션 스타일링 */
+.md-figure > img {
+  display:block;
+  margin:0 auto;
+}
+.md-figure > figcaption{
+  text-align:center;
+  margin-top:0.3rem;
+  font-size:0.8rem;
+  color:${props => props.theme.barColor};
+  font-style:italic;
+}
+.gatsby-resp-image-figcaption{
+  text-align:center;
+  margin-top:0.3rem;
+  font-size:0.8rem;
+  color:${props => props.theme.barColor};
+  font-style:italic;
+}
+
+/* 끝 마크다운 이미지 캡션 스타일링 */
+
 `

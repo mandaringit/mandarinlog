@@ -74,14 +74,13 @@ const About = () => {
               <MailAddress>@gmail.com</MailAddress>
             </div>
           </SnsWrapper>
-          <Text>게시글 문제 / 사이트 오류 연락 주시면 감사하겠습니다.</Text>
+          <Text>게시글 문제 / 사이트 오류 연락 주세요.</Text>
         </AccountWrapper>
         <Title>MANDARIN</Title>
         <Text>
           <span role="img" aria-label="mandarin">
             🍊
           </span>{" "}
-          귤은 맛있습니다.
         </Text>
         <Title>하루종일 노래듣는걸 좋아합니다.</Title>
         <Text>

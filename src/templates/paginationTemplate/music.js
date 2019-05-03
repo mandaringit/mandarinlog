@@ -5,9 +5,10 @@ import styled from "styled-components"
 import { CategoryTitle, PageWrapper } from "../../styles/pageStyles"
 import SEO from "../../components/SEO"
 import PageLink from "../../components/pageLink"
+import SidePlayListLink from "../../components/indexContent/SideContent/SidePlaylistLink"
 
 const Posts = styled.div`
-  margin: 0;
+  margin-top: 1rem;
   display: grid;
   grid-gap: 0.5rem;
   grid-template-columns: repeat(auto-fit, minmax(9rem, 1fr));
@@ -85,6 +86,7 @@ const MusicPage = props => {
           </span>{" "}
           해외음악
         </CategoryTitle>
+        <SidePlayListLink />
         <Posts>
           {edges.map(edge => {
             const { slug } = edge.node.fields

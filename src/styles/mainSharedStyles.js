@@ -47,7 +47,7 @@ export const MainTitleBar = ({ icon, label, title, route }) => {
         </span>{" "}
         {title}
       </MainTitle>
-      {title === "LATEST" ? null : (
+      {route === "/" ? null : (
         <MainTitleLink to={route}>
           <NextIcon />
           <div>더보기</div>

@@ -33,8 +33,7 @@ const PlayListCard = () => {
     {
       title: "멜론 플레이리스트 1",
       Logo: <MelonLogo />,
-      link:
-        "https://www.melon.com/mymusic/playlist/mymusicplaylistview_inform.htm?plylstSeq=459004706&memberKey=&ref=facebook&snsGate=Y",
+      link: "https://melon.do/OJTB0cVxV",
     },
     {
       title: "유튜브 플레이리스트",

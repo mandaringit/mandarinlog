@@ -53,8 +53,8 @@ const LogPage = props => {
             const { excerpt } = edge.node
             const lowerCaseCategory = category.toLowerCase()
             return (
-              <Post key={slug}>
-                <PostLinkBox to={`/${lowerCaseCategory}/${slug}`}>
+              <PostLinkBox key={slug} to={`/${lowerCaseCategory}/${slug}`}>
+                <Post>
                   <FeaturedImage src={src}>
                     <PlatformBadge platform={platform}>
                       {platform}
@@ -79,8 +79,8 @@ const LogPage = props => {
                     <Bar />
                     <Excerpt>{excerpt}</Excerpt>
                   </InfoBox>
-                </PostLinkBox>
-              </Post>
+                </Post>
+              </PostLinkBox>
             )
           })}
         </Posts>

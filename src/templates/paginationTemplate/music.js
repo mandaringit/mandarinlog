@@ -95,8 +95,8 @@ const MusicPage = props => {
             } = edge.node.frontmatter.featuredImage.childImageSharp.fixed
             const { singer, album, albumCategory } = edge.node.frontmatter
             return (
-              <Post key={slug}>
-                <PostLinkBox to={`/music/${slug}`}>
+              <PostLinkBox key={slug} to={`/music/${slug}`}>
+                <Post>
                   <FeaturedImage src={src}>
                     <AlbumCategoryBadge category={albumCategory}>
                       {albumCategory}
@@ -106,8 +106,8 @@ const MusicPage = props => {
                     <Title>{album}</Title>
                     <Singer>{singer}</Singer>
                   </InfoBox>
-                </PostLinkBox>
-              </Post>
+                </Post>
+              </PostLinkBox>
             )
           })}
         </Posts>

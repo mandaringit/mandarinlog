@@ -23,19 +23,20 @@ export const Posts = styled.div`
   grid-auto-rows: auto;
 `
 
+// 각 포스트를 감싸는 박스 겸 링크
+export const PostLinkBox = styled(Link)`
+  color: black;
+  text-decoration: none;
+`
+
 export const Post = styled.article`
   background-color: ${props => props.theme.postBackgroundColor};
   border: 1px solid ${props => props.theme.postBorderColor};
   border-radius: 3px;
+  height: 100%;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
-`
-
-// 각 포스트를 감싸는 박스 겸 링크
-export const PostLinkBox = styled(Link)`
-  color: black;
   display: flex;
   flex-direction: column;
-  text-decoration: none;
 `
 
 export const FeaturedImage = styled.div`
@@ -44,7 +45,7 @@ export const FeaturedImage = styled.div`
   background-size: cover;
   background-position: center;
   width: 100%;
-  height: 100%;
+  flex: 1; /* 이미지 높이 박스에 맞게*/
   min-height: 8rem;
   border-radius: 3px 3px 0 0;
   opacity: 0.8;

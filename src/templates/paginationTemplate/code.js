@@ -48,8 +48,8 @@ const CodePage = props => {
             const { title, date, stacks } = edge.node.frontmatter
             const { excerpt } = edge.node
             return (
-              <Post key={slug}>
-                <PostLinkBox to={`/code/${slug}`}>
+              <PostLinkBox key={slug} to={`/code/${slug}`}>
+                <Post>
                   <InfoBox>
                     <ExtendTitle>{title}</ExtendTitle>
                     <StackContainer>
@@ -68,8 +68,8 @@ const CodePage = props => {
                     <Bar />
                     <Excerpt>{excerpt}</Excerpt>
                   </InfoBox>
-                </PostLinkBox>
-              </Post>
+                </Post>
+              </PostLinkBox>
             )
           })}
         </Posts>

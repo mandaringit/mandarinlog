@@ -19,16 +19,6 @@ export default function HTML(props) {
         {/* 빙 사이트인증 */}
         <meta name="msvalidate.01" content="2297B21A8C05A3FC8454BCEFB3CB6BC6" />
         {props.headComponents}
-        <script
-          async
-          src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
-        />
-        <script
-          dangerouslySetInnerHTML={{
-            __html:
-              '(window.adsbygoogle = window.adsbygoogle || []).push({google_ad_client: "ca-pub-8604026265944417",enable_page_level_ads: true});',
-          }}
-        />
       </head>
       <body {...props.bodyAttributes}>
         {props.preBodyComponents}

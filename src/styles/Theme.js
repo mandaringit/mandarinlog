@@ -47,7 +47,7 @@ export const Theme = {
     } else if (props.platform === "MARVEL") {
       return "#D74124"
     } else {
-      return "white"
+      return "gray"
     }
   },
   albumCategoryColor: props => {

@@ -40,8 +40,8 @@ const InfoBox = styled.div`
   flex-direction: column;
   justify-content: flex-end;
   align-items: start;
-  padding-left: 0.5rem;
-  padding-bottom: 0.5rem;
+  width: 100%;
+  padding: 0 0.5rem 0.5rem 0.5rem;
 `
 const Title = styled.div`
   font-size: 1rem;

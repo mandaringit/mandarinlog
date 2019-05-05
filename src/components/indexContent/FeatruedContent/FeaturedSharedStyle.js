@@ -42,7 +42,7 @@ export const TitleContainer = styled.div`
 export const Title = styled.h1`
   color: white;
   padding: 1rem;
-  margin: 1rem 0 0 0;
+  margin: 0;
   font-size: 1.5rem;
   text-align: center;
 `

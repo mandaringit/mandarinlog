@@ -40,9 +40,9 @@ const PlatformBadge = styled.h6`
   color: ${props => props.theme.platformColor};
   font-size: 0.7rem;
   font-weight: bold;
-  margin: 0 0.2rem 0.2rem 0.2rem;
+  margin: 0;
   padding: 0.2rem 0.3rem;
-  align-self: center;
+  text-align: center;
   background-color: ${props => props.theme.platformBackColor};
 `
 

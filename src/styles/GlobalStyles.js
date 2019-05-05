@@ -2,14 +2,14 @@ import { createGlobalStyle } from "styled-components"
 
 export default createGlobalStyle`
   /* Reset provided by https://github.com/gatsbyjs/gatsby-starter-blog via MIT license */
+  @import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR');
 html {
+  font-family:  -apple-system, BlinkMacSystemFont, Segoe UI, Apple SD Gothic Neo, Ubuntu,Noto Sans KR, Roboto, Helvetica Neue, Arial, sans-serif;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
   background-color:${props => props.theme.mainBackgroundColor};
 }
 body {
-  @import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR');
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Apple SD Gothic Neo, Ubuntu,Noto Sans KR, Roboto, Helvetica Neue, Arial, sans-serif;
   margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -193,6 +193,7 @@ textarea {
   font: inherit;
 }
 html {
+  font: 112.5%/1.45em georgia, serif;
   box-sizing: border-box;
   overflow-y: scroll;
 }
@@ -207,6 +208,7 @@ html {
 }
 body {
   color: hsla(0, 0%, 0%, 0.8);
+  font-family:  -apple-system, BlinkMacSystemFont, Segoe UI, Apple SD Gothic Neo, Ubuntu,Noto Sans KR, Roboto, Helvetica Neue, Arial, sans-serif;
   font-weight: normal;
   word-wrap: break-word;
   font-kerning: normal;
@@ -237,6 +239,7 @@ h1 {
   margin-bottom: 1rem;
   color: inherit;
   font-weight: bold;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Apple SD Gothic Neo, Ubuntu,Noto Sans KR, Roboto, Helvetica Neue, Arial, sans-serif;
   text-rendering: optimizeLegibility;
   font-size: 2.25rem;
   line-height: 1.1;
@@ -252,6 +255,7 @@ h2 {
   margin-bottom: 1rem;
   color: inherit;
   font-weight: bold;
+  font-family:  -apple-system, BlinkMacSystemFont, Segoe UI, Apple SD Gothic Neo, Ubuntu,Noto Sans KR, Roboto, Helvetica Neue, Arial, sans-serif;
   text-rendering: optimizeLegibility;
   font-size: 1.62671rem;
   line-height: 1.1;
@@ -267,6 +271,7 @@ h3 {
   margin-bottom: 1rem;
   color: inherit;
   font-weight: bold;
+  font-family:  -apple-system, BlinkMacSystemFont, Segoe UI, Apple SD Gothic Neo, Ubuntu,Noto Sans KR, Roboto, Helvetica Neue, Arial, sans-serif;
   text-rendering: optimizeLegibility;
   font-size: 1.38316rem;
   line-height: 1.1;
@@ -300,6 +305,7 @@ h5 {
   text-rendering: optimizeLegibility;
   font-size: 0.85028rem;
   line-height: 1.1;
+  font-family:  -apple-system, BlinkMacSystemFont, Segoe UI, Apple SD Gothic Neo, Ubuntu,Noto Sans KR, Roboto, Helvetica Neue, Arial, sans-serif;
 }
 h6 {
   margin-left: 0;
@@ -315,6 +321,7 @@ h6 {
   text-rendering: optimizeLegibility;
   font-size: 0.78405rem;
   line-height: 1.1;
+  font-family:  -apple-system, BlinkMacSystemFont, Segoe UI, Apple SD Gothic Neo, Ubuntu,Noto Sans KR, Roboto, Helvetica Neue, Arial, sans-serif;
 }
 hgroup {
   margin-left: 0;

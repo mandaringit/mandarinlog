@@ -14,6 +14,12 @@ export const CategoryTitle = styled.div`
   font-weight: bold;
   margin-bottom: 1rem;
 `
+export const Description = styled.div`
+  margin-bottom: 1rem;
+  font-size: 0.8rem;
+  color: ${props => props.theme.barColor};
+  font-style: italic;
+`
 
 export const Posts = styled.div`
   margin: 0;

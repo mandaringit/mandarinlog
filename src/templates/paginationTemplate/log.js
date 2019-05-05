@@ -13,6 +13,7 @@ import {
   FeaturedImage,
   PostLinkBox,
   DateContainer,
+  Description,
 } from "../../styles/pageStyles"
 import { PlatformBadge, TagContainer, Tag } from "../../styles/tagsSharedStyles"
 import SEO from "../../components/SEO"
@@ -36,6 +37,7 @@ const LogPage = props => {
           </span>{" "}
           로그
         </CategoryTitle>
+        <Description>보고 느낀것들의 기록</Description>
         <Posts>
           {edges.map(edge => {
             const { slug } = edge.node.fields

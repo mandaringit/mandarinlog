@@ -2,7 +2,11 @@ import React from "react"
 import PageLayout from "../../components/Layout/pageLayout"
 import { graphql, Link } from "gatsby"
 import styled from "styled-components"
-import { CategoryTitle, PageWrapper } from "../../styles/pageStyles"
+import {
+  CategoryTitle,
+  Description,
+  PageWrapper,
+} from "../../styles/pageStyles"
 import SEO from "../../components/SEO"
 import PageLink from "../../components/pageLink"
 import SidePlayListLink from "../../components/indexContent/SideContent/SidePlaylistLink"
@@ -86,6 +90,7 @@ const MusicPage = props => {
           </span>{" "}
           해외음악
         </CategoryTitle>
+        <Description>지극히 개인적인 취향의 해외음악 콜렉션</Description>
         <SidePlayListLink />
         <Posts>
           {edges.map(edge => {

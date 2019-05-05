@@ -1,9 +1,8 @@
 const path = require("path")
-const config = require("./config")
 
 module.exports = async (graphql, actions) => {
   const { createPage } = actions
-  const { postsPerPage } = config
+  const postsPerPage = 18
   const musicPage = path.resolve("./src/templates/paginationTemplate/music.js")
 
   const res = await graphql(`

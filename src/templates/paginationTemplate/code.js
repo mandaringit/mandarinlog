@@ -12,6 +12,7 @@ import {
   Post,
   PostLinkBox,
   Excerpt,
+  Description,
 } from "../../styles/pageStyles"
 import { StackContainer, StackBadge } from "../../styles/stackSharedStyles"
 import SEO from "../../components/SEO"
@@ -42,6 +43,7 @@ const CodePage = props => {
           </span>{" "}
           코드
         </CategoryTitle>
+        <Description>코딩 공부 노트</Description>
         <Posts>
           {edges.map(edge => {
             const { slug } = edge.node.fields

@@ -4,6 +4,7 @@ import SEO from "../components/SEO"
 import styled from "styled-components"
 import PlayListCard from "../components/playlistcard"
 import { CategoryTitle } from "../styles/pageStyles"
+import SingerSorting from "../components/singerSorting"
 
 const Wrapper = styled.div`
   margin: 1rem auto;

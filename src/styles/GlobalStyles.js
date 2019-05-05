@@ -3,12 +3,13 @@ import { createGlobalStyle } from "styled-components"
 export default createGlobalStyle`
   /* Reset provided by https://github.com/gatsbyjs/gatsby-starter-blog via MIT license */
 html {
-  
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
   background-color:${props => props.theme.mainBackgroundColor};
 }
 body {
+  @import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR');
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Apple SD Gothic Neo, Ubuntu,Noto Sans KR, Roboto, Helvetica Neue, Arial, sans-serif;
   margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -192,7 +193,6 @@ textarea {
   font: inherit;
 }
 html {
-  font: 112.5%/1.45em georgia, serif;
   box-sizing: border-box;
   overflow-y: scroll;
 }
@@ -207,8 +207,6 @@ html {
 }
 body {
   color: hsla(0, 0%, 0%, 0.8);
-  @import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR');
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Apple SD Gothic Neo, Ubuntu,Noto Sans KR, Roboto, Helvetica Neue, Arial, sans-serif;
   font-weight: normal;
   word-wrap: break-word;
   font-kerning: normal;

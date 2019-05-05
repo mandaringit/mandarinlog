@@ -50,7 +50,3 @@ Facebook이 GraphQL을 개발한 초기 원인은 모바일 사용 증가, 저�
 사실, GraphQL은 클라이언트가 API로 통신하는 모든 곳에서 사용할 수 있는 기술이다. 흥미롭게도, Netflix나 Coursera와 같은 다른 회사들은 API 상호 작용을 더 효율적으로 만들기 위해 비교 가능한 아이디어를 연구하고 있었다. Coursera는 고객이 데이터 요구사항을 명시하고 Netflix는 Falcor라고 하는 솔루션을 오픈 소스화하도록 하는 유사한 기술을 구상했다. GraphQL을 오픈소스화 한 후(open-sourced), Coursera는 그들의 노력을 완전히 취소하고 GraphQL 열차에 올라탔다.
 
 오늘날 GitHub, Twitter, Yelp, Shopify와 같은 여러 회사([lots of different companies](http://graphql.org/users/))에서 GraphQL을 생산하는데 사용하고 있다.
-
-*Despite being such a young technology, GraphQL has already been widely adopted. Learn [who else](http://graphql.org/users/) is using GraphQL in production.*
-
-There are entire conferences dedicated to GraphQL such as [GraphQL Conf](https://graphqlconf.org/) and more resources like the [GraphQL Weekly](https://graphqlweekly.com/) newsletter.

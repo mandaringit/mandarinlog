@@ -499,7 +499,6 @@ th {
 }
 li {
   margin-bottom: calc(1.45rem / 2);
-  list-style:none;
 }
 ol li {
   padding-left: 0;
@@ -639,7 +638,7 @@ pre[class*="language-"] {
 /* Code blocks */
 pre[class*="language-"] {
 	padding: 1em;
-	margin: .5em 0;
+	margin: .5em 0 1.5rem 0;
 	overflow: auto;
 	border-radius: 0.3em;
 }
@@ -728,7 +727,6 @@ pre[class*="language-"] {
 .token.entity {
 	cursor: help;
 }
-/* 끝 prism okaidia.css */
 
 /* 마크다운 이미지 캡션 스타일링 */
 .md-figure > img {
@@ -750,6 +748,10 @@ pre[class*="language-"] {
   font-style:italic;
 }
 
-/* 끝 마크다운 이미지 캡션 스타일링 */
+/* 마크다운 h3~h6 윗 공백 */
+/* 비슷한 구조를 가진 요소까지 영향 미치므로 고려하도록 */
+article > div > h3,h4,h5,h6 {
+  margin-top:2rem;
+}
 
 `

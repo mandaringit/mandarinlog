@@ -111,8 +111,6 @@ GraphQL의 주요 장점 중 하나는 자연스럽게 *중첩된* 정보(*neste
 }
 ```
 
-<br>
-
 ## Arguments를 가진 Queries
 
 - - -
@@ -126,8 +124,6 @@ GraphQL에서 각 필드(*field*)는 스키마에 지정된 인수(arguments)를
   }
 }
 ```
-
-<br>
 
 ## Mutations를 이용한 데이터 Writing (Writing Data with Mutations)
 
@@ -185,8 +181,6 @@ mutation {
 }
 ```
 
-<br>
-
 ## 구독을 사용한 실시간 업데이트(Realtime Updates with Subscriptions)
 
 - - -
@@ -216,8 +210,6 @@ subscription {
   }
 }
 ```
-
-<br>
 
 ## 스키마 정의(Defining a Schema)
 
@@ -295,8 +287,6 @@ type Post {
   author: Person!
 }
 ```
-
-<br>
 
 ## Learn more
 

@@ -42,7 +42,7 @@ title: "제목"
 date : "2019-01-01"
 category: "CODE"
 featuredImage: "경로"
-stacks:["스택1","스택2","스택3"]
+stacks: ["스택1","스택2","스택3"]
 keywords: ["키워드1","키워드2","키워드3"]
 ---
 ```

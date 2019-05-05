@@ -71,6 +71,7 @@ export const InfoBox = styled.div`
 
 // 각 포스트 타이틀
 export const Title = styled.h4`
+  margin-top: 0;
   margin-bottom: 0.3rem;
 `
 

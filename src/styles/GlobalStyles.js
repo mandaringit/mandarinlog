@@ -3,7 +3,7 @@ import { createGlobalStyle } from "styled-components"
 export default createGlobalStyle`
   /* Reset provided by https://github.com/gatsbyjs/gatsby-starter-blog via MIT license */
 html {
-  font-family: sans-serif;
+  
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
   background-color:${props => props.theme.mainBackgroundColor};
@@ -207,7 +207,8 @@ html {
 }
 body {
   color: hsla(0, 0%, 0%, 0.8);
-  font-family: sans-serif;
+  @import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR');
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Apple SD Gothic Neo, Ubuntu,Noto Sans KR, Roboto, Helvetica Neue, Arial, sans-serif;
   font-weight: normal;
   word-wrap: break-word;
   font-kerning: normal;
@@ -237,8 +238,6 @@ h1 {
   padding-top: 0;
   margin-bottom: 1rem;
   color: inherit;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   font-weight: bold;
   text-rendering: optimizeLegibility;
   font-size: 2.25rem;
@@ -254,8 +253,6 @@ h2 {
   padding-top: 0;
   margin-bottom: 1rem;
   color: inherit;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   font-weight: bold;
   text-rendering: optimizeLegibility;
   font-size: 1.62671rem;
@@ -271,8 +268,6 @@ h3 {
   padding-top: 0;
   margin-bottom: 1rem;
   color: inherit;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   font-weight: bold;
   text-rendering: optimizeLegibility;
   font-size: 1.38316rem;
@@ -288,8 +283,6 @@ h4 {
   padding-top: 0;
   margin-bottom: 1rem;
   color: inherit;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   font-weight: bold;
   text-rendering: optimizeLegibility;
   font-size: 1rem;
@@ -305,8 +298,6 @@ h5 {
   padding-top: 0;
   margin-bottom: 1rem;
   color: inherit;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   font-weight: bold;
   text-rendering: optimizeLegibility;
   font-size: 0.85028rem;
@@ -322,8 +313,6 @@ h6 {
   padding-top: 0;
   margin-bottom: 1rem;
   color: inherit;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   font-weight: bold;
   text-rendering: optimizeLegibility;
   font-size: 0.78405rem;

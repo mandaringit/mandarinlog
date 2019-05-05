@@ -22,17 +22,17 @@ const Content = styled.div`
 
 const MainLayout = props => {
   // 이하 IE 미지원 경고문 띄우기 코드
-  let caution = false
-  if (typeof window !== "undefined") {
-    let agent = window.navigator.userAgent.toLowerCase()
-    if (
-      (window.navigator.appName === "Netscape" &&
-        window.navigator.userAgent.search("Trident") !== -1) ||
-      agent.indexOf("msie") !== -1
-    ) {
-      caution = true
-    }
-  }
+  // let caution = false
+  // if (typeof window !== "undefined") {
+  //   let agent = window.navigator.userAgent.toLowerCase()
+  //   if (
+  //     (window.navigator.appName === "Netscape" &&
+  //       window.navigator.userAgent.search("Trident") !== -1) ||
+  //     agent.indexOf("msie") !== -1
+  //   ) {
+  //     caution = true
+  //   }
+  // }
   // 끝
 
   return (
@@ -41,7 +41,7 @@ const MainLayout = props => {
         <GlobalStyles />
         <>
           <Container>
-            {caution ? <SupportCaution /> : null}
+            {/* {caution ? <SupportCaution /> : null} */}
             <Header />
             <Nav />
             <Content>{props.children}</Content>

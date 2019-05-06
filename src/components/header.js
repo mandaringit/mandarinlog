@@ -22,7 +22,7 @@ const HeaderTitle = styled.div`
   text-align: center;
   font-weight: bold;
   margin-bottom: 1rem;
-  @media (min-width: 500px) {
+  @media (min-width: 900px) {
     margin-bottom: 0;
   }
 `

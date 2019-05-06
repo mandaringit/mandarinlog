@@ -24,6 +24,8 @@ export const Theme = {
       return "#61DAFB"
     } else if (props.stack === "Go") {
       return "#375DAB"
+    } else if (props.stack === "VSC") {
+      return "#0079CC"
     } else {
       return "#636e72"
     }

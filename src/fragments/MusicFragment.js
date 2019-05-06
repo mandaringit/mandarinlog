@@ -14,7 +14,7 @@ export const query = graphql`
           albumCategory
           featuredImage {
             childImageSharp {
-              fixed(width: 500) {
+              fixed(width: 900) {
                 src
               }
             }

@@ -28,6 +28,13 @@ export const Theme = {
       return "#636e72"
     }
   },
+  stackBackColor: props => {
+    if (props.stack === "JavaScript") {
+      return "black"
+    } else {
+      return "white"
+    }
+  },
   platformColor: props => {
     if (props.platform === "Netflix") {
       return "#e52811"

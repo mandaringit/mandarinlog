@@ -11,6 +11,7 @@ export const StackBadge = styled.h6`
   margin: 0 0.5rem 0 0;
   font-size: 0.7rem;
   font-weight: bold;
-  border-radius: 5px;
   color: ${props => props.theme.stackColor};
+  background-color: ${props => props.theme.stackBackColor};
+  padding: 0.1rem 0.2rem;
 `

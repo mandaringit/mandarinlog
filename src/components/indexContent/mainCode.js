@@ -39,6 +39,8 @@ const StackBadge = styled.h6`
   font-weight: bold;
   margin: 0 0.5rem 0 0;
   color: ${props => props.theme.stackColor};
+  background-color: ${props => props.theme.stackBackColor};
+  padding: 0.1rem 0.2rem;
 `
 
 const Title = styled.h5`

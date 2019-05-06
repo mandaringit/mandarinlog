@@ -43,6 +43,6 @@ export const Title = styled.h1`
   color: white;
   padding: 1rem;
   margin: 0;
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   text-align: center;
 `

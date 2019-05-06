@@ -21,7 +21,6 @@ const HeaderTitle = styled.div`
   font-size: 2rem;
   text-align: center;
   font-weight: bold;
-  margin-bottom: 1rem;
   @media (min-width: 900px) {
     margin-bottom: 0;
   }

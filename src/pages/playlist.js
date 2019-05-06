@@ -4,7 +4,6 @@ import SEO from "../components/SEO"
 import styled from "styled-components"
 import PlayListCard from "../components/playlistcard"
 import { CategoryTitle } from "../styles/pageStyles"
-import SingerSorting from "../components/singerSorting"
 
 const Wrapper = styled.div`
   margin: 1rem auto;
@@ -39,16 +38,16 @@ const PlaylistPage = () => {
         <CategoryTitle>
           <span role="img" aria-label="music">
             🎼
-          </span>
+          </span>{" "}
           플레이리스트
         </CategoryTitle>
         <Explain>
           <Text>
-            해외음악 페이지의 음악을 플레이리스트
+            해외음악 페이지의 음악을{" "}
             <span role="img" aria-label="list">
               📃
             </span>
-            로 만들었습니다.
+            플레이리스트로 만들었습니다.
           </Text>
           <Text>노래는 계속해서 추가할 예정입니다.</Text>
           <Text>

@@ -14,7 +14,7 @@ export const Comment = ({ siteUrl, slug, id, title, category }) => {
   )
 }
 
-export const CommnetCount = ({ siteUrl, slug, id, title, category }) => {
+export const CommentCount = ({ siteUrl, slug, id, title, category }) => {
   const disqusConfig = {
     url: `${siteUrl}/${category}/${slug}`,
     identifier: id,

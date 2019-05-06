@@ -61,7 +61,7 @@ const Title = styled.h6`
   margin: auto 0;
   text-align: center;
   font-size: 0.8rem;
-  padding: 0 0.3rem 0.3rem 0.3rem;
+  padding: 0 0.3rem 0.5rem 0.3rem;
 `
 
 const NextPrev = ({ next, prev }) => {

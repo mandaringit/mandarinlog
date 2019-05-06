@@ -315,7 +315,7 @@ h6 {
   font-weight: bold;
   font-size: 0.78405rem;
   line-height: 1.1;
-  font-family:Noto Sans KR,  -apple-system, BlinkMacSystemFont, Segoe UI, Apple SD Gothic Neo, Ubuntu, Roboto, Helvetica Neue, Arial, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Apple SD Gothic Neo, Ubuntu,Noto Sans KR, Roboto, Helvetica Neue, Arial, sans-serif;
 }
 hgroup {
   margin-left: 0;

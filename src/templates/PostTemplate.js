@@ -7,6 +7,7 @@ import { graphql } from "gatsby"
 import { Comment } from "../components/disqus"
 import { StackContainer, StackBadge } from "../styles/stackSharedStyles"
 import { PlatformBadge, TagContainer, Tag } from "../styles/tagsSharedStyles"
+import NextPrev from "../components/NextPrev"
 
 // 공통
 
@@ -44,8 +45,12 @@ const DateContainer = styled.h5`
   margin-top: 0.5rem;
 `
 
-const Bar = styled.div`
+const StartBar = styled.div`
   border-bottom: 1px solid ${props => props.theme.barColor};
+`
+
+const EndBar = styled.div`
+  border-bottom: 2px solid ${props => props.theme.barColor};
 `
 
 const Content = styled.div`
@@ -78,6 +83,7 @@ const PostTemplate = props => {
     title: frontmatter.title,
     category: category_lowercase,
   }
+  const { next, prev } = props.pageContext
   return (
     <PageLayout>
       <SEO
@@ -141,8 +147,10 @@ const PostTemplate = props => {
               {frontmatter.date}
             </DateContainer>
           </InfoContainer>
-          <Bar />
+          <StartBar />
           <Content dangerouslySetInnerHTML={{ __html: html }} />
+          <EndBar />
+          <NextPrev next={next} prev={prev} />
         </ContentContainer>
         {Comment(disqus)}
       </TemplateContainer>

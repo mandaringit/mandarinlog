@@ -1,6 +1,6 @@
 ---
 title: "알자시리즈 - #6 SORTING(초급) - 버블정렬(Bubble Sort)"
-date : "2019-05-06"
+date : "2019-05-06 12:00"
 category: "CODE"
 featuredImage: "../cover.jpg"
 stacks: ["알고리즘","자료구조","JavaScript"]

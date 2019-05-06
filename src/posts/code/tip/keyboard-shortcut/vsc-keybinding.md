@@ -1,6 +1,6 @@
 ---
 title: "에디터에서 알던 키가 안먹힐때 - Visual Studio Code(VSC) 키 바인딩(단축키) 설정하기"
-date : "2019-05-06"
+date : "2019-05-06 13:00"
 category: "CODE"
 featuredImage: "cover.jpg"
 stacks: ["TIP","VSC"]

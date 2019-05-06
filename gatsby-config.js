@@ -45,7 +45,7 @@ module.exports = {
           {
             resolve: `gatsby-remark-prismjs`,
             options: {
-              classPrefix: "language-js",
+              classPrefix: "language-",
               inlineCodeMarker: null,
               aliases: {},
               showLineNumbers: false,

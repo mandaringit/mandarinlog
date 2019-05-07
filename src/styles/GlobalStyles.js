@@ -2,10 +2,10 @@ import { createGlobalStyle } from "styled-components"
 
 export default createGlobalStyle`
   /* Reset provided by https://github.com/gatsbyjs/gatsby-starter-blog via MIT license */
-  @import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR|Roboto|Ubuntu');
+  @import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR|Roboto|Nanum+Gothic+Coding');
 html {
-   font-family: -apple-system, BlinkMacSystemFont, Apple SD Gothic Neo, Noto Sans KR, Ubuntu, Roboto, Helvetica Neue, Arial, Segoe UI, sans-serif;
-  font: 112.5%/1.45em -apple-system, BlinkMacSystemFont, Apple SD Gothic Neo, Noto Sans KR, Ubuntu, Roboto, Helvetica Neue, Arial, Segoe UI, sans-serif;
+   font-family: -apple-system, BlinkMacSystemFont, Apple SD Gothic Neo,  Ubuntu, Noto Sans KR,Roboto, Helvetica Neue, Arial, Segoe UI, sans-serif;
+  font: 112.5%/1.45em -apple-system, BlinkMacSystemFont, Apple SD Gothic Neo,Ubuntu, Noto Sans KR, Roboto, Helvetica Neue, Arial, Segoe UI, sans-serif;
   background-color:${props => props.theme.mainBackgroundColor};
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
@@ -17,7 +17,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: hsla(0, 0%, 0%, 0.8);
-  font-family: -apple-system, BlinkMacSystemFont, Apple SD Gothic Neo, Noto Sans KR, Ubuntu, Roboto, Helvetica Neue, Arial, Segoe UI, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, Apple SD Gothic Neo,  Ubuntu, Noto Sans KR,Roboto, Helvetica Neue, Arial, Segoe UI, sans-serif;
   font-weight: normal;
   word-wrap: break-word;
   font-kerning: normal;
@@ -574,7 +574,7 @@ code {
   background-color: hsla(0, 0%, 0%, 0.04);
   border-radius: 3px;
   font-family: "SFMono-Regular", Consolas, "Roboto Mono", "Droid Sans Mono",
-    "Liberation Mono", Menlo, Courier, monospace;
+    "Liberation Mono", Menlo, Courier, monospace, Nanum Gothic Coding, monospace;
   padding: 0;
   padding-top: 0.2em;
   padding-bottom: 0.2em;

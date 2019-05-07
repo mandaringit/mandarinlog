@@ -11,6 +11,8 @@ export default function HTML(props) {
           name="viewport"
           content="width=device-width, initial-scale=1, shrink-to-fit=no"
         />
+        {/* 카카오 sdk */}
+        <script src="//developers.kakao.com/sdk/js/kakao.min.js" />
         {/* 네이버 사이트인증 */}
         <meta
           name="naver-site-verification"

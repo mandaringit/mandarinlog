@@ -8,6 +8,7 @@ import { Comment } from "../components/disqus"
 import { StackContainer, StackBadge } from "../styles/stackSharedStyles"
 import { PlatformBadge, TagContainer, Tag } from "../styles/tagsSharedStyles"
 import NextPrev from "../components/NextPrev"
+import AllSnsShareComp from "../components/SnsShare/AllSnsShareComp"
 
 // 공통
 
@@ -56,7 +57,6 @@ const EndBar = styled.div`
 const Content = styled.div`
   margin: 1rem 0;
 `
-
 // Log
 
 const StarRating = styled(StarRatingComponent)``
@@ -67,7 +67,8 @@ const MusicTitle = styled(Title)`
   margin-bottom: 1rem;
 `
 
-const Singer = styled.h4`
+const Singer = styled.div`
+  font-weight: bold;
   margin-bottom: 1rem;
 `
 
@@ -149,6 +150,14 @@ const PostTemplate = props => {
           </InfoContainer>
           <StartBar />
           <Content dangerouslySetInnerHTML={{ __html: html }} />
+          <AllSnsShareComp
+            siteUrl={siteUrl}
+            category={category_lowercase}
+            slug={fields.slug}
+            title={frontmatter.title}
+            excerpt={excerpt}
+            src={src}
+          />
           <EndBar />
           <NextPrev next={next} prev={prev} />
         </ContentContainer>
@@ -197,7 +206,7 @@ export const query = graphql`
         }
       }
       html
-      excerpt
+      excerpt(pruneLength: 130, truncate: true)
       fields {
         slug
       }

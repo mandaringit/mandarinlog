@@ -378,3 +378,26 @@ l-26 -20 0 105 0 106 -45 0 -45 0 0 -295z m151 48 c10 -11 14 -49 14 -134 0
     </g>
   </svg>
 )
+
+export const NaverLogo = ({ size }) => (
+  <svg
+    version="1.0"
+    xmlns="http://www.w3.org/2000/svg"
+    width={size}
+    height={size}
+    viewBox="0 0 161.000000 161.000000"
+    preserveAspectRatio="xMidYMid meet"
+  >
+    <g
+      transform="translate(0.000000,161.000000) scale(0.100000,-0.100000)"
+      fill="#00c63b"
+      stroke="none"
+    >
+      <path
+        d="M0 805 l0 -805 805 0 805 0 0 805 0 805 -805 0 -805 0 0 -805z m803
+188 l127 -186 2 184 3 184 138 3 137 3 0 -376 0 -375 -138 0 -138 0 -127 187
+-127 186 -2 -184 -3 -184 -137 -3 -138 -3 0 376 0 375 138 0 138 0 127 -187z"
+      />
+    </g>
+  </svg>
+)

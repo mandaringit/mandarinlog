@@ -2,17 +2,29 @@ import { createGlobalStyle } from "styled-components"
 
 export default createGlobalStyle`
   /* Reset provided by https://github.com/gatsbyjs/gatsby-starter-blog via MIT license */
-  @import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR');
+  @import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR|Roboto|Ubuntu');
 html {
-  font-family:  -apple-system, BlinkMacSystemFont, Segoe UI, Apple SD Gothic Neo, Ubuntu,Noto Sans KR, Roboto, Helvetica Neue, Arial, sans-serif;
+   font-family: -apple-system, BlinkMacSystemFont, Apple SD Gothic Neo, Noto Sans KR, Ubuntu, Roboto, Helvetica Neue, Arial, Segoe UI, sans-serif;
+  font: 112.5%/1.45em -apple-system, BlinkMacSystemFont, Apple SD Gothic Neo, Noto Sans KR, Ubuntu, Roboto, Helvetica Neue, Arial, Segoe UI, sans-serif;
+  background-color:${props => props.theme.mainBackgroundColor};
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
-  background-color:${props => props.theme.mainBackgroundColor};
+  box-sizing: border-box;
+  overflow-y: scroll;
 }
 body {
   margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  color: hsla(0, 0%, 0%, 0.8);
+  font-family: -apple-system, BlinkMacSystemFont, Apple SD Gothic Neo, Noto Sans KR, Ubuntu, Roboto, Helvetica Neue, Arial, Segoe UI, sans-serif;
+  font-weight: normal;
+  word-wrap: break-word;
+  font-kerning: normal;
+  -moz-font-feature-settings: "kern", "liga", "clig", "calt";
+  -ms-font-feature-settings: "kern", "liga", "clig", "calt";
+  -webkit-font-feature-settings: "kern", "liga", "clig", "calt";
+  font-feature-settings: "kern", "liga", "clig", "calt";
 }
 article,
 aside,
@@ -192,11 +204,6 @@ textarea {
   -webkit-appearance: button;
   font: inherit;
 }
-html {
-  font: 112.5%/1.45em georgia, serif;
-  box-sizing: border-box;
-  overflow-y: scroll;
-}
 * {
   box-sizing: inherit;
 }
@@ -205,17 +212,6 @@ html {
 }
 *:after {
   box-sizing: inherit;
-}
-body {
-  color: hsla(0, 0%, 0%, 0.8);
-  font-family:  -apple-system, BlinkMacSystemFont, Segoe UI, Apple SD Gothic Neo, Ubuntu,Noto Sans KR, Roboto, Helvetica Neue, Arial, sans-serif;
-  font-weight: normal;
-  word-wrap: break-word;
-  font-kerning: normal;
-  -moz-font-feature-settings: "kern", "liga", "clig", "calt";
-  -ms-font-feature-settings: "kern", "liga", "clig", "calt";
-  -webkit-font-feature-settings: "kern", "liga", "clig", "calt";
-  font-feature-settings: "kern", "liga", "clig", "calt";
 }
 img {
   max-width: 100%;
@@ -239,7 +235,6 @@ h1 {
   margin-bottom: 1rem;
   color: inherit;
   font-weight: bold;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Apple SD Gothic Neo, Ubuntu,Noto Sans KR, Roboto, Helvetica Neue, Arial, sans-serif;
   font-size: 2.25rem;
   line-height: 1.1;
 }
@@ -254,7 +249,6 @@ h2 {
   margin-bottom: 1rem;
   color: inherit;
   font-weight: bold;
-  font-family:  -apple-system, BlinkMacSystemFont, Segoe UI, Apple SD Gothic Neo, Ubuntu,Noto Sans KR, Roboto, Helvetica Neue, Arial, sans-serif;
   font-size: 1.62671rem;
   line-height: 1.1;
 }
@@ -269,7 +263,6 @@ h3 {
   margin-bottom: 1rem;
   color: inherit;
   font-weight: bold;
-  font-family:  -apple-system, BlinkMacSystemFont, Segoe UI, Apple SD Gothic Neo, Ubuntu,Noto Sans KR, Roboto, Helvetica Neue, Arial, sans-serif;
   font-size: 1.38316rem;
   line-height: 1.1;
 }
@@ -300,7 +293,6 @@ h5 {
   font-weight: bold;
   font-size: 0.85028rem;
   line-height: 1.1;
-  font-family:  -apple-system, BlinkMacSystemFont, Segoe UI, Apple SD Gothic Neo, Ubuntu,Noto Sans KR, Roboto, Helvetica Neue, Arial, sans-serif;
 }
 h6 {
   margin-left: 0;
@@ -315,7 +307,6 @@ h6 {
   font-weight: bold;
   font-size: 0.78405rem;
   line-height: 1.1;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Apple SD Gothic Neo, Ubuntu,Noto Sans KR, Roboto, Helvetica Neue, Arial, sans-serif;
 }
 hgroup {
   margin-left: 0;
@@ -369,6 +360,7 @@ dd {
   margin-bottom: 1.45rem;
 }
 p {
+  line-height: 1.7;
   margin-left: 0;
   margin-right: 0;
   margin-top: 0;
@@ -402,7 +394,7 @@ pre {
   padding: 1.45rem;
 }
 table {
-  margin:0 auto 1.45rem auto;
+  margin:0 0 1.45rem 0;
   padding-bottom: 0;
   padding-left: 0;
   padding-right: 0;
@@ -410,7 +402,7 @@ table {
   font-size: 1rem;
   line-height: 1.45rem;
   border-collapse: collapse;
-  /* width: 100%; */
+  width: 100%; 
 }
 fieldset {
   margin-left: 0;

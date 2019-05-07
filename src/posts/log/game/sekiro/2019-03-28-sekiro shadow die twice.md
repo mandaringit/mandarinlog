@@ -2,7 +2,7 @@
 title: "SEKIRO - SHADOW DIE TWICE 리뷰"
 date: "2019-03-28"
 category: "LOG"
-featuredImage: "./2019-03-28-sekiro shadow die twice-cover.jpg"
+featuredImage: "./2019-03-28-sekiro-shadow-die-twice-cover.jpg"
 platform: "FROM SOFTWARE"
 subCategory: "게임"
 star: 4

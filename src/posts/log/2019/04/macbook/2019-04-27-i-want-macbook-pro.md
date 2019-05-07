@@ -2,7 +2,7 @@
 title: "맥북 프로, 지금 살까? 애플 제품 구매전에 참고해야 할 사이트"
 date: "2019-04-27"
 category: "LOG"
-featuredImage: "./macbook.jpg"
+featuredImage: "./2019-04-27-i-want-macbook-pro-macbook.jpg"
 platform: "IT"
 subCategory: "정보"
 star: 0
@@ -10,7 +10,7 @@ tags: ["유용한 웹","애플","맥북 프로"]
 keywords: ["macbook pro","맥북 프로"]
 ---
 
-![커버](./macbook.jpg "맥북")
+![커버](./2019-04-27-i-want-macbook-pro-macbook.jpg "맥북")
 
 최근 한 달 전부터 맥북을 구매하고 싶은 욕구가 스멀스멀 다시 올라오고 있습니다.
 

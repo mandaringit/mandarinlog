@@ -6,9 +6,9 @@ featuredImage: "cover.jpg"
 stacks: ["TIP","VSC"]
 keywords: ["visual studio code","key binding","키보드 셋팅"]
 ---
-![커버](./cover.jpg "커버")
+![커버](./cover.jpg)
 
-저는 편집기로 Visual Studio Code를 사용하고 있습니다. 주로 작업을 노트북에서 하는데 최근에 데스크탑에서 잠깐 작업을 하려고 셋팅을 맞추고 코딩을 하고 있었죠. 그런데 여기 데스크탑에선 같은 단어 선택인 Ctrl + Shift + l 키가 안먹히는겁니다. 
+저는 편집기로 Visual Studio Code를 사용하고 있습니다. 주로 작업을 노트북에서 하는데 최근에 데스크탑에서 잠깐 작업을 하려고 셋팅을 맞추고 코딩을 하고 있었죠. 그런데 여기 데스크탑에선 같은 단어 선택인 Ctrl + Shift + l 키가 안먹히는겁니다.
 
 그래서 세팅을 잘못했나 싶어서 키 바인딩 설정을 찾아보는데 아직 에디터가 익숙하지 않아서👶 잘 못찾겠어서 구글링해봤습니다.
 

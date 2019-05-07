@@ -10,9 +10,8 @@ tags: ["일본","스톱모션","귀엽"]
 keywords: ["리락쿠마","가오루씨","rilakkuma"]
 ---
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/4qduajaways" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+![커버](./cover.jpg)
 
-<br>
 
 넷플릭스에서 4월에 방영을 시작한 "리락쿠마와 가오루씨"를 보았습니다.
 
@@ -21,6 +20,8 @@ keywords: ["리락쿠마","가오루씨","rilakkuma"]
 리락쿠마는 어렸을때 아트박스같은 문구점이나 마트에서 인형만 봤지, 따로 책같은걸 따로 본적은 없었습니다.
 
 귀여운 캐릭터라고만 알고 있었죠.
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/4qduajaways" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ### 👨‍👩‍👧‍👦 등장인물
 

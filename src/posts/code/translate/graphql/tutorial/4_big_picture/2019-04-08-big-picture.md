@@ -6,6 +6,8 @@ featuredImage: "../cover.png"
 stacks: ["번역","GraphQL","NodeJs"]
 keywords: ["GraphQL","NodeJs","CODE"]
 ---
+![커버](../cover.png)
+
 >_[How To GraphQL? GRAPHQL FUNDAMENTALS - #4 Big Picture (Architecture)](https://www.howtographql.com/basics/3-big-picture/)의 번역입니다._
 
 GraphQL은 *규격(specification)*으로만 출시되었다. 즉, GraphQL은 실제로 *GraphQL 서버*의 동작을 상세히 기술하는 긴 문서([long document](https://facebook.github.io/graphql/)) 이상일 수 없다. ⇒ 규격 안에서만 움직인다는 뜻

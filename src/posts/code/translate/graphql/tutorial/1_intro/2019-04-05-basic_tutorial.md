@@ -6,6 +6,7 @@ featuredImage: "../cover.png"
 stacks: ["번역","GraphQL","NodeJs"]
 keywords: ["GraphQL","NodeJs","CODE"]
 ---
+![커버](../cover.png)
 
 [How To GraphQL? GRAPHQL FUNDAMENTALS - #1 Introduction](https://www.howtographql.com/basics/0-introduction/)의 번역본입니다.
 

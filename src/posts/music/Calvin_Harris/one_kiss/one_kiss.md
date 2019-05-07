@@ -13,6 +13,8 @@ keywords: ["POP추천","calvin harris","dua lipa","one kiss"]
 
 <br>
 
+![커버](./cover.jpg)
+
 - - -
 
 좋아하는 두 가수의 조합은 언제들어도 행복합니다.

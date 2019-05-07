@@ -6,6 +6,8 @@ featuredImage: "../cover.png"
 stacks: ["번역","GraphQL","NodeJs"]
 keywords: ["GraphQL","NodeJs","CODE"]
 ---
+![커버](../cover.png)
+
 >_[How To GraphQL? GRAPHQL FUNDAMENTALS - #2 GraphQL is the better REST](https://www.howtographql.com/basics/1-graphql-is-the-better-rest/?autoplay)의 번역입니다. 부족한 실력으로 인해 다소 잘못된 번역이 있을 수 있습니다._
 
 지난 10년 동안 REST는 웹 API를 설계하는 표준(아직 모호하긴 하지만)이 되었다. 그것은 상태정보를 저장하지 않는 서버(*stateless servers*)나 리소스에 대한 구조화된 접근(*structured access to resources*)과 같은 몇 가지 훌륭한 아이디어를 제공한다. 그러나 REST API는 너무 유연하여 액세스되는 클라이언트의 급변하는 요구 사항을 충족할 수 없는 것으로 나타났다.

@@ -13,6 +13,8 @@ keywords: ["POP추천","Usher","Crash"]
 
 <br>
 
+![커버](./cover.png)
+
 - - -
 
 갑자기 꽂혀서 무한 반복중입니다 🕺

@@ -13,6 +13,8 @@ keywords: ["POP추천","Post Malone","beerbongs & bentleys"]
 
 <br>
 
+![커버](./cover.jpg)
+
 ## 트랙리스트
 
 - - -

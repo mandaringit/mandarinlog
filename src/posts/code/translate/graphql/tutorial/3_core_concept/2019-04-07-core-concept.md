@@ -6,6 +6,8 @@ featuredImage: "../cover.png"
 stacks: ["번역","GraphQL","NodeJs"]
 keywords: ["GraphQL","NodeJs","CODE"]
 ---
+![커버](../cover.png)
+
 >_[How To GraphQL? GRAPHQL FUNDAMENTALS - #3 Core Concepts](https://www.howtographql.com/basics/2-core-concepts/)의 번역입니다._
 
 ## **The Schema Definition Language (SDL)**

@@ -5,7 +5,7 @@ singer: "blackbear"
 albumCategory: "정규"
 date: "2019-05-03"
 category: "MUSIC"
-featuredImage: "./cover.jpg"
+featuredImage: "./anonymous-cover.jpg"
 keywords: ["POP추천","blackbear","ANONYMOUS"]
 ---
 
@@ -13,7 +13,7 @@ keywords: ["POP추천","blackbear","ANONYMOUS"]
 
 <br>
 
-![커버](./cover.jpg)
+![커버](./anonymous-cover.jpg)
 
 ## 트랙리스트
 

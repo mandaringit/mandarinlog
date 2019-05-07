@@ -5,7 +5,7 @@ albumCategory: "정규"
 singer: "Khalid"
 date: "2019-04-21"
 category: "MUSIC"
-featuredImage: "./cover.jpg"
+featuredImage: "./free-spirit-cover.jpg"
 keywords: ["POP추천","Khalid","Free Spirit"]
 ---
 
@@ -13,7 +13,7 @@ keywords: ["POP추천","Khalid","Free Spirit"]
 
 <br>
 
-![커버](./cover.jpg)
+![커버](./free-spirit-cover.jpg)
 
 ## 트랙리스트
 

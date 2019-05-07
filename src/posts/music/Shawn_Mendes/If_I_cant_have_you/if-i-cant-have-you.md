@@ -5,7 +5,7 @@ singer: "Shawn Mendes"
 albumCategory: "싱글"
 date: "2019-05-05"
 category: "MUSIC"
-featuredImage: "./cover.jpg"
+featuredImage: "./if-i-cant-have-you-cover.jpg"
 keywords: ["POP추천","Shawn Mendes","If I Can't Have You"]
 ---
 
@@ -13,7 +13,7 @@ keywords: ["POP추천","Shawn Mendes","If I Can't Have You"]
 
 <br>
 
-![커버](./cover.jpg)
+![커버](./if-i-cant-have-you-cover.jpg)
 
 - - -
 

@@ -2,11 +2,11 @@
 title: "에디터에서 알던 키가 안먹힐때 - Visual Studio Code(VSC) 키 바인딩(단축키) 설정하기"
 date : "2019-05-06 13:00"
 category: "CODE"
-featuredImage: "cover.jpg"
+featuredImage: "./vsc-keybinding-cover.jpg"
 stacks: ["TIP","VSC"]
 keywords: ["visual studio code","key binding","키보드 셋팅"]
 ---
-![커버](./cover.jpg)
+![커버](./vsc-keybinding-cover.jpg)
 
 저는 편집기로 Visual Studio Code를 사용하고 있습니다. 주로 작업을 노트북에서 하는데 최근에 데스크탑에서 잠깐 작업을 하려고 셋팅을 맞추고 코딩을 하고 있었죠. 그런데 여기 데스크탑에선 같은 단어 선택인 Ctrl + Shift + l 키가 안먹히는겁니다.
 

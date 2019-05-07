@@ -2,11 +2,11 @@
 title: "GRAPHQL FUNDAMENTALS #1 기본 튜토리얼 - 소개"
 date : "2019-04-05"
 category: "CODE"
-featuredImage: "../cover.png"
+featuredImage: "../graphql-tutorial-cover.png"
 stacks: ["번역","GraphQL","NodeJs"]
 keywords: ["GraphQL","NodeJs","CODE"]
 ---
-![커버](../cover.png)
+![커버](../graphql-tutorial-cover.png)
 
 [How To GraphQL? GRAPHQL FUNDAMENTALS - #1 Introduction](https://www.howtographql.com/basics/0-introduction/)의 번역본입니다.
 

@@ -2,10 +2,12 @@
 title: "Gatsby 블로그 프로젝트 프리뷰 - 프레임워크 선택과 튜토리얼 강의 추천"
 date : "2019-04-26"
 category: "CODE"
-featuredImage: "./cover.png"
+featuredImage: "./2019-04-26-gatsby-preview-cover.png"
 stacks: ["프리뷰"]
 keywords: ["Gatsby","React"]
 ---
+
+![커버](./2019-04-26-gatsby-preview)
 
 웹개발을 배울 때부터 두고두고 블로그를 만들자.. 라는 생각을 한지도 몇개월이 흘렀습니다.
 

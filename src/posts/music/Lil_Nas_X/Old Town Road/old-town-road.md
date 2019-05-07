@@ -5,7 +5,7 @@ album: "Old Town Road"
 albumCategory: "싱글"
 date: "2019-04-19"
 category: "MUSIC"
-featuredImage: "./cover.png"
+featuredImage: "./old-town-road-cover.png"
 keywords: ["POP추천","Lil Nas X","Old Town Road"]
 ---
 
@@ -13,4 +13,4 @@ keywords: ["POP추천","Lil Nas X","Old Town Road"]
 
 <br>
 
-![커버](./cover.png)
+![커버](./old-town-road-cover.png)

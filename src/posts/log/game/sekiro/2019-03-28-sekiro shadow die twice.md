@@ -2,7 +2,7 @@
 title: "SEKIRO - SHADOW DIE TWICE 리뷰"
 date: "2019-03-28"
 category: "LOG"
-featuredImage: "./cover.jpg"
+featuredImage: "./2019-03-28-sekiro shadow die twice-cover.jpg"
 platform: "FROM SOFTWARE"
 subCategory: "게임"
 star: 4
@@ -10,7 +10,7 @@ tags: ["프롬소프트웨어","잠입액션","도전욕구","깊은빡침"]
 keywords: ["세키로","프롬소프트","sekiro"]
 ---
 
-![커버](./cover.jpg)
+![커버](./2019-03-28-sekiro-shadow-die-twice-cover.jpg)
 
 이전에 유튜브에서 티저영상으로 "SEKIRO - SHADOW DIE TWICE"의 티저영상을 봤습니다. 적당한 그래픽과 스타일리쉬하게 적들을 "인살"하는 영상을 보면서 한번 해보고 싶다는 생각이 들었었습니다.
 

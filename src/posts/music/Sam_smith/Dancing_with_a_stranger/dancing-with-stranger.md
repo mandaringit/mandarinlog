@@ -5,7 +5,7 @@ singer: "Sam Smith, Normani"
 albumCategory: "싱글"
 date: "2019-04-30"
 category: "MUSIC"
-featuredImage: "./cover.jpg"
+featuredImage: "./dancing-with-stranger-cover.jpg"
 keywords: ["POP추천","Sam Smith","Dancing With A Stranger"]
 ---
 
@@ -13,7 +13,7 @@ keywords: ["POP추천","Sam Smith","Dancing With A Stranger"]
 
 <br>
 
-![커버](./cover.jpg)
+![커버](./dancing-with-stranger-cover.jpg)
 
 - - -
 

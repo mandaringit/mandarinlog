@@ -5,7 +5,7 @@ singer: "Calvin Harris, Dua Lipa"
 albumCategory: "싱글"
 date: "2019-04-30"
 category: "MUSIC"
-featuredImage: "./cover.jpg"
+featuredImage: "./one-kiss-cover.jpg"
 keywords: ["POP추천","calvin harris","dua lipa","one kiss"]
 ---
 
@@ -13,7 +13,7 @@ keywords: ["POP추천","calvin harris","dua lipa","one kiss"]
 
 <br>
 
-![커버](./cover.jpg)
+![커버](./one-kiss-cover.jpg)
 
 - - -
 

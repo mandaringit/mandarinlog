@@ -5,7 +5,7 @@ date: "2019-05-05"
 album: "beerbongs & bentleys"
 albumCategory: "정규"
 category: "MUSIC"
-featuredImage: "./cover.jpg"
+featuredImage: "./beerbongs-and-bentleys-cover.jpg"
 keywords: ["POP추천","Post Malone","beerbongs & bentleys"]
 ---
 
@@ -13,7 +13,7 @@ keywords: ["POP추천","Post Malone","beerbongs & bentleys"]
 
 <br>
 
-![커버](./cover.jpg)
+![커버](./beerbongs-and-bentleys-cover.jpg)
 
 ## 트랙리스트
 

@@ -2,11 +2,11 @@
 title: "GRAPHQL FUNDAMENTALS #2 GraphQL이 더 나은 REST 이다"
 date : "2019-04-06"
 category: "CODE"
-featuredImage: "../cover.png"
+featuredImage: "../graphql-tutorial-cover.png"
 stacks: ["번역","GraphQL","NodeJs"]
 keywords: ["GraphQL","NodeJs","CODE"]
 ---
-![커버](../cover.png)
+![커버](../graphql-tutorial-cover.png)
 
 >_[How To GraphQL? GRAPHQL FUNDAMENTALS - #2 GraphQL is the better REST](https://www.howtographql.com/basics/1-graphql-is-the-better-rest/?autoplay)의 번역입니다. 부족한 실력으로 인해 다소 잘못된 번역이 있을 수 있습니다._
 

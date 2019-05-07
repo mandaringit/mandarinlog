@@ -5,7 +5,7 @@ singer: "Gallant"
 albumCategory: "정규"
 date: "2019-04-20"
 category: "MUSIC"
-featuredImage: "./cover.jpg"
+featuredImage: "./ology-cover.jpg"
 keywords: ["POP추천","Gallant","Ology"]
 ---
 
@@ -13,7 +13,7 @@ keywords: ["POP추천","Gallant","Ology"]
 
 <br>
 
-![커버](./cover.jpg)
+![커버](./ology-cover.jpg)
 
 ## 트랙리스트
 

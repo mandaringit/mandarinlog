@@ -2,7 +2,7 @@
 title: "리락쿠마와 가오루씨 리뷰"
 date : "2019-05-03"
 category: "LOG"
-featuredImage: "./cover.jpg"
+featuredImage: "./rilakkuma-and-kaorusan-cover.jpg"
 platform: "Netflix"
 subCategory: "스톱모션 애니메이션"
 star: 4
@@ -10,7 +10,7 @@ tags: ["일본","스톱모션","귀엽"]
 keywords: ["리락쿠마","가오루씨","rilakkuma"]
 ---
 
-![커버](./cover.jpg)
+![커버](./rilakkuma-and-kaorusan-cover.jpg)
 
 
 넷플릭스에서 4월에 방영을 시작한 "리락쿠마와 가오루씨"를 보았습니다.

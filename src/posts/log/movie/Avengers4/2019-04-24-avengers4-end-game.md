@@ -2,7 +2,7 @@
 title: "AVENGERS4 - ENDGAME 리뷰"
 date : "2019-04-24"
 category: "LOG"
-featuredImage: "./cover.jpg"
+featuredImage: "./2019-04-24-avengers4-end-game-cover.jpg"
 platform: "MARVEL"
 subCategory: "영화"
 star: 5
@@ -10,7 +10,7 @@ tags: ["IMAX","3D","MCU"]
 keywords: ["avengers4","endgame","thanos"]
 ---
 
-![커버](./cover.jpg "어벤져스4 포스터")
+![커버](./2019-04-24-avengers4-end-game-cover.jpg "어벤져스4 포스터")
 
 어벤져스 4를 당일 저녁에 보고왔습니다. 늦게 예매해서 일단 2D로 관람했습니다.
 

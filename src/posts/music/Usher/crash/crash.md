@@ -5,7 +5,7 @@ singer: "Usher"
 albumCategory: "싱글"
 date: "2019-04-30"
 category: "MUSIC"
-featuredImage: "./cover.png"
+featuredImage: "./crash-cover.png"
 keywords: ["POP추천","Usher","Crash"]
 ---
 
@@ -13,7 +13,7 @@ keywords: ["POP추천","Usher","Crash"]
 
 <br>
 
-![커버](./cover.png)
+![커버](./crash-cover.png)
 
 - - -
 

@@ -2,11 +2,11 @@
 title: "GRAPHQL FUNDAMENTALS #4 Big Picture (아키텍처)"
 date : "2019-04-08"
 category: "CODE"
-featuredImage: "../cover.png"
+featuredImage: "../graphql-tutorial-cover.png"
 stacks: ["번역","GraphQL","NodeJs"]
 keywords: ["GraphQL","NodeJs","CODE"]
 ---
-![커버](../cover.png)
+![커버](../graphql-tutorial-cover.png)
 
 >_[How To GraphQL? GRAPHQL FUNDAMENTALS - #4 Big Picture (Architecture)](https://www.howtographql.com/basics/3-big-picture/)의 번역입니다._
 

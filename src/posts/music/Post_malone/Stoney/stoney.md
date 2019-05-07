@@ -5,7 +5,7 @@ date: "2019-05-05"
 album: "Stoney"
 albumCategory: "정규"
 category: "MUSIC"
-featuredImage: "./cover.jpg"
+featuredImage: "./stoney-cover.jpg"
 keywords: ["POP추천","Post Malone","Stoney"]
 ---
 
@@ -13,7 +13,7 @@ keywords: ["POP추천","Post Malone","Stoney"]
 
 <br>
 
-![커버](./cover.jpg)
+![커버](./stoney-cover.jpg)
 
 ## 트랙리스트
 

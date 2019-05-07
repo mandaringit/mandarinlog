@@ -5,7 +5,7 @@ date: "2019-04-17"
 album: "I TOLD YOU"
 albumCategory: "정규"
 category: "MUSIC"
-featuredImage: "./cover.jpg"
+featuredImage: "./i-told-you-cover.jpg"
 keywords: ["POP추천","Tory Lanez","I TOLD YOU"]
 ---
 
@@ -13,7 +13,7 @@ keywords: ["POP추천","Tory Lanez","I TOLD YOU"]
 
 <br>
 
-![커버](./cover.jpg)
+![커버](./i-told-you-cover.jpg)
 
 ## 트랙리스트
 

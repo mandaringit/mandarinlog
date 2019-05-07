@@ -574,7 +574,7 @@ code {
   background-color: hsla(0, 0%, 0%, 0.04);
   border-radius: 3px;
   font-family: "SFMono-Regular", Consolas, "Roboto Mono", "Droid Sans Mono",
-    "Liberation Mono", Menlo, Courier, monospace, Nanum Gothic Coding, monospace;
+    "Liberation Mono", Menlo, Courier, monospace, "Nanum Gothic Coding", monospace;
   padding: 0;
   padding-top: 0.2em;
   padding-bottom: 0.2em;
@@ -608,7 +608,7 @@ pre[class*="language-"] {
 	color: #f8f8f2;
 	background: none;
 	text-shadow: 0 1px rgba(0, 0, 0, 0.3);
-	font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+	font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace, Courier, monospace, "Nanum Gothic Coding", monospace;;
 	font-size: 1em;
 	text-align: left;
 	white-space: pre;

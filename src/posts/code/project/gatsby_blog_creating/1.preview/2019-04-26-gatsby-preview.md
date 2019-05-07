@@ -3,7 +3,7 @@ title: "Gatsby 블로그 프로젝트 프리뷰 - 프레임워크 선택과 튜�
 date : "2019-04-26"
 category: "CODE"
 featuredImage: "./2019-04-26-gatsby-preview-cover.png"
-stacks: ["프리뷰"]
+stacks: ["프리뷰","GatsbyJS"]
 keywords: ["Gatsby","React"]
 ---
 

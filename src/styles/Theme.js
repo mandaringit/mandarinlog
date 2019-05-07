@@ -26,6 +26,8 @@ export const Theme = {
       return "#375DAB"
     } else if (props.stack === "VSC") {
       return "#0079CC"
+    } else if (props.stack === "GatsbyJS") {
+      return "#663399"
     } else {
       return "#636e72"
     }
@@ -34,7 +36,7 @@ export const Theme = {
     if (props.stack === "JavaScript") {
       return "black"
     } else {
-      return "white"
+      return "transparent"
     }
   },
   platformColor: props => {

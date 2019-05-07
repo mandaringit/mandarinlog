@@ -15,6 +15,4 @@ keywords: ["POP추천","Sam Smith","Dancing With A Stranger"]
 
 ![커버](./dancing-with-stranger-cover.jpg)
 
-- - -
-
 샘 스미스의 목소리는 빠져나올수가 없어요~🕺🌊

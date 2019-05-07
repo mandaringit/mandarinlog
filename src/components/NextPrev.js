@@ -14,18 +14,17 @@ const Container = styled.div`
 const LinkBox = styled(Link)`
   color: black;
   text-decoration: none;
-  border: 1px solid ${props => props.theme.postBorderColor};
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  :hover {
+    transition-duration: 1.3s;
+    background-color: #e0e0e0;
+  }
 `
 
 const CardWrapper = styled.div`
   height: 100%;
   display: flex;
   flex-direction: column;
-  :hover {
-    transition-duration: 1.3s;
-    background-color: #e0e0e0;
-  }
 `
 
 const FeaturedImage = styled.div`

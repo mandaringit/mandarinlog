@@ -2,10 +2,12 @@
 title: "알자시리즈 - #1 Big-O 표기법(notaion)"
 date : "2019-05-01"
 category: "CODE"
-featuredImage: "../cover.jpg"
+featuredImage: "../al-da-cover.jpg"
 stacks: ["알고리즘","자료구조","JavaScript"]
 keywords: ["JavaScript","자바스크립트","algorithm","알고리즘","데이터구조","datastructure"]
 ---
+![커버](../al-da-cover.jpg "알자시리즈")
+
 > _Udemy 강의를 듣고 직접 정리한 요약본입니다._
 
 같은 함수의 여러가지 구현을 생각해볼 때, 어떤것이 **최고**라고 할 수 있을까?

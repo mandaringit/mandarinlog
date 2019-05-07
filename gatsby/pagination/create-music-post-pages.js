@@ -16,7 +16,7 @@ module.exports = async (graphql, actions) => {
               title
               featuredImage {
                 childImageSharp {
-                  fixed(width: 900) {
+                  fixed(width: 400) {
                     src
                   }
                 }
@@ -31,7 +31,7 @@ module.exports = async (graphql, actions) => {
               title
               featuredImage {
                 childImageSharp {
-                  fixed(width: 900) {
+                  fixed(width: 400) {
                     src
                   }
                 }

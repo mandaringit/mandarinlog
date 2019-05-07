@@ -2,10 +2,12 @@
 title: "알자시리즈 - #4 Searching Algorithms"
 date : "2019-05-04"
 category: "CODE"
-featuredImage: "../cover.jpg"
+featuredImage: "../al-da-cover.jpg"
 stacks: ["알고리즘","자료구조","JavaScript"]
 keywords: ["JavaScript","자바스크립트","algorithm","알고리즘","데이터구조","datastructure"]
 ---
+![커버](../al-da-cover.jpg "알자시리즈")
+
 > _Udemy 강의를 듣고 직접 정리한 요약본입니다._
 
 예를들어 유저 네임으로 여러명의 이름이 존재할때 내가 새로운 유저네임을 만들려 할때 중복인지 아닌지 어떻게 판단 할 수 있을까?

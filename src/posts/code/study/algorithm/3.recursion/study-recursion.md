@@ -2,10 +2,12 @@
 title: "알자시리즈 - #3 Recursion (재귀)"
 date : "2019-05-03"
 category: "CODE"
-featuredImage: "../cover.jpg"
+featuredImage: "../al-da-cover.jpg"
 stacks: ["알고리즘","자료구조","JavaScript"]
 keywords: ["JavaScript","자바스크립트","algorithm","알고리즘","데이터구조","datastructure"]
 ---
+![커버](../al-da-cover.jpg "알자시리즈")
+
 > _Udemy 강의를 듣고 직접 정리한 요약본입니다._
 
 ### 목표

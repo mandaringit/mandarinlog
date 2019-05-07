@@ -5,7 +5,7 @@ singer: "Usher"
 albumCategory: "정규"
 date: "2019-05-02"
 category: "MUSIC"
-featuredImage: "./cover.png"
+featuredImage: "./cover.jpg"
 keywords: ["POP추천","Usher","Hard II Love"]
 ---
 

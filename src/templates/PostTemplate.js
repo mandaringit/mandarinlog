@@ -13,21 +13,12 @@ import AllSnsShareComp from "../components/SnsShare/AllSnsShareComp"
 // 공통
 
 const TemplateContainer = styled.div`
-  margin: 2rem auto;
+  margin: 1rem auto;
   max-width: ${props => props.theme.templateMaxWidth};
 `
 
 const ContentContainer = styled.article`
   padding: 1rem;
-`
-
-const FeaturedImage = styled.img`
-  margin: 0;
-  width: 100%;
-  height: 100%;
-  max-height: 30rem;
-  object-fit: cover;
-  border-radius: 5px;
 `
 
 const InfoContainer = styled.div`
@@ -94,7 +85,6 @@ const PostTemplate = props => {
         keywords={frontmatter.keywords}
       />
       <TemplateContainer>
-        <FeaturedImage src={src} />
         <ContentContainer>
           <InfoContainer>
             {/* 로그 */}
@@ -199,7 +189,7 @@ export const query = graphql`
         date(formatString: "YYYY년 MM월 DD일")
         featuredImage {
           childImageSharp {
-            fixed(width: 900) {
+            fixed(width: 400) {
               src
             }
           }

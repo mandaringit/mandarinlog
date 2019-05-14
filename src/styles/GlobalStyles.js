@@ -740,10 +740,4 @@ pre[class*="language-"] {
   font-style:italic;
 }
 
-/* 마크다운 h3~h6 윗 공백 */
-/* 비슷한 구조를 가진 요소까지 영향 미치므로 고려하도록 */
-article > div > h3,h4,h5,h6 {
-  margin-top:2rem;
-}
-
 `

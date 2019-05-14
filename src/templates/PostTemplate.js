@@ -47,6 +47,28 @@ const EndBar = styled.div`
 
 const Content = styled.div`
   margin: 1rem 0;
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin-top: 2rem;
+    margin-bottom: 0.5rem;
+    color: black;
+  }
+  blockquote {
+    p {
+      font-style: italic;
+      border-left: 4px solid ${props => props.theme.mainColor};
+      padding-left: 1rem;
+    }
+  }
+  code {
+    font-family: "SFMono-Regular", Consolas, "Roboto Mono", "Droid Sans Mono",
+      "Liberation Mono", Menlo, Courier, monospace, "Nanum Gothic Coding",
+      monospace;
+  }
 `
 // Log
 
@@ -139,7 +161,7 @@ const PostTemplate = props => {
             </DateContainer>
           </InfoContainer>
           <StartBar />
-          <Content dangerouslySetInnerHTML={{ __html: html }} />
+          <Content id="content" dangerouslySetInnerHTML={{ __html: html }} />
           <AllSnsShareComp
             siteUrl={siteUrl}
             category={category_lowercase}

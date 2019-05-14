@@ -17,7 +17,7 @@ export const TagContainer = styled.div`
 export const Tag = styled.h6`
   background-color: #303952;
   color: white;
-  padding: 0.2rem 0.3rem;
+  padding: 0.3rem 0.3rem;
   margin: 0 0.3rem 0 0;
   font-size: 0.6rem;
   font-weight: bold;

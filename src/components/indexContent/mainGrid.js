@@ -8,7 +8,7 @@ import {
 import FeaturedLog from "./FeatruedContent/FeaturedLog"
 import FeaturedCode from "./FeatruedContent/FeaturedCode"
 import FeaturedMusic from "./FeatruedContent/FeaturedMusic"
-import SidePlayListLink from "./SideContent/SidePlaylistLink"
+// import SidePlayListLink from "./SideContent/SidePlaylistLink"
 
 const TopGrid = styled.div`
   display: grid;
@@ -17,8 +17,9 @@ const TopGrid = styled.div`
 
   /* // 태블릿 디바이스 (가로 해상도가 768px 보다 큰 화면에 적용) */
   @media (min-width: 768px) {
-    grid-template-columns: 2fr 1fr;
-    grid-gap: 1rem;
+    /* 사이드 컨텐츠 있을때 */
+    /* grid-template-columns: 2fr 1fr; */
+    /* grid-gap: 1rem; */
   }
 `
 
@@ -35,11 +36,11 @@ const PostsGrid = styled.div`
     grid-gap: 0.5rem;
   }
 `
-const SideGrid = styled.div`
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-gap: 0.5rem;
-`
+// const SideGrid = styled.div`
+//   display: grid;
+//   grid-template-columns: 1fr;
+//   grid-gap: 0.5rem;
+// `
 
 // 사이드 컨텐츠는 아직 주석처리
 const MainGrid = () => {
@@ -55,7 +56,7 @@ const MainGrid = () => {
               <FeaturedMusic />
             </PostsGrid>
           </div>
-          <div>
+          {/* <div>
             <MainTitleBar
               icon="📌"
               label="fire"
@@ -65,7 +66,7 @@ const MainGrid = () => {
             <SideGrid>
               <SidePlayListLink />
             </SideGrid>
-          </div>
+          </div> */}
         </TopGrid>
       </MainPostWrapper>
     </Wrapper>

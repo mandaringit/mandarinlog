@@ -91,7 +91,7 @@ const MusicPage = props => {
           해외음악
         </CategoryTitle>
         <Description>지극히 개인적인 취향의 해외음악 콜렉션</Description>
-        <SidePlayListLink />
+        {/* <SidePlayListLink /> */}
         <Posts>
           {edges.map(edge => {
             const { slug } = edge.node.fields

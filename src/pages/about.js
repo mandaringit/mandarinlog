@@ -55,12 +55,12 @@ const About = () => {
       />
       <Wrapper>
         <AccountWrapper>
-          <SnsWrapper>
+          {/* <SnsWrapper>
             <InstagramLogo />
             <ExtnedAnchor href="https://www.instagram.com/_mandarinlog/">
               _mandarinlog
             </ExtnedAnchor>
-          </SnsWrapper>
+          </SnsWrapper> */}
           <SnsWrapper>
             <GithubLogo />
             <ExtnedAnchor href="https://github.com/mandaringit">
@@ -96,15 +96,6 @@ const About = () => {
           </span>{" "}
           JavaScript, Node.Js, React, GraphQL
           <br />
-          <span role="img" aria-label="notebook">
-            💻
-          </span>{" "}
-          LG GRAM 14ZD970-GX50K 16GB
-          <br />
-          <span role="img" aria-label="os">
-            ⛓
-          </span>{" "}
-          Ubuntu 18.04 LTS
         </Text>
       </Wrapper>
     </PageLayout>

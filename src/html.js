@@ -21,8 +21,6 @@ export default function HTML(props) {
         {/* 빙 사이트인증 */}
         <meta name="msvalidate.01" content="2297B21A8C05A3FC8454BCEFB3CB6BC6" />
         {props.headComponents}
-        {/* 구글 애드센스 */}
-        <script data-ad-client="ca-pub-2340747711009580" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
       </head>
       <body {...props.bodyAttributes}>
         {props.preBodyComponents}

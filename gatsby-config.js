@@ -15,5 +15,13 @@ module.exports = {
         dest: `./src/graphql-types.d.ts`,
       },
     },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `markdown-pages`,
+        path: `${__dirname}/posts`,
+      },
+    },
+    `gatsby-transformer-remark`,
   ],
 };

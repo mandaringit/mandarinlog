@@ -3,14 +3,13 @@
     "target": "esnext",
     "module": "commonjs",
     "jsx": "preserve",
-    "lib": [
-      "dom",
-      "esnext"
-    ],
+    "lib": ["dom", "esnext"],
     "strict": true,
     "isolatedModules": true,
     "esModuleInterop": true,
-    "allowJs": true
+    "allowJs": true,
+    "noImplicitAny": false,
+    "strictNullChecks": false
   },
   "include": ["./src/**/*"],
   "exclude": ["node_modules", "public", ".cache"]

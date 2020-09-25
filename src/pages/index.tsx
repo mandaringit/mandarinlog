@@ -1,10 +1,7 @@
 import React, { ReactNode } from 'react';
 import { graphql, Link, useStaticQuery } from 'gatsby';
 import { Query } from '../graphql-types';
-
-interface Props {
-  data: Query;
-}
+import Layout from '../components/Layout';
 
 const LatestPostListQuery = graphql`
   query LatestPostListQuery {
@@ -15,7 +12,7 @@ const LatestPostListQuery = graphql`
           frontmatter {
             title
             path
-            # date(formatString: "YYYY-MM-DD HH:mm:ss")
+            date(formatString: "YYYY-MM-DD HH:mm:ss")
           }
           id
         }
@@ -27,7 +24,7 @@ const LatestPostListQuery = graphql`
 const IndexPage: React.FC = () => {
   const data = useStaticQuery<Query>(LatestPostListQuery);
   return (
-    <>
+    <Layout>
       <h1>최근 작성한 게시글 목록</h1>
       <ul>
         {data.allMarkdownRemark.edges.map(({ node }) => (
@@ -41,7 +38,7 @@ const IndexPage: React.FC = () => {
           </li>
         ))}
       </ul>
-    </>
+    </Layout>
   );
 };
 

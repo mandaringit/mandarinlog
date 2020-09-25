@@ -1002,13 +1002,21 @@ export type MarkdownRemarkFrontmatter = {
   __typename?: 'MarkdownRemarkFrontmatter';
   title?: Maybe<Scalars['String']>;
   path?: Maybe<Scalars['String']>;
-  date?: Maybe<Scalars['String']>;
+  date?: Maybe<Scalars['Date']>;
+};
+
+
+export type MarkdownRemarkFrontmatterDateArgs = {
+  formatString?: Maybe<Scalars['String']>;
+  fromNow?: Maybe<Scalars['Boolean']>;
+  difference?: Maybe<Scalars['String']>;
+  locale?: Maybe<Scalars['String']>;
 };
 
 export type MarkdownRemarkFrontmatterFilterInput = {
   title?: Maybe<StringQueryOperatorInput>;
   path?: Maybe<StringQueryOperatorInput>;
-  date?: Maybe<StringQueryOperatorInput>;
+  date?: Maybe<DateQueryOperatorInput>;
 };
 
 export type MarkdownRemarkGroupConnection = {
@@ -1673,13 +1681,13 @@ export type SitePageContext = {
   __typename?: 'SitePageContext';
   html?: Maybe<Scalars['String']>;
   title?: Maybe<Scalars['String']>;
-  date?: Maybe<Scalars['String']>;
+  date?: Maybe<Scalars['Date']>;
 };
 
 export type SitePageContextFilterInput = {
   html?: Maybe<StringQueryOperatorInput>;
   title?: Maybe<StringQueryOperatorInput>;
-  date?: Maybe<StringQueryOperatorInput>;
+  date?: Maybe<DateQueryOperatorInput>;
 };
 
 export type SitePageEdge = {

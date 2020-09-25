@@ -1,5 +1,7 @@
 ---
-title: 테스트
+title: '테스트'
+path: 'second'
+date: '2020-09-25'
 ---
 
 # Hi!

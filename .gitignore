@@ -71,3 +71,4 @@ yarn-error.log
 
 # 타입
 graphql-types.d.ts
+posts

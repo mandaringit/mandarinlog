@@ -1,16 +1,34 @@
 import React, { ReactNode } from 'react';
+import styled, { ThemeProvider } from 'styled-components';
+import GlobalStyle from '../styles/GlobalStyle';
+import theme from '../styles/theme';
+import Footer from './Footer';
+import Header from './Header';
 
-interface Props {
-  children: ReactNode;
-}
+const Container = styled.div`
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+`;
 
-const Layout = ({ children }: Props) => {
+const MainContainer = styled.main`
+  flex-grow: 1;
+  margin: 0 auto;
+  padding: ${({ theme }) => theme.headerHeight} 1rem 0 1rem;
+  max-width: 800px;
+`;
+
+const Layout: React.FC = ({ children }) => {
   return (
-    <div>
-      <h1>레이아웃 상단</h1>
-      {children}
-      <h1>레이아웃 하단</h1>
-    </div>
+    <ThemeProvider theme={theme}>
+      <GlobalStyle />
+      <Container>
+        <Header />
+        <MainContainer>{children}</MainContainer>
+        <Footer />
+      </Container>
+    </ThemeProvider>
   );
 };
 
